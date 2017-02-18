@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: InfoSite_production
+  database: festival
   username: <%= ENV['RDS_USERNAME'] %>
   password: <%= ENV['RDS_PASSWORD'] %>
