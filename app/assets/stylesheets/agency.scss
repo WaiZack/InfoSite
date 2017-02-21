@@ -166,12 +166,20 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+html {
+  //background-image: asset_data_url('header-bg.jpg');
+  //background-repeat: no-repeat;
+  //background-attachment: fixed;
+  //background-position: center center;
+  @include background-cover;
+}
+
 header {
-    background-image: asset_data_url('header-bg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    @include background-cover;
+    //background-image: asset_data_url('header-bg.jpg');
+    //background-repeat: no-repeat;
+    //background-attachment: scroll;
+    //background-position: center center;
+    //@include background-cover;
     text-align: center;
     color: white;
     .intro-text {
