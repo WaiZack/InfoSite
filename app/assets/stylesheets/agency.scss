@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: asset_data_url('header-bg.jpg');
+    background-image: asset_data_url('header-bg.jpg'); //commented out to apply background image individually
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -175,21 +175,25 @@ header {
     text-align: center;
     color: white;
     .intro-text {
-        padding-top: 100px;
+        padding-top: 300px;
         padding-bottom: 50px;
         .intro-lead-in {
-            @include serif-font;
-            font-style: italic;
-            font-size: 22px;
+            //@include serif-font;
+            //font-style: italic;
+            font-family: "Times New Roman";
+            font-size: 50px;
             line-height: 22px;
             margin-bottom: 25px;
+            text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
         .intro-heading {
-            @include heading-font;
-            font-weight: 700;
-            font-size: 50px;
-            line-height: 50px;
+            //@include heading-font;
+            //font-weight: 700;
+            font-family: "EB Garamond";
+            font-size: 20px;
+            //line-height: 50px;
             margin-bottom: 25px;
+            text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
     }
 }
@@ -197,21 +201,27 @@ header {
 @media(min-width:768px) {
     header {
         .intro-text {
-            padding-top: 300px;
+            //padding-top: 300px;
+            padding-top:700px;
             padding-bottom: 200px;
             .intro-lead-in {
-                @include serif-font;
-                font-style: italic;
-                font-size: 40px;
+                //@include serif-font;
+                //font-style: italic;
+                font-family: "Times New Roman";
+                font-size: 92px;
                 line-height: 40px;
                 margin-bottom: 25px;
+                margin-top: -500px;
+                text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
             }
             .intro-heading {
-                @include heading-font;
-                font-weight: 700;
-                font-size: 75px;
-                line-height: 75px;
+                //@include heading-font;
+                //font-weight: 700;
+                font-family: "EB Garamond";
+                font-size: 44px;
+                //line-height: 75px;
                 margin-bottom: 50px;
+                text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
             }
         }
     }
@@ -735,4 +745,9 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: $theme-primary;
+}
+
+//custom css
+#smartnationHeader{
+  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
 }
