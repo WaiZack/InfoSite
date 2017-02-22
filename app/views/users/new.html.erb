@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+</head>
+
+<body>
+
+<!-- Top content -->
+<div class="top-content">
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+          <div class="form-top-left">
+            <h3>BizIT Festival Registration</h3>
+            <p>Please provide the following information</p>
+          </div>
+          <div class="form-top-right">
+            <i class="fa fa-lock"></i>
+          </div>
+        </div>
+        <div class="form-bottom">
+          <%= simple_form_for @user do |f| %>
+              <%= f.input :email, placeholder: 'Email', label: false %>
+              <%= f.input :password, placeholder: 'Password', label: false %>
+              <%= f.input :password_confirmation, placeholder: 'Repeat Password', label: false %>
+              <%= f.input :institute, placeholder: 'Institute\'s Full Name', label: false %>
+              <%= f.button :button, 'Register', class: 'btn' %>
+
+          <% end %>
+        </div>
+        <div>
+          <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%= javascript_include_tag 'application' %>
+
+</body>
+
+</html>

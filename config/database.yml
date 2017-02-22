@@ -12,9 +12,12 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: 5
+#  username: <%= ENV['RDS_USERNAME'] %>
+#  password: <%= ENV['RDS_PASSWORD'] %>
+#  host: <%= ENV['RDS_HOSTNAME'] %>
+#  port: <%= ENV['RDS_PORT'] %>
   username: root
-  password: Jiankang2017
+  password: toosweet
   socket: /tmp/mysql.sock
 
 development:
@@ -49,6 +52,6 @@ test:
 #
 production:
   <<: *default
-  database: InfoSite_production
-  username: InfoSite
-  password: <%= ENV['INFOSITE_DATABASE_PASSWORD'] %>
+  database: festival
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>

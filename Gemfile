@@ -54,3 +54,9 @@ gem 'autoprefixer-rails', '~> 6.7', '>= 6.7.2'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
+
+gem 'simple_form'
+
+gem 'validates_email_format_of'
+
+gem 'bcrypt'
