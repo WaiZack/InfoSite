@@ -6,4 +6,7 @@ class LandingController < ApplicationController
   def smartnation
   end
 
+  def bigdata
+  end
+
 end

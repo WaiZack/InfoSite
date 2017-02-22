@@ -166,28 +166,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-html {
-  //background-image: asset_data_url('header-bg.jpg');
-  //background-repeat: no-repeat;
-  //background-attachment: fixed;
-  //background-position: center center;
-  @include background-cover;
-}
-
 header {
-//<<<<<<< HEAD
-//    background-image: asset_data_url('header-bg.jpg'); //commented out to apply background image individually
-//    background-repeat: no-repeat;
-//    background-attachment: scroll;
-//    background-position: center center;
-//    @include background-cover;
-//=======
-    //background-image: asset_data_url('header-bg.jpg');
-    //background-repeat: no-repeat;
-    //background-attachment: scroll;
-    //background-position: center center;
-    //@include background-cover;
-//>>>>>>> b1dd556e67b0183b63c3964a65e071b813ef0dd5
+    background-image: asset_data_url('header-bg.jpg'); //commented out to apply background image individually
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    @include background-cover;
     text-align: center;
     color: white;
     .intro-text {
@@ -200,6 +184,7 @@ header {
             font-size: 50px;
             line-height: 22px;
             margin-bottom: 25px;
+            margin-top: -150px;
             text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
         .intro-heading {
@@ -208,8 +193,12 @@ header {
             font-family: "EB Garamond";
             font-size: 20px;
             //line-height: 50px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
+        }
+        .register-bar{
+          margin-top: 14px;
+          font-size:12px;
         }
     }
 }
@@ -218,7 +207,7 @@ header {
     header {
         .intro-text {
             //padding-top: 300px;
-            padding-top:700px;
+            padding-top:600px;
             padding-bottom: 200px;
             .intro-lead-in {
                 //@include serif-font;
@@ -227,7 +216,7 @@ header {
                 font-size: 92px;
                 line-height: 40px;
                 margin-bottom: 25px;
-                margin-top: -500px;
+                margin-top: -350px;
                 text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
             }
             .intro-heading {
@@ -236,8 +225,13 @@ header {
                 font-family: "EB Garamond";
                 font-size: 44px;
                 //line-height: 75px;
-                margin-bottom: 50px;
+                margin-top:50px;
+                margin-bottom: 100px;
                 text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
+            }
+            .register-bar{
+              margin-top: 14px;
+              font-size:16px;
             }
         }
     }
@@ -766,4 +760,15 @@ body {
 //custom css
 #smartnationHeader{
   background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
+}
+.btn-register{
+  @include button-variant(white, $theme-danger, $theme-danger);
+  @include heading-font;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 20px 40px;
+}
+#bigdataHeader{
+  background-image: asset_data_url('bigdata/BigDataBackground.jpg');
 }
