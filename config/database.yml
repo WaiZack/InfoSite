@@ -18,6 +18,7 @@ default: &default
 #  port: <%= ENV['RDS_PORT'] %>
   username: root
   password: toosweet
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default

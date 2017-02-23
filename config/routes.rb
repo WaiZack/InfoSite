@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'landing#home'
+  get '/smartnation', to: 'landing#smartnation', as: 'smartnation'
+  get '/bigdata', to: 'landing#bigdata', as: 'bigdata'
   get '/users' => 'users#new'
 
   get '/dash' => 'dashboard#show'
