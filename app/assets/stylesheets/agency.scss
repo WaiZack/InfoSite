@@ -13,7 +13,7 @@ body {
 }
 
 .text-primary {
-    color: $theme-primary !important;
+    color: #3c588c !important;
 }
 
 p {
@@ -241,18 +241,19 @@ header {
 
 section {
     padding: 100px 0;
-    h2.section-heading {
-        font-size: 40px;
+    h1.section-heading {
+        color:#3c588c;
+        font-size: 50px;
         margin-top: 0;
-        margin-bottom: 15px;
+        margin-bottom: 65px;
     }
     h3.section-subheading {
-        font-size: 16px;
-        @include serif-font;
+        font-family: "Roboto";
+        font-size: 25px;
         text-transform: none;
-        font-style: italic;
         font-weight: 400;
-        margin-bottom: 75px;
+        margin-top: 0;
+        margin-bottom: 65px;
     }
 }
 
@@ -628,13 +629,13 @@ ul.social-buttons {
     li {
         a {
             display: block;
-            background-color: $gray-darker;
+            //background-color: $gray-darker;
             height: 40px;
             width: 40px;
             border-radius: 100%;
             font-size: 20px;
             line-height: 40px;
-            color: white;
+            color: $theme-primary;
             outline: none;
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
@@ -642,6 +643,7 @@ ul.social-buttons {
             &:hover,
             &:focus,
             &:active {
+                color:white;
                 background-color: $theme-primary;
             }
         }
@@ -732,7 +734,7 @@ ul.social-buttons {
     }
 }
 
-// Highlight Color Customization
+ Highlight Color Customization
 
 ::-moz-selection {
     text-shadow: none;
@@ -757,9 +759,7 @@ body {
 }
 
 //custom css
-#smartnationHeader{
-  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
-}
+//global
 .btn-register{
   @include button-variant(white, $theme-danger, $theme-danger);
   @include heading-font;
@@ -768,6 +768,29 @@ body {
   font-size: 18px;
   padding: 20px 40px;
 }
+
+.statementText{
+  width:70%;
+  font-size: 18px;
+  display: inline-block;
+  text-align: justify;
+}
+
+#statement-section-heading{
+  margin-bottom:15px !important;
+}
+
+@media(min-width:768px) {
+  .sponsor.row {
+    margin-top: 10px;
+  }
+}
+
+//individual track
+#smartnationHeader{
+  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
+}
+
 #bigdataHeader{
   background-image: asset_data_url('bigdata/BigDataBackground.jpg');
 }
