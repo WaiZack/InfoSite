@@ -97,13 +97,14 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom {
 
     .navbar-brand {
-        color: $theme-primary;
-        @include script-font;
+        font-family: "Helvetica Neue";
+        font-weight: bold;
+        color: white;
         &:hover,
         &:focus,
         &:active,
         &.active {
-            color: darken($theme-primary, 10%);
+            color: $theme-primary;
         }
     }
     .navbar-collapse {
@@ -124,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
         li {
             a {
                 @include heading-font;
-                font-weight: 400;
+                font-weight: bold;
                 letter-spacing: 1px;
                 color: white;
                 &:hover,
@@ -212,7 +213,7 @@ header {
             text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
         .register-bar{
-          margin-top: 14px;
+          margin-top: 18px;
           font-size:12px;
         }
     }
@@ -749,43 +750,67 @@ ul.social-buttons {
     }
 }
 
- Highlight Color Customization
+ //Highlight Color Customization
 
-::-moz-selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
-
-::selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
-
-img::selection {
-    background: transparent;
-}
-
-img::-moz-selection {
-    background: transparent;
-}
-
-body {
-    webkit-tap-highlight-color: $theme-primary;
-    background-color: rgba(0,0,0,1) !important;
-}
+//::-moz-selection {
+//    text-shadow: none;
+//    background: $theme-primary;
+//}
+//
+//::selection {
+//    text-shadow: none;
+//    background: $theme-primary;
+//}
+//
+//img::selection {
+//    background: transparent;
+//}
+//
+//img::-moz-selection {
+//    background: transparent;
+//}
+//
+//body {
+//    webkit-tap-highlight-color: $theme-primary;
+//}
 
 //custom css
 //global
+body {
+  webkit-tap-highlight-color: $theme-primary;
+  background-color: rgba(0,0,0,1) !important;
+}
+
+.nav li a.btn-login:hover,
+.nav li a.btn-login:focus {
+          color: white;
+          background-color: darken($theme-primary, 10%);
+        }
+
 .btn-register{
   @include button-variant(white, $theme-danger, $theme-danger);
   @include heading-font;
   font-weight: 700;
   border-radius: 3px;
   font-size: 18px;
-  padding: 20px 40px;
+  padding: 15px 35px;
+}
+
+.btn-login{
+  @include button-variant(white, $theme-primary, $theme-primary);
+  border-radius: 3px;
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+  margin-top: 7px !important;
+  margin-bottom:7px !important;
+}
+
+a.btn-register{
+  text-decoration: none !important;
 }
 
 .statementText{
+  font-family:"Helvetica Neue";
   width:70%;
   font-size: 18px;
   display: inline-block;
@@ -794,6 +819,7 @@ body {
 }
 
 #statement-section-heading{
+  font-family:"Helvetica Neue";
   margin-bottom:15px !important;
 }
 
