@@ -197,7 +197,7 @@ header {
             text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
         .register-bar{
-          margin-top: 14px;
+          margin-top: 18px;
           font-size:12px;
         }
     }
@@ -734,29 +734,29 @@ ul.social-buttons {
     }
 }
 
- Highlight Color Customization
+ //Highlight Color Customization
 
-::-moz-selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
-
-::selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
-
-img::selection {
-    background: transparent;
-}
-
-img::-moz-selection {
-    background: transparent;
-}
-
-body {
-    webkit-tap-highlight-color: $theme-primary;
-}
+//::-moz-selection {
+//    text-shadow: none;
+//    background: $theme-primary;
+//}
+//
+//::selection {
+//    text-shadow: none;
+//    background: $theme-primary;
+//}
+//
+//img::selection {
+//    background: transparent;
+//}
+//
+//img::-moz-selection {
+//    background: transparent;
+//}
+//
+//body {
+//    webkit-tap-highlight-color: $theme-primary;
+//}
 
 //custom css
 //global
@@ -766,10 +766,14 @@ body {
   font-weight: 700;
   border-radius: 3px;
   font-size: 18px;
-  padding: 20px 40px;
+  padding: 15px 35px;
+}
+a.btn-register{
+  text-decoration: none !important;
 }
 
 .statementText{
+  font-family:"Helvetica Neue";
   width:70%;
   font-size: 18px;
   display: inline-block;
@@ -777,6 +781,7 @@ body {
 }
 
 #statement-section-heading{
+  font-family:"Helvetica Neue";
   margin-bottom:15px !important;
 }
 
