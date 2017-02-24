@@ -97,13 +97,14 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom {
 
     .navbar-brand {
+        font-family: "Helvetica Neue";
+        font-weight: bold;
         color: white;
-        @include script-font;
         &:hover,
         &:focus,
         &:active,
         &.active {
-            color: darken($theme-primary, 10%);
+            color: $theme-primary;
         }
     }
     .navbar-collapse {
@@ -124,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
         li {
             a {
                 @include heading-font;
-                font-weight: 400;
+                font-weight: bold;
                 letter-spacing: 1px;
                 color: white;
                 &:hover,
@@ -151,15 +152,6 @@ h1, h2, h3, h4, h5, h6 {
   border-color: transparent;
 }
 
-.navbar-bd{
-  background-color: $theme-smartnation;
-  border-color: transparent;
-}
-
-.navbar-ft{
-  background-color: $theme-smartnation;
-  border-color: transparent;
-}
 
 
 @media(min-width:768px) {
@@ -185,27 +177,13 @@ h1, h2, h3, h4, h5, h6 {
 // Navbar Change on Scroll
 
 @media(min-width:768px) {
-  .navbar-sn.affix {
-    background-color: $sn-bar;
-    padding: 10px 0;
-    .navbar-brand {
-      font-size: 1.5em;
+    .navbar-sn.affix {
+        background-color: $sn-bar;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
     }
-  }
-  .navbar-bd.affix {
-    background-color: $bd-bar;
-    padding: 10px 0;
-    .navbar-brand {
-      font-size: 1.5em;
-    }
-  }
-  .navbar-ft.affix {
-    background-color: $ft-bar;
-    padding: 10px 0;
-    .navbar-brand {
-      font-size: 1.5em;
-    }
-  }
 }
 
 header {
@@ -235,7 +213,7 @@ header {
             text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
         .register-bar{
-          margin-top: 14px;
+          margin-top: 18px;
           font-size:12px;
         }
     }
@@ -250,7 +228,7 @@ header {
             .intro-lead-in {
                 //@include serif-font;
                 //font-style: italic;
-                font-family: 'Times New Roman', serif;
+                font-family: "Times New Roman";
                 font-size: 92px;
                 line-height: 40px;
                 margin-bottom: 25px;
@@ -260,7 +238,7 @@ header {
             .intro-heading {
                 //@include heading-font;
                 //font-weight: 700;
-                font-family: 'EB Garamond', serif;
+                font-family: "EB Garamond";
                 font-size: 44px;
                 //line-height: 75px;
                 margin-top:50px;
@@ -772,43 +750,67 @@ ul.social-buttons {
     }
 }
 
- Highlight Color Customization
+ //Highlight Color Customization
 
-::-moz-selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
-
-::selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
-
-img::selection {
-    background: transparent;
-}
-
-img::-moz-selection {
-    background: transparent;
-}
-
-body {
-    webkit-tap-highlight-color: $theme-primary;
-    background-color: rgba(0,0,0,1) !important;
-}
+//::-moz-selection {
+//    text-shadow: none;
+//    background: $theme-primary;
+//}
+//
+//::selection {
+//    text-shadow: none;
+//    background: $theme-primary;
+//}
+//
+//img::selection {
+//    background: transparent;
+//}
+//
+//img::-moz-selection {
+//    background: transparent;
+//}
+//
+//body {
+//    webkit-tap-highlight-color: $theme-primary;
+//}
 
 //custom css
 //global
+body {
+  webkit-tap-highlight-color: $theme-primary;
+  background-color: rgba(0,0,0,1) !important;
+}
+
+.nav li a.btn-login:hover,
+.nav li a.btn-login:focus {
+          color: white;
+          background-color: darken($theme-primary, 10%);
+        }
+
 .btn-register{
   @include button-variant(white, $theme-danger, $theme-danger);
   @include heading-font;
   font-weight: 700;
   border-radius: 3px;
   font-size: 18px;
-  padding: 20px 40px;
+  padding: 15px 35px;
+}
+
+.btn-login{
+  @include button-variant(white, $theme-primary, $theme-primary);
+  border-radius: 3px;
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+  margin-top: 7px !important;
+  margin-bottom:7px !important;
+}
+
+a.btn-register{
+  text-decoration: none !important;
 }
 
 .statementText{
+  font-family:"Helvetica Neue";
   width:70%;
   font-size: 18px;
   display: inline-block;
@@ -817,6 +819,7 @@ body {
 }
 
 #statement-section-heading{
+  font-family:"Helvetica Neue";
   margin-bottom:15px !important;
 }
 
@@ -831,9 +834,9 @@ body {
 //  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
 //}
 
-//#bigdataHeader{
-//  background-image: asset_data_url('bigdata/BigDataBackground.jpg');
-//}
+#bigdataHeader{
+  background-image: asset_data_url('bigdata/BigDataBackground.jpg');
+}
 
 .layer {
   background-color: rgba(0, 0, 0, 0.5);
@@ -844,23 +847,11 @@ body {
 .sn-bg{
   background: rgba( $theme-smartnation, .6 );
 }
-
-.sn-sponsors{
-  background: rgba( $theme-smartnation, 1);
-}
-
-.bd-bg{
+.sn-bd{
   background: rgba( $theme-bigdata, .6 );
 }
-.bd-sponsors{
-  background: rgba( $theme-bigdata, 1);
-}
-
-.ft-bg{
+.sn-ft{
   background: rgba( $theme-fintech, .6 );
-}
-.ft-sponsors{
-  background: rgba( $theme-fintech, 1);
 }
 
 h3{
@@ -870,26 +861,6 @@ h3{
 .smartNationBody{
 
   background-image: asset_data_url('smartnation/SmartNationBackground.jpg'); //commented out to apply background image individually
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  @include background-cover;
-
-}
-
-.bigDataBody{
-
-  background-image: asset_data_url('bigdata/BigDataBackground.jpg'); //commented out to apply background image individually
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  @include background-cover;
-
-}
-
-.finTechBody{
-
-  background-image: asset_data_url('bigdata/BigDataBackground.jpg'); //commented out to apply background image individually
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
