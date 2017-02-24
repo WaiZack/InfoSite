@@ -10,4 +10,11 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.scss, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
+#css files
 Rails.application.config.assets.precompile += %w( light-bootstrap-dashboard.css )
+Rails.application.config.assets.precompile += %w( login.css )
+
+#js files
+Rails.application.config.assets.precompile += %w( light-bootstrap-dashboard.js )
+Rails.application.config.assets.precompile += %w( loginScripts.js )
+Rails.application.config.assets.precompile += %w( agency.js )
