@@ -18,7 +18,6 @@
 //= require agency
 //= require turbolinks
 //= require jquery.backstretch
-//= require light-bootstrap-dashboard
 
 
 
