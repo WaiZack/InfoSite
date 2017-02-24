@@ -29,7 +29,7 @@ var loaded = function() {
         offset: {
             top: 100
         }
-    })
+    });
 
 }; // End of use strict
 

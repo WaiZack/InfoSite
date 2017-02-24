@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom {
 
     .navbar-brand {
-        color: $theme-primary;
+        color: white;
         @include script-font;
         &:hover,
         &:focus,
@@ -151,6 +151,15 @@ h1, h2, h3, h4, h5, h6 {
   border-color: transparent;
 }
 
+.navbar-bd{
+  background-color: $theme-smartnation;
+  border-color: transparent;
+}
+
+.navbar-ft{
+  background-color: $theme-smartnation;
+  border-color: transparent;
+}
 
 
 @media(min-width:768px) {
@@ -176,13 +185,27 @@ h1, h2, h3, h4, h5, h6 {
 // Navbar Change on Scroll
 
 @media(min-width:768px) {
-    .navbar-sn.affix {
-        background-color: $sn-bar;
-        padding: 10px 0;
-        .navbar-brand {
-            font-size: 1.5em;
-        }
+  .navbar-sn.affix {
+    background-color: $sn-bar;
+    padding: 10px 0;
+    .navbar-brand {
+      font-size: 1.5em;
     }
+  }
+  .navbar-bd.affix {
+    background-color: $bd-bar;
+    padding: 10px 0;
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
+  .navbar-ft.affix {
+    background-color: $ft-bar;
+    padding: 10px 0;
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
 }
 
 header {
@@ -227,7 +250,7 @@ header {
             .intro-lead-in {
                 //@include serif-font;
                 //font-style: italic;
-                font-family: "Times New Roman";
+                font-family: 'Times New Roman', serif;
                 font-size: 92px;
                 line-height: 40px;
                 margin-bottom: 25px;
@@ -237,7 +260,7 @@ header {
             .intro-heading {
                 //@include heading-font;
                 //font-weight: 700;
-                font-family: "EB Garamond";
+                font-family: 'EB Garamond', serif;
                 font-size: 44px;
                 //line-height: 75px;
                 margin-top:50px;
@@ -808,9 +831,9 @@ body {
 //  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
 //}
 
-#bigdataHeader{
-  background-image: asset_data_url('bigdata/BigDataBackground.jpg');
-}
+//#bigdataHeader{
+//  background-image: asset_data_url('bigdata/BigDataBackground.jpg');
+//}
 
 .layer {
   background-color: rgba(0, 0, 0, 0.5);
@@ -821,11 +844,23 @@ body {
 .sn-bg{
   background: rgba( $theme-smartnation, .6 );
 }
-.sn-bd{
+
+.sn-sponsors{
+  background: rgba( $theme-smartnation, 1);
+}
+
+.bd-bg{
   background: rgba( $theme-bigdata, .6 );
 }
-.sn-ft{
+.bd-sponsors{
+  background: rgba( $theme-bigdata, 1);
+}
+
+.ft-bg{
   background: rgba( $theme-fintech, .6 );
+}
+.ft-sponsors{
+  background: rgba( $theme-fintech, 1);
 }
 
 h3{
@@ -835,6 +870,26 @@ h3{
 .smartNationBody{
 
   background-image: asset_data_url('smartnation/SmartNationBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
+}
+
+.bigDataBody{
+
+  background-image: asset_data_url('bigdata/BigDataBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
+}
+
+.finTechBody{
+
+  background-image: asset_data_url('bigdata/BigDataBackground.jpg'); //commented out to apply background image individually
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;

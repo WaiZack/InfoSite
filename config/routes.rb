@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   root 'landing#home'
   get '/smartnation', to: 'landing#smartnation'
   get '/bigdata', to: 'landing#bigdata'
+  get '/fintech' => 'landing#findtech'
   get '/users' => 'users#new'
 
   get '/dash' => 'dashboard#show'
