@@ -11,3 +11,12 @@ $gray-dark:			lighten($gray-base, 20%) !default;   // #333
 $gray:				lighten($gray-base, 33.5%) !default; // #555
 $gray-light:		lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:		lighten($gray-base, 93.5%) !default; // #eee
+
+$theme-smartnation: #075300;
+$sn-bar: rgba( $theme-smartnation, .5);
+
+$theme-bigdata: #3D9BE9;
+$bd-bar: rgba( $theme-bigdata, .5);
+
+$theme-fintech: #F1BF3A;
+$ft-bar: rgba( $theme-fintech, .5);

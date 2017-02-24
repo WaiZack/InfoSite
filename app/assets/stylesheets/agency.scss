@@ -9,11 +9,21 @@ body {
 }
 
 .text-muted {
-    color: $gray-light;
+    color: white;
 }
 
 .text-primary {
     color: #3c588c !important;
+}
+
+.text-primarySN {
+  color: $theme-smartnation !important;
+}
+.text-primaryBD {
+  color: $theme-bigdata !important;
+}
+.text-primaryFT {
+  color: $theme-fintech !important;
 }
 
 p {
@@ -61,6 +71,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: $gray-darker;
 }
 
+.other {
+  background-color: #151A2C;
+}
+
 // Restyled Primary Buttons
 
 .btn-primary {
@@ -81,8 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 // Custom Navigation Bar
 
 .navbar-custom {
-    background-color: $gray-darker;
-    border-color: transparent;
+
     .navbar-brand {
         font-family: "Helvetica Neue";
         font-weight: bold;
@@ -134,6 +147,12 @@ h1, h2, h3, h4, h5, h6 {
         background-color: darken($theme-primary, 10%);
     }
 }
+.navbar-sn{
+  background-color: $theme-smartnation;
+  border-color: transparent;
+}
+
+
 
 @media(min-width:768px) {
     .navbar-custom {
@@ -158,8 +177,8 @@ h1, h2, h3, h4, h5, h6 {
 // Navbar Change on Scroll
 
 @media(min-width:768px) {
-    .navbar-custom.affix {
-        background-color: $gray-darker;
+    .navbar-sn.affix {
+        background-color: $sn-bar;
         padding: 10px 0;
         .navbar-brand {
             font-size: 1.5em;
@@ -168,11 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: asset_data_url('header-bg.jpg'); //commented out to apply background image individually
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    @include background-cover;
+
     text-align: center;
     color: white;
     .intro-text {
@@ -181,7 +196,7 @@ header {
         .intro-lead-in {
             //@include serif-font;
             //font-style: italic;
-            font-family: "Times New Roman";
+            font-family: 'Times New Roman', serif;
             font-size: 50px;
             line-height: 22px;
             margin-bottom: 25px;
@@ -191,7 +206,7 @@ header {
         .intro-heading {
             //@include heading-font;
             //font-weight: 700;
-            font-family: "EB Garamond";
+            font-family: 'EB Garamond', serif;
             font-size: 20px;
             //line-height: 50px;
             margin-bottom: 30px;
@@ -231,7 +246,7 @@ header {
                 text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
             }
             .register-bar{
-              margin-top: 14px;
+              padding-top: 14px;
               font-size:16px;
             }
         }
@@ -243,7 +258,7 @@ header {
 section {
     padding: 100px 0;
     h1.section-heading {
-        color:#3c588c;
+      color: #ffffff;;
         font-size: 50px;
         margin-top: 0;
         margin-bottom: 65px;
@@ -761,12 +776,16 @@ ul.social-buttons {
 
 //custom css
 //global
+body {
+  webkit-tap-highlight-color: $theme-primary;
+  background-color: rgba(0,0,0,1) !important;
+}
 
 .nav li a.btn-login:hover,
-.nav li a.btn-login:focus{
-  color: white;
-  background-color: darken($theme-primary, 10%);
-}
+.nav li a.btn-login:focus {
+          color: white;
+          background-color: darken($theme-primary, 10%);
+        }
 
 .btn-register{
   @include button-variant(white, $theme-danger, $theme-danger);
@@ -796,6 +815,7 @@ a.btn-register{
   font-size: 18px;
   display: inline-block;
   text-align: justify;
+  color: #FFF;
 }
 
 #statement-section-heading{
@@ -810,10 +830,40 @@ a.btn-register{
 }
 
 //individual track
-#smartnationHeader{
-  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
-}
+//#smartnationHeader{
+//  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
+//}
 
 #bigdataHeader{
   background-image: asset_data_url('bigdata/BigDataBackground.jpg');
+}
+
+.layer {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.sn-bg{
+  background: rgba( $theme-smartnation, .6 );
+}
+.sn-bd{
+  background: rgba( $theme-bigdata, .6 );
+}
+.sn-ft{
+  background: rgba( $theme-fintech, .6 );
+}
+
+h3{
+  color: white;
+}
+
+.smartNationBody{
+
+  background-image: asset_data_url('smartnation/SmartNationBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
 }
