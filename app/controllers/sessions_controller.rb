@@ -1,4 +1,14 @@
 class SessionsController < ApplicationController
+
+  before_action :logged_in_user, only: [:new]
+
+  def logged_in_user
+    if logged_in?
+      redirect_to '/dash'
+    end
+  end
+
+
   def new
   end
 
