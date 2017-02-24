@@ -12,13 +12,13 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
-#  username: root
-#  password: toosweet
-#  socket: /tmp/mysql.sock
+#  username: <%= ENV['RDS_USERNAME'] %>
+#  password: <%= ENV['RDS_PASSWORD'] %>
+#  host: <%= ENV['RDS_HOSTNAME'] %>
+#  port: <%= ENV['RDS_PORT'] %>
+  username: root
+  password: toosweet
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
