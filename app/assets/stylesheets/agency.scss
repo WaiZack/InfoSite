@@ -84,13 +84,14 @@ h1, h2, h3, h4, h5, h6 {
     background-color: $gray-darker;
     border-color: transparent;
     .navbar-brand {
-        color: $theme-primary;
-        @include script-font;
+        font-family: "Helvetica Neue";
+        font-weight: bold;
+        color: white;
         &:hover,
         &:focus,
         &:active,
         &.active {
-            color: darken($theme-primary, 10%);
+            color: $theme-primary;
         }
     }
     .navbar-collapse {
@@ -111,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
         li {
             a {
                 @include heading-font;
-                font-weight: 400;
+                font-weight: bold;
                 letter-spacing: 1px;
                 color: white;
                 &:hover,
@@ -760,6 +761,13 @@ ul.social-buttons {
 
 //custom css
 //global
+
+.nav li a.btn-login:hover,
+.nav li a.btn-login:focus{
+  color: white;
+  background-color: darken($theme-primary, 10%);
+}
+
 .btn-register{
   @include button-variant(white, $theme-danger, $theme-danger);
   @include heading-font;
@@ -768,6 +776,16 @@ ul.social-buttons {
   font-size: 18px;
   padding: 15px 35px;
 }
+
+.btn-login{
+  @include button-variant(white, $theme-primary, $theme-primary);
+  border-radius: 3px;
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+  margin-top: 7px !important;
+  margin-bottom:7px !important;
+}
+
 a.btn-register{
   text-decoration: none !important;
 }
