@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-ft{
-  background-color: $theme-fintech;
+  background-color: $theme-smartnation;
   border-color: transparent;
 }
 
@@ -895,30 +895,27 @@ h3{
 
 .smartNationBody{
 
-  background-image: asset_data_url('smartnation/SmartNationBackground'); //commented out to apply background image individually
+  background-image: asset_data_url('smartnation/SmartNationBackground.jpg'); //commented out to apply background image individually
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  @include background-cover;
 
 }
 
 .bigDataBody{
 
-  background-image: asset_data_url('bigdata/BigDataBackground'); //commented out to apply background image individually
+  background-image: asset_data_url('bigdata/BigDataBackground.jpg'); //commented out to apply background image individually
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  @include background-cover;
 
 }
 
 .finTechBody{
 
-  background-image: asset_data_url('fintech/fintechBackground'); //commented out to apply background image individually
+  background-image: asset_data_url('fintech/fintechBackground.jpg'); //commented out to apply background image individually
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  @include background-cover;
 
 }
