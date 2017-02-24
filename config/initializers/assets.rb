@@ -13,10 +13,8 @@ Rails.application.config.assets.version = '1.0'
 #css files
 Rails.application.config.assets.precompile += %w( light-bootstrap-dashboard.css )
 Rails.application.config.assets.precompile += %w( login.css )
-Rails.application.config.assets.precompile += %w( sb-admin-2.css )
 
 #js files
 Rails.application.config.assets.precompile += %w( light-bootstrap-dashboard.js )
 Rails.application.config.assets.precompile += %w( loginScripts.js )
 Rails.application.config.assets.precompile += %w( agency.js )
-Rails.application.config.assets.precompile += %w( sb-admin-2.js )
