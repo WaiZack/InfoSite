@@ -22,45 +22,52 @@ var fixedTop = false;
 
 var navbar_initialized = false;
 
-$(document).ready(function(){
-    window_width = $(window).width();
-
-    // check if there is an image set for the sidebar's background
-    lbd.checkSidebarImage();
-
-    // Init navigation toggle for small screens
-    if(window_width <= 991){
-        lbd.initRightMenu();
-    }
-
-    //  Activate the tooltips
-    $('[rel="tooltip"]').tooltip();
-
-    //      Activate the switches with icons
-    if($('.switch').length != 0){
-        $('.switch')['bootstrapSwitch']();
-    }
-    //      Activate regular switches
-    if($("[data-toggle='switch']").length != 0){
-         $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
-    }
-
-    $('.form-control').on("focus", function(){
-        $(this).parent('.input-group').addClass("input-group-focus");
-    }).on("blur", function(){
-        $(this).parent(".input-group").removeClass("input-group-focus");
-    });
-
-    // Fixes sub-nav not working as expected on IOS
-$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-});
+// $(document).ready(function(){
+//     window_width = $(window).width();
+//
+//     // check if there is an image set for the sidebar's background
+//     lbd.checkSidebarImage();
+//
+//     // Init navigation toggle for small screens
+//     if(window_width <= 991){
+//         lbd.initRightMenu();
+//     }
+//
+//     //  Activate the tooltips
+//     $('[rel="tooltip"]').tooltip();
+//
+//     //      Activate the switches with icons
+//     if($('.switch').length != 0){
+//         $('.switch')['bootstrapSwitch']();
+//     }
+//     //      Activate regular switches
+//     if($("[data-toggle='switch']").length != 0){
+//          $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
+//     }
+//
+//     $('.form-control').on("focus", function(){
+//         $(this).parent('.input-group').addClass("input-group-focus");
+//     }).on("blur", function(){
+//         $(this).parent(".input-group").removeClass("input-group-focus");
+//     });
+//
+//     // Fixes sub-nav not working as expected on IOS
+// $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+// });
 
 // activate collapse right menu when the windows is resized
-$(window).resize(function(){
+
+$(document).on("turbolinks:load", function() {
     if($(window).width() <= 991){
         lbd.initRightMenu();
     }
+
 });
+// $(window).resize(function(){
+//     if($(window).width() <= 991){
+//         lbd.initRightMenu();
+//     }
+// });
 
 lbd = {
     misc:{
