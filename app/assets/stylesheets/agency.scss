@@ -893,14 +893,16 @@ h3{
   color: white;
 }
 
-//.smartNationBody{
-//
-//  background-image: asset_data_url('smartnation/SmartNationBackground.jpg'); //commented out to apply background image individually
-//  background-repeat: no-repeat;
-//  background-attachment: fixed;
-//  background-position: center center;
-//
-//}
+.smartNationBody{
+
+  background-image: image-url('smartnation/SmartNationBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
+
+}
 //
 //.bigDataBody{
 //
@@ -908,6 +910,7 @@ h3{
 //  background-repeat: no-repeat;
 //  background-attachment: fixed;
 //  background-position: center center;
+//  @include background-cover;
 //
 //}
 //
@@ -917,5 +920,6 @@ h3{
 //  background-repeat: no-repeat;
 //  background-attachment: fixed;
 //  background-position: center center;
+//  @include background-cover;
 //
 //}
