@@ -1,64 +1,39 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'dash' %>
 
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  <meta name="viewport" content="width=device-width" />
 
-
-  <%= stylesheet_link_tag 'light-bootstrap-dashboard' %>
-  <%= javascript_include_tag 'light-bootstrap-dashboard' %>
-  <!--     Fonts and icons     -->
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag ('application') %>
 
 </head>
 <body>
+<div class="navbar navbar-inverse set-radius-zero">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-<div class="wrapper">
-  <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
-
-    <div class="sidebar-wrapper">
-      <div class="logo">
-
-      </div>
-
-      <ul class="nav">
-        <li class="active">
-          <a href="/dash">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>
-            <p>User Profile</p>
-          </a>
-        </li>
-        <li>
-          <a href="/teams">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
-            <p>Team List</p>
-          </a>
-        </li>
-
-      </ul>
     </div>
   </div>
-
-  <div class="main-panel">
-    <nav class="navbar navbar-default navbar-fixed">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Dashboard</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-left">
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
+</div>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="navbar-collapse collapse ">
+          <ul id="menu-top" class="nav navbar-nav navbar-right">
+            <li><a class="menu-top-active" href="/dash">Profile</a></li>
+            <li><a href="/teams">Teams</a></li>
             <li>
               <a href="/changePassword">
                 <p>Change Password</p>
@@ -67,187 +42,94 @@
             <li>
               <%= link_to "Log out", logout_path, method: "delete" %>
             </li>
-            <li class="separator hidden-lg hidden-md"></li>
+
           </ul>
         </div>
       </div>
-    </nav>
 
+    </div>
+  </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="page-head-line">Edit Profile</h4>
 
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="card">
-              <% flash.each do |key, value| %>
-                  <div class="alert alert-<%= key %>"><%= value %></div>
-              <% end %>
-              <div class="header">
-                <h4 class="title">Edit Profile</h4>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class ="row">
+      <%= simple_form_for @user, url: '/dashboard/:id' do |f| %>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Institute</label>
+                <%= f.input :institute, placeholder: 'Institute', label: false , input_html: { class: 'form-control' }, value: @user.institute %>
               </div>
-              <div class="content">
-                <%= simple_form_for @user, url: '/dashboard/:id' do |f| %>
-                    <div class="row">
-                      <div class="col-md-6">asset
-                        <div class="form-group">
-                          <label>Institute</label>
-                          <%= f.input :institute, placeholder: 'Institute', label: false , input_html: { class: 'form-control' }, value: @user.institute %>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email address (disabled)</label>
-                          <%= f.input :email, placeholder: 'Email', label: false, input_html: { class: 'form-control' },value: @user.email, disabled: true %>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address (disabled)</label>
+                <%= f.input :email, placeholder: 'Email', label: false, input_html: { class: 'form-control' },value: @user.email, disabled: true %>
 
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>First Name</label>
-                          <%= f.input :firstName, placeholder: 'First Name', label: false, input_html: { class: 'form-control' },value: @user.firstName %>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Last Name</label>
-                          <%= f.input :lastName, placeholder: 'Last Name', label: false, input_html: { class: 'form-control' },value: @user.lastName %>
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>About Me</label>
-                          <%= f.input :introduction, placeholder: 'Introduce yourself!', label: false, input_html: { class: 'form-control' },value: @user.introduction %>
-                        </div>
-                      </div>
-                    </div>
-
-                    <%= f.button :button, 'Update', class: 'btn ' %>
-
-                <% end %>
-                <!--<form>-->
-                  <!--<div class="row">-->
-                    <!--<div class="col-md-6">-->
-                      <!--<div class="form-group">-->
-                        <!--<label>Institute</label>-->
-                        <!--<input type="text" class="form-control" placeholder="Institute" value=<%=@user.institute%>>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-6">-->
-                      <!--<div class="form-group">-->
-                        <!--<label for="exampleInputEmail1">Email address (disabled)</label>-->
-                        <!--<input type="email" class="form-control" disabled placeholder="Email" value=<%=@user.email%>>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</div>-->
-
-                  <!--<div class="row">-->
-                    <!--<div class="col-md-6">-->
-                      <!--<div class="form-group">-->
-                        <!--<label>First Name</label>-->
-                        <!--<input type="text" class="form-control" placeholder="First Name" value=<%=@user.firstName%>>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-6">-->
-                      <!--<div class="form-group">-->
-                        <!--<label>Last Name</label>-->
-                        <!--<input type="text" class="form-control" placeholder="Last Name" value=<%=@user.lastName%>>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</div>-->
-
-                  <!--<div class="row">-->
-                    <!--<div class="col-md-12">-->
-                      <!--<div class="form-group">-->
-                        <!--<label>About Me</label>-->
-                        <!--<textarea rows="5" class="form-control" placeholder="Introduce yourself!"><%=@user.introduction%></textarea>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</div>-->
-
-                  <!--<button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>-->
-                  <!--<div class="clearfix"></div>-->
-                <!--</form>-->
               </div>
             </div>
           </div>
-          <!--<div class="col-md-4">-->
-            <!--<div class="card card-user">-->
-              <!--<div class="image">-->
-                <!--<img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>-->
-              <!--</div>-->
-              <!--<div class="content">-->
-                <!--<div class="author">-->
-                  <!--<a href="#">-->
-                    <!--<img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>-->
 
-                    <!--<h4 class="title">Mike Andrew<br />-->
-                      <!--<small>michael24</small>-->
-                    <!--</h4>-->
-                  <!--</a>-->
-                <!--</div>-->
-                <!--<p class="description text-center"> "Lamborghini Mercy <br>-->
-                  <!--Your chick she so thirsty <br>-->
-                  <!--I'm in that two seat Lambo"-->
-                <!--</p>-->
-              <!--</div>-->
-              <!--<hr>-->
-              <!--<div class="text-center">-->
-                <!--<button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>-->
-                <!--<button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>-->
-                <!--<button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>First Name</label>
+                <%= f.input :firstName, placeholder: 'First Name', label: false, input_html: { class: 'form-control' },value: @user.firstName %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Last Name</label>
+                <%= f.input :lastName, placeholder: 'Last Name', label: false, input_html: { class: 'form-control' },value: @user.lastName %>
 
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
+              </div>
+            </div>
+          </div>
 
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>About Me</label>
+                <%= f.input :introduction, placeholder: 'Introduce yourself!', label: false, input_html: { class: 'form-control' },value: @user.introduction %>
+              </div>
+            </div>
+          </div>
+
+          <%= f.button :button, 'Update', class: 'btn ' %>
+
+      <% end %>
+
+
     </div>
 
 
-    <footer class="footer">
-      <%= session.inspect %>
-      <div class="container-fluid">
-        <nav class="pull-left">
-          <ul>
-            <li>
-              <a href="#">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Company
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Blog
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
+
+
 
   </div>
 </div>
+<!-- CONTENT-WRAPPER SECTION END-->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
 
 
 </body>
-
-<% javascript_include_tag ('application') %>
-
 </html>

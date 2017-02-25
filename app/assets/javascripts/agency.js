@@ -33,6 +33,6 @@ var loaded = function() {
 
 }; // End of use strict
 
-$(document).on("turbolinks:load", loaded);
+$(document).ready (loaded);
 
 
