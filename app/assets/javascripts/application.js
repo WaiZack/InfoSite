@@ -15,4 +15,3 @@
 //= require bootstrap
 //= require jquery.easing.1.3
 //= require jquery.backstretch
-//= require turbolinks
