@@ -903,23 +903,23 @@ h3{
 
 
 }
-//
-//.bigDataBody{
-//
-//  background-image: asset_data_url('bigdata/BigDataBackground.jpg'); //commented out to apply background image individually
-//  background-repeat: no-repeat;
-//  background-attachment: fixed;
-//  background-position: center center;
-//  @include background-cover;
-//
-//}
-//
-//.finTechBody{
-//
-//  background-image: asset_data_url('fintech/fintechBackground.jpg'); //commented out to apply background image individually
-//  background-repeat: no-repeat;
-//  background-attachment: fixed;
-//  background-position: center center;
-//  @include background-cover;
-//
-//}
+
+.bigDataBody{
+
+  background-image: image-url('bigdata/BigDataBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
+}
+
+.finTechBody{
+
+  background-image: image-url('fintech/fintechBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
+}
