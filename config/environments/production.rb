@@ -84,4 +84,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.smtp_settings = {
+      :address => "email-smtp.us-west-2.amazonaws.com",
+      :port => 587,
+      :user_name => 'AKIAJYD5EW7YL4JGYI3A', #Your SMTP user
+      :password => 'AmoSlS/lmi6YSrhaw/PJ+XTEThnccc1+BnRAkGCE3quk', #Your SMTP password
+      :authentication => :login,
+      :enable_starttls_auto => true
+  }
+
+  config.action_mailer.default_url_options = { :host => "bizitfestival.com" }
 end
