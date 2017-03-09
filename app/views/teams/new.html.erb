@@ -1,2 +1,84 @@
-<h1>TeamsController#new</h1>
-<p>Find me in app/views/teams_controller/new.html.erb</p>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'dash' %>
+
+
+  <%= javascript_include_tag ('application') %>
+
+</head>
+<body>
+<div class="navbar navbar-inverse set-radius-zero">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+  </div>
+</div>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="navbar-collapse collapse ">
+          <ul id="menu-top" class="nav navbar-nav navbar-right">
+            <li><a href="/dash">Profile</a></li>
+            <li><a class="menu-top-active"  href="/teams">Teams</a></li>
+            <li>
+              <a href=<%= new_password_reset_path%>>
+                <p>Change Password</p>
+              </a>
+            </li>
+            <li>
+              <%= link_to "Log out", logout_path, method: "delete" %>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="page-head-line">Create Team</h4>
+      </div>
+    </div>
+  </div>
+  <div class="container"  style="width: 70%;">
+    <div class ="row">
+      <div>
+        <%= simple_form_for @team do |f| %>
+            <%= f.input :name, placeholder: 'Name', label: false %>
+            <%= f.input :track, collection: @tracks %>
+            <%= f.button :button, 'Register', class: 'btn' %>
+
+        <% end %>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+
+</html>

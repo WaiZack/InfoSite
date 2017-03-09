@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'teams_controller/new'
+  get 'teams/new'
 
-  get 'teams_controller/show'
+  get 'teams/show'
 
-  get 'teams_controller/edit'
+  get 'teams/edit'
 
-  get 'teams_controller/index'
+  get 'teams/index'
 
   get 'password_resets/new'
 
@@ -20,16 +20,20 @@ Rails.application.routes.draw do
   get '/fintech' => 'landing#fintech'
   get '/users' => 'users#new'
 
-  get '/dash' => 'dashboard#show'
+  get '/dash' => 'dashboard#edit'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
   get '/changePassword' => 'dashboard#edit'
 
+  get '/teams' => 'teams#index'
+  get '/createTeam' => 'teams#new'
+
   resources :users
   resources :dashboard
   resources :account_activation, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :teams
 
 end

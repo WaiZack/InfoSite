@@ -58,65 +58,46 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4 class="page-head-line">Edit Profile</h4>
+        <h4 class="page-head-line">Team</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="dashboard-div-wrapper bk-clr-two">
+          <h5>Team Name</h5>
+          <i  class="fa fa-id-card dashboard-div-icon" ></i>
+          <h4><%=@team.name%></h4>
+        </div>
+
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="dashboard-div-wrapper bk-clr-three">
+          <h5>Team Track</h5>
+          <i  class="fa fa-road dashboard-div-icon" ></i>
+          <h4><%=@team.track%></h4>
+        </div>
 
       </div>
 
     </div>
   </div>
-  <div class="container">
-    <div class ="row">
-      <%= simple_form_for @user, url: '/dashboard/:id' do |f| %>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Institute</label>
-                <%= f.input :institute, placeholder: 'Institute', label: false , input_html: { class: 'form-control' }, value: @user.institute %>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address (disabled)</label>
-                <%= f.input :email, placeholder: 'Email', label: false, input_html: { class: 'form-control' },value: @user.email, disabled: true %>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>First Name</label>
-                <%= f.input :firstName, placeholder: 'First Name', label: false, input_html: { class: 'form-control' },value: @user.firstName %>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Last Name</label>
-                <%= f.input :lastName, placeholder: 'Last Name', label: false, input_html: { class: 'form-control' },value: @user.lastName %>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>About Me</label>
-                <%= f.input :introduction, placeholder: 'Introduce yourself!', label: false, input_html: { class: 'form-control' },value: @user.introduction %>
-              </div>
-            </div>
-          </div>
-
-          <%= f.button :button, 'Update', class: 'btn ' %>
-
-      <% end %>
+</div>
+</div>
+<div class="container">
+  <div class ="row">
 
 
-    </div>
 
   </div>
+
+</div>
 </div>
 
 </body>
+
+<script>
+    $(document).ready(function() {
+        $('#teamTable').DataTable();
+    } );
+</script>
 </html>
