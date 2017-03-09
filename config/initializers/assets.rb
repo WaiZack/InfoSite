@@ -15,6 +15,8 @@ Rails.application.config.assets.precompile += %w( light-bootstrap-dashboard.css 
 Rails.application.config.assets.precompile += %w( dash.css )
 Rails.application.config.assets.precompile += %w( login.css )
 Rails.application.config.assets.precompile += %w( agency.css )
+Rails.application.config.assets.precompile += %w( zigzagtimeline.css )
+Rails.application.config.assets.precompile += %w( lineartimeline.css )
 
 
 #js files
