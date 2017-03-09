@@ -60,3 +60,5 @@ gem 'simple_form'
 gem 'validates_email_format_of'
 
 gem 'bcrypt'
+
+gem 'jquery-datatables-rails', '~> 3.4.0'
