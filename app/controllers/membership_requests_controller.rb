@@ -19,10 +19,13 @@ class MembershipRequestsController < ApplicationController
     @request.status = 'Pending'
     @request.requester_id = @user.id
     @request.teamName = @team.name
-
+    @sameTrackTeams = Team.where(track: @team.track)
 
     if @request.save
       flash[:info] = 'Request submitted'
+      redirect_to '/teams'
+    elsif !(@user.teams.all & @sameTrackTeams).empty?
+      flash[:danger] = 'You are already part of team from the same track!'
       redirect_to '/teams'
     else
       flash[:danger] = 'You have already submitted a request to that team!'
@@ -56,10 +59,7 @@ class MembershipRequestsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @request = MembershipRequest.find_by(id: params[:request_id])
     @request.update_attribute(:status, 'Rejected')
-
     redirect_to '/teams'
-
-
   end
 
   def create

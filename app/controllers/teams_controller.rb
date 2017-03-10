@@ -39,15 +39,21 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.creator = user.id
     @team.numMember = 1
-    @team.save
 
-    membership = Membership.new(team_id: @team.id, user_id:user.id)
+    @sameTrackTeams = Team.where(track: @team.track)
+    if (user.teams.all & @sameTrackTeams).empty?
+      @team.save
+      membership = Membership.new(team_id: @team.id, user_id:user.id)
 
-    if membership.save
-      flash[:info] = 'Team Created'
-      redirect_to '/teams'
+      if membership.save
+        flash[:info] = 'Team Created'
+        redirect_to '/teams'
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      flash[:warning] = 'You already belong to a team of that track!'
+      redirect_to '/teams'
     end
   end
 
