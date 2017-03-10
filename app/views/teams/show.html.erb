@@ -62,7 +62,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <div class="dashboard-div-wrapper bk-clr-two">
           <h5>Team Name</h5>
           <i  class="fa fa-id-card dashboard-div-icon" ></i>
@@ -70,7 +70,7 @@
         </div>
 
       </div>
-      <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <div class="dashboard-div-wrapper bk-clr-three">
           <h5>Team Track</h5>
           <i  class="fa fa-road dashboard-div-icon" ></i>
@@ -78,26 +78,55 @@
         </div>
 
       </div>
+      <div class="col-md-4 col-sm-4 col-xs-6">
+        <div class="dashboard-div-wrapper bk-clr-four">
+          <h5>Team Size</h5>
+          <i  class="fa fa-users dashboard-div-icon" ></i>
+          <h4><%=@team.users.count%> / 3</h4>
+        </div>
 
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Members</th>
+          </tr>
+
+          </thead>
+
+          <% @team.users.all.each do |member| %>
+              <tr>
+                <td><%= member.email%></td>
+
+                  <% if member.id == @team.creator%>
+                    <td class="alert-warning">
+                      <i class="fa fa-hand-spock-o" aria-hidden="true"></i> Leader
+                    </td>
+                  <%end%>
+
+
+              </tr>
+          <%end%>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <% if @team.users.count < 3 && !@team.users.all.include?(@user) && @user.teams.count < 3%>
+          <!--<%= simple_form_for @request do |f| %>-->
+              <!--<%= f.input :requester_id,input_html: { value: @user.id }%>-->
+              <!--<%= f.button :button, 'Request Membership', class: 'btn' %>-->
+          <!--<% end %>-->
+
+        <a class="btn btn-primary" href='/membership_requests/new?team_id=<%=@team.id%>'>Send Join Request</a>
+      <% end %>
     </div>
   </div>
 </div>
-</div>
-<div class="container">
-  <div class ="row">
-
-
-
-  </div>
-
-</div>
-</div>
 
 </body>
-
-<script>
-    $(document).ready(function() {
-        $('#teamTable').DataTable();
-    } );
-</script>
 </html>

@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309150632) do
+ActiveRecord::Schema.define(version: 20170309194749) do
+
+  create_table "membership_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "requester_id"
+    t.integer  "team_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "email"
+    t.string   "teamName"
+    t.string   "status"
+  end
+
+  create_table "memberships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "team_id"
+    t.integer  "user_id"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,13 +37,7 @@ ActiveRecord::Schema.define(version: 20170309150632) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "numMember"
-    t.string   "creator"
-  end
-
-  create_table "teams_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id", null: false
-    t.integer "team_id", null: false
-    t.index ["user_id", "team_id"], name: "index_teams_users_on_user_id_and_team_id", using: :btree
+    t.integer  "creator"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
