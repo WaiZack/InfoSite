@@ -3,6 +3,7 @@
 // Gray and Brand Colors for use across theme
 
 $theme-primary:    #3c588c;
+$theme-secondary:  #f4a460;
 $theme-danger:     #e74c3c;
 
 $gray-base:			#000 !default;
@@ -20,3 +21,6 @@ $bd-bar: rgba( $theme-bigdata, .5);
 
 $theme-fintech: #F1BF3A;
 $ft-bar: rgba( $theme-fintech, .5);
+
+$theme-about: #1E90FF;
+$about-bar: rgba( $theme-about, .5);
