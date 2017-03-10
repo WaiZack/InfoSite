@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def logged_in_user
     if logged_in?
-      redirect_to '/dash'
+      redirect_to '/myTeams'
     end
   end
 
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
-        redirect_to '/dash'
+        redirect_to '/myTeams'
       else
         message  = "Account not activated. "
         message += "Check your email for the activation link."
