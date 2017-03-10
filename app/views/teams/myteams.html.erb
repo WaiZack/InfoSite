@@ -56,15 +56,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4 class="page-head-line">List Of Teams</h4>
-        <div style="padding-bottom: 20px">
-          <a class="btn btn-success" href="/createTeam">
-            Create Team
-          </a>
-          <a class="btn btn-primary" href="/myTeams">
-            My Teams
-          </a>
-        </div>
+        <h4 class="page-head-line">My Teams</h4>
         <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
@@ -86,7 +78,45 @@
             <%end%>
           </table>
         </div>
+        <h4 class="page-head-line">Requests to join my team</h4>
 
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered" id="teamTable">
+            <thead>
+            <tr>
+              <th>Requester's Email</th>
+              <th>Team Name</th>
+              <th colspan="2">Actions</th>
+            </tr>
+            </thead>
+            <% @incoming_requests.each do |request| %>
+                <tr>
+                  <td><%= request.email%></td>
+                  <td><%= request.teamName%></td>
+                  <td><a class="btn btn-success" href="/approve?request_id=<%= request.id %>">Approve</a></td>
+                  <td><a class="btn btn-danger" href="/reject">Reject</a></td>
+                </tr>
+            <%end%>
+          </table>
+        </div>
+
+        <h4 class="page-head-line">My Requests</h4>
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered" id="teamTable">
+            <thead>
+            <tr>
+              <th>Requester's Email</th>
+              <th>Team Name</th>
+            </tr>
+            </thead>
+            <% @outgoing_requests.each do |request| %>
+                <tr>
+                  <td><%= request.email%></td>
+                  <td><%= request.teamName%></td>
+                </tr>
+            <%end%>
+          </table>
+        </div>
 
 
       </div>
@@ -104,10 +134,4 @@
 </div>
 
 </body>
-
-<script>
-    $(document).ready(function() {
-        $('#teamTable').DataTable();
-    } );
-</script>
 </html>

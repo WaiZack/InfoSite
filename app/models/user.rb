@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
-  has_and_belongs_to_many :teams
+  has_many :memberships
+  has_many :teams, through: :memberships
+  has_many :membership_requests
 
 
   attr_accessor :remember_token, :activation_token, :reset_token

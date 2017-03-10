@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'membership_requests/new'
+
+  get 'membership_acceptance/new'
+
   get 'teams/new'
 
   get 'teams/show'
@@ -29,11 +33,15 @@ Rails.application.routes.draw do
 
   get '/teams' => 'teams#index'
   get '/createTeam' => 'teams#new'
+  get '/myTeams' => 'teams#myteams'
+
+  get '/approve' => 'membership_requests#approve'
 
   resources :users
   resources :dashboard
   resources :account_activation, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :teams
+  resources :membership_requests
 
 end
