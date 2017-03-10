@@ -171,6 +171,11 @@ h1, h2, h3, h4, h5, h6 {
   border-color: transparent;
 }
 
+.navbar-home{
+  background-color: $theme-home;
+  border-color: transparent;
+}
+
 
 @media(min-width:768px) {
     .navbar-custom {
@@ -218,6 +223,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   .navbar-about.affix {
     background-color: $about-bar;
+    padding: 10px 0;
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
+
+  .navbar-home.affix {
+    background-color: $home-bar;
     padding: 10px 0;
     .navbar-brand {
       font-size: 1.5em;
@@ -618,6 +631,9 @@ a.btn-register{
   padding-right: 40px;
 }
 
+span{
+  color: $theme-secondary;
+}
 //individual track
 //#smartnationHeader{
 //  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
@@ -662,6 +678,17 @@ a.btn-register{
   background: rgba( $theme-about, 1);
 }
 
+
+#homeHeader .intro-lead-in{
+  color: $theme-about;
+}
+#homeHeader .intro-heading{
+  color: $theme-about;
+  font-family: "Times New Roman";
+  margin-top: 20px;
+}
+
+
 h3{
   color: white;
 }
@@ -676,6 +703,26 @@ h4{
   font-weight:bold;
   color:$theme-secondary;
 }
+
+
+#carouselSection{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+#myCarousel .backgound{
+  width:100%;
+}
+
+#myCarousel .item{
+  background-image: image-url('smartnation/SmartNationBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+}
+
 
 .smartNationBody{
 
@@ -716,4 +763,12 @@ h4{
   background-position: center center;
   @include background-cover;
 
+}
+
+.homeBody{
+  background-image: image-url('home/dummy.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
 }
