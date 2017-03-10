@@ -25,6 +25,10 @@ body {
 .text-primaryFT {
   color: $theme-fintech !important;
 }
+.text-primaryAbout {
+  color: $theme-about !important;
+}
+
 
 p {
     font-size: 14px;
@@ -162,6 +166,11 @@ h1, h2, h3, h4, h5, h6 {
   border-color: transparent;
 }
 
+.navbar-about{
+  background-color: $theme-about;
+  border-color: transparent;
+}
+
 
 @media(min-width:768px) {
     .navbar-custom {
@@ -207,6 +216,14 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 1.5em;
     }
   }
+  .navbar-about.affix {
+    background-color: $about-bar;
+    padding: 10px 0;
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
+
 }
 
 header {
@@ -883,14 +900,37 @@ a.btn-register{
 }
 
 .ft-bg{
-  background: rgba( $theme-fintech, .6 );
+  background: rgba( $theme-fintech, .6);
 }
 .ft-sponsors{
   background: rgba( $theme-fintech, 1);
 }
 
+.about-bg{
+  background: rgba( $theme-about, .6);
+}
+.about-sponsors{
+  background: rgba( $theme-about, 1);
+}
+
+#timelineSection{
+  padding: 100px 20px;
+}
+@media(min-width:768px) {
+  #timelineSection {
+    padding: 150px 70px;
+  }
+}
+
+
 h3{
   color: white;
+}
+
+h4{
+  color: white;
+  text-align: left;
+  padding: 0px 60px 50px 60px;
 }
 
 .smartNationBody{
@@ -917,6 +957,16 @@ h3{
 .finTechBody{
 
   background-image: image-url('fintech/fintechBackground.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
+}
+
+.aboutBody{
+
+  background-image: image-url('about/dummy.jpg'); //commented out to apply background image individually
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
