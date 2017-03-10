@@ -37,6 +37,10 @@ Rails.application.routes.draw do
   get '/myTeams' => 'teams#myteams'
 
   get '/approve' => 'membership_requests#approve'
+  get '/reject' => 'membership_requests#reject'
+  get '/removeMember' => 'teams#remove'
+  get '/quitTeam' => 'teams#quit'
+  get 'deleteTeam' => 'teams#delete'
 
   resources :users
   resources :dashboard

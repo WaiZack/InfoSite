@@ -55,7 +55,58 @@ class TeamsController < ApplicationController
     user = User.find_by(id: session[:user_id])
     @teams = user.teams.all
     @incoming_requests = MembershipRequest.where(user_id: user.id).where('status = ?', 'Pending')
-    @outgoing_requests = MembershipRequest.where(requester_id: user.id).where('status = ?', 'Pending')
+    @outgoing_requests = MembershipRequest.where(requester_id: user.id)
+
+  end
+
+  def remove
+    @user = User.find_by(id: session[:user_id])
+    @team = Team.find_by(id: params[:team])
+    @member = User.find_by(id: params[:member])
+    request = MembershipRequest.where(requester_id: @member.id).where(team_id: @team.id).first()
+
+    if @user.id == @team.creator && @member.id!=@user.id && request
+      MembershipRequest.find(request.id).delete
+      @team.users.delete(@member)
+
+      redirect_to '/myTeams'
+    else
+      flash[:danger] = 'You do not have permission to do that!'
+      redirect_to '/myTeams'
+    end
+  end
+
+  def quit
+    @user = User.find_by(id: session[:user_id])
+    @team = Team.find_by(id: params[:team])
+    if @team.creator == @user.id
+      flash[:danger] = 'The leader is unable to leave the group!'
+      render 'show'
+    elsif @team.users.all.include?(@user)
+      flash[:info] = 'You quit the group'
+      @team.users.delete(@user)
+      render 'show'
+    else
+      flash[:danger] = 'Invalid action'
+      redirect_to '/myTeams'
+    end
+
+  end
+
+  def delete
+    @user = User.find_by(id: session[:user_id])
+    @team = Team.find_by(id: params[:team])
+    if @team && @team.creator == @user.id
+      flash[:success] = 'Team deleted'
+      MembershipRequest.where(:team_id => @team.id).update_all(status: 'Team deleted')
+
+      Membership.where(:team_id => @team.id).delete_all
+      Team.find(@team.id).delete
+      redirect_to '/myTeams'
+    else
+      flash[:danger] = 'You don\'t have permssion to do that'
+      redirect_to '/myTeams'
+    end
 
   end
 

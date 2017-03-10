@@ -16,6 +16,7 @@ class MembershipRequestsController < ApplicationController
     @request = MembershipRequest.new(request_params)
     @request.user_id = @team.creator
     @request.email = @user.email
+    @request.status = 'Pending'
     @request.requester_id = @user.id
     @request.teamName = @team.name
 
