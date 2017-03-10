@@ -12,17 +12,14 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
-#  username: root
-#  password: toosweet
-#  socket: /tmp/mysql.sock
+
 
 development:
   <<: *default
   database: InfoSite_development
+  username: root
+  password: toosweet
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -55,3 +52,6 @@ production:
   database: festival
   username: <%= ENV['RDS_USERNAME'] %>
   password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
+
