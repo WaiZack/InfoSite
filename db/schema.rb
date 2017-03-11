@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 20170309194749) do
     t.integer  "creator"
   end
 
+  create_table "teams_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id", null: false
+    t.integer "team_id", null: false
+    t.index ["user_id", "team_id"], name: "index_teams_users_on_user_id_and_team_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
     t.string   "password_digest"
