@@ -40,7 +40,8 @@ Rails.application.routes.draw do
   get '/reject' => 'membership_requests#reject'
   get '/removeMember' => 'teams#remove'
   get '/quitTeam' => 'teams#quit'
-  get 'deleteTeam' => 'teams#delete'
+  get '/deleteTeam' => 'teams#delete'
+  post '/addList' => 'mailing_list#new'
 
   resources :users
   resources :dashboard
@@ -48,5 +49,6 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :teams
   resources :membership_requests
+  resources :mailing_list
 
 end
