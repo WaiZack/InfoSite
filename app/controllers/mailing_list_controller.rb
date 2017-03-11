@@ -5,7 +5,7 @@ class MailingListController < ApplicationController
     if @mail.save
       flash[:info] = 'Thanks for signing up!'
     else
-      flash[:warning] = 'Either the email is not valid or you have already signed up'
+      flash[:warning] = 'Either the email is not valid or you have already signed ups'
     end
     # redirect_to
     redirect_to root_url+'#mailing'
