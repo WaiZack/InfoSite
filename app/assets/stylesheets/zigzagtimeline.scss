@@ -1,20 +1,20 @@
 @import "variables.scss";
 
-img {
+timeline-centered img {
   vertical-align: middle;
 }
 
-.img-responsive {
+timeline-centered .img-responsive {
   display: block;
   height: auto;
   max-width: 100%;
 }
 
-.img-rounded {
+timeline-centered .img-rounded {
   border-radius: 3px;
 }
 
-.img-thumbnail {
+timeline-centered .img-thumbnail {
   background-color: #fff;
   border: 1px solid #ededf0;
   border-radius: 3px;
@@ -29,7 +29,7 @@ img {
   webkit-transition: all .2s ease-in-out;
 }
 
-.img-circle {
+timeline-centered .img-circle {
   border-radius: 50%;
 }
 
