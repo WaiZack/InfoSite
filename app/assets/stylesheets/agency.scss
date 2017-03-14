@@ -339,23 +339,26 @@ section {
     text-transform: none;
 }
 
-// Team Section
+// trackDiv Section
 
-.team-member {
+.trackDiv {
     text-align: center;
-    margin-bottom: 50px;
     img {
+        max-width:230px;
+        max-height:230px;
         margin: 0 auto;
         border: 7px solid white;
     }
-    h4 {
-        margin-top: 25px;
-        margin-bottom: 0;
-        text-transform: none;
-    }
     p {
+        font-size: 15px;
         margin-top: 0;
     }
+}
+@media(min-width:1000px) {
+  .trackDiv img {
+    max-width:270px;
+    max-height:270px;
+  }
 }
 
 // Clients Aside
@@ -422,10 +425,12 @@ section#contact {
 footer {
     padding: 0px;
     text-align: center;
+    background: rgba( black, .8);
     span.copyright {
         line-height: 40px;
         @include heading-font;
         text-transform: none;
+        color:white;
     }
     ul.quicklinks {
         margin-bottom: 0;
@@ -634,7 +639,38 @@ a.btn-register{
 span{
   color: $theme-secondary;
 }
-//individual track
+h3{
+  color: white;
+}
+
+h4{
+  color: white;
+  text-align: left;
+  padding: 0px 60px 50px 60px;
+}
+
+#mapSection{
+  text-align: center; /* !!! */
+}
+#map {
+  height: 400px;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+#mapSection h1.section-heading{
+  margin-bottom: 20px;
+}
+#mapSection h3.section-heading{
+  margin-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#mapSection p{
+  color: white;
+  margin-top: 20px;
+}
+  //individual track
 //#smartnationHeader{
 //  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
 //}
@@ -694,23 +730,15 @@ span{
   margin-top: 20px;
 }
 
-
-h3{
-  color: white;
+#tracks h1{
+  margin-bottom: 85px !important;
 }
-
-h4{
-  color: white;
-  text-align: left;
-  padding: 0px 60px 50px 60px;
+#tracks a{
+  color: $theme-secondary;
 }
-
-#tracks img{
-  height:25%;
-  width:25%;
-  border-radius: 50%;
+#tracks a:hover{
+  color:white;
 }
-
 
 .statementText span{
   font-weight:bold;
@@ -746,7 +774,6 @@ h4{
   background-attachment: fixed;
   background-position: center center;
   @include background-cover;
-
 
 }
 
