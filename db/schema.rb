@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311042724) do
+ActiveRecord::Schema.define(version: 20170318035950) do
 
   create_table "mailing_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
@@ -40,16 +40,11 @@ ActiveRecord::Schema.define(version: 20170311042724) do
   create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "track"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "numMember"
     t.integer  "creator"
-  end
-
-  create_table "teams_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id", null: false
-    t.integer "team_id", null: false
-    t.index ["user_id", "team_id"], name: "index_teams_users_on_user_id_and_team_id", using: :btree
+    t.text     "proposal_data", limit: 65535
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

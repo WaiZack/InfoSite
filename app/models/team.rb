@@ -1,4 +1,7 @@
 class Team < ApplicationRecord
+
+  include DocumentUploader[:proposal]
+
   has_many :memberships
   has_many :users, through: :memberships
 
