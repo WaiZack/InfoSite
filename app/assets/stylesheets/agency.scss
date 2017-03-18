@@ -249,7 +249,7 @@ header {
         .intro-lead-in {
             //@include serif-font;
             //font-style: italic;
-            font-family: 'Ubuntu', Sans-Serif;
+            font-family: 'Orbitron', Sans-Serif;
             font-size: 50px;
             line-height: 22px;
             margin-bottom: 25px;
@@ -259,7 +259,7 @@ header {
         .intro-heading {
             //@include heading-font;
             //font-weight: 700;
-            font-family: 'Ubuntu', Sans-Serif;
+            font-family: 'Orbitron', Sans-Serif;
             font-size: 20px;
             //line-height: 50px;
             margin-bottom: 30px;
@@ -281,7 +281,7 @@ header {
             .intro-lead-in {
                 //@include serif-font;
                 //font-style: italic;
-                font-family: 'Ubuntu', Sans-Serif;
+                font-family: 'Orbitron', Sans-Serif;
                 font-size: 92px;
                 line-height: 40px;
                 margin-bottom: 25px;
@@ -291,7 +291,7 @@ header {
             .intro-heading {
                 //@include heading-font;
                 //font-weight: 700;
-                font-family: 'Ubuntu', Sans-Serif;
+                font-family: 'Orbitron', Sans-Serif;
                 font-size: 44px;
                 //line-height: 75px;
                 margin-top:50px;
@@ -348,6 +348,9 @@ section {
         max-height:230px;
         margin: 0 auto;
         border: 7px solid white;
+    }
+    img:hover{
+
     }
     p {
         font-size: 15px;
@@ -715,7 +718,7 @@ h4{
 }
 
 .home-bg{
-  background: rgba( $theme-home, .6);
+  background: rgba( $theme-home, .8);
 }
 .home-sponsors{
   background: rgba( $theme-home, 1);
@@ -726,7 +729,6 @@ h4{
 }
 #homeHeader .intro-heading{
   color: $theme-about;
-  font-family: "Times New Roman";
   margin-top: 20px;
 }
 
