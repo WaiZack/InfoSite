@@ -50,6 +50,6 @@ Rails.application.routes.draw do
   resources :teams
   resources :membership_requests
   resources :mailing_list
-  resources :submissions
+  resources :submissions, only: [:create, :update]
 
 end

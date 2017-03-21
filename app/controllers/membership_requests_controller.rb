@@ -21,16 +21,17 @@ class MembershipRequestsController < ApplicationController
     @request.teamName = @team.name
     @sameTrackTeams = Team.where(track: @team.track)
 
-    if @request.save
-      flash[:info] = 'Request submitted'
-      redirect_to '/teams'
-    elsif !(@user.teams.all & @sameTrackTeams).empty?
-      flash[:danger] = 'You are already part of team from the same track!'
-      redirect_to '/teams'
+    if !(@user.teams.all & @sameTrackTeams).empty?
+      flash[:danger] = 'You are already part of a team from the same track!'
+      redirect_to :back
     else
-      flash[:danger] = 'You have already submitted a request to that team!'
-      redirect_to '/teams'
-      # render 'new'
+      if @request.save
+        flash[:info] = 'Request submitted'
+        redirect_to :back
+      else
+        flash[:danger] = 'You have already submitted a request to that team!'
+        redirect_to :back
+      end
     end
 
 
@@ -39,18 +40,26 @@ class MembershipRequestsController < ApplicationController
   def approve
     @user = User.find_by(id: session[:user_id])
     @request = MembershipRequest.find_by(id: params[:request_id])
-    @request.update_attribute(:status, 'Approved')
 
     @team = Team.find_by(id: @request.team_id)
+    @sameTrackTeams = Team.where(track: @team.track)
     membership = Membership.new(team_id: @team.id, user_id:@request.requester_id)
 
-    if membership.save
-      flash[:info] = 'Member added!'
-      redirect_to '/teams'
+    if !(@user.teams.all & @sameTrackTeams).empty?
+      flash[:danger] = 'This user already belongs to a team in this track!'
+      redirect_to :back
     else
-      flash[:danger] = 'This person is already part of the team!'
-      redirect_to '/myTeams'
+      if membership.save
+        @request.update_attribute(:status, 'Approved')
+        flash[:info] = 'Member added!'
+        redirect_to :back
+      else
+        flash[:danger] = 'This person is already part of the team!'
+        redirect_to :back
+      end
     end
+
+
 
   end
 
@@ -59,7 +68,7 @@ class MembershipRequestsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @request = MembershipRequest.find_by(id: params[:request_id])
     @request.update_attribute(:status, 'Rejected')
-    redirect_to '/teams'
+    redirect_to :back
   end
 
   def create
