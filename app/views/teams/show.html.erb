@@ -56,7 +56,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4 class="page-head-line">Team</h4>
+        <h5 class="page-head-line">Team</h5>
       </div>
     </div>
     <% flash.each do |key, value| %>
@@ -90,41 +90,12 @@
     </div>
 
     <div class = "row">
+      <h4 class="subheader">Members</h4>
       <div class="table-responsive">
         <table class="table">
           <thead>
           <tr>
-            <th>Members</th>
-          </tr>
-
-          </thead>
-
-          <% @team.users.all.each do |member| %>
-              <tr>
-                <td><%= member.email%></td>
-
-                  <% if member.id == @team.creator%>
-                    <td class="alert-warning">
-                      <i class="fa fa-hand-spock-o" aria-hidden="true"></i> Leader
-                    </td>
-                  <%end%>
-                <% if member.id != @team.creator && @user.id == @team.creator%>
-                      <td><a class="btn btn-danger" href="/removeMember?member=<%=member.id%>&team=<%=@team.id%>">Remove Member</a></td>
-                <%end%>
-
-
-              </tr>
-          <%end%>
-        </table>
-      </div>
-    </div>
-
-    <div class = "row">
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-          <tr>
-            <th>Uploaded Files</th>
+            <th>Member email</th>
           </tr>
 
           </thead>
@@ -146,22 +117,53 @@
               </tr>
           <%end%>
         </table>
-
-
-        <%= simple_form_for @submission do |f| %>
-            <%= f.file_field :content%>
-            <%= f.hidden_field :team_id, value: @team.id %>
-            <%= f.button :button, 'Upload', class: 'btn' %>
-
-        <% end %>
       </div>
     </div>
 
+    <% if @team.users.all.include?(@user)%>
+        <div class = "row">
+          <h5 class="subheader">Uploaded Files</h5>
+
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr>
+                <th colspan="2">File Name</th>
+              </tr>
+
+              </thead>
+
+              <% @team.submissions.all.each do |sub| %>
+                  <% parsed = ActiveSupport::JSON.decode(sub.content_data) %>
+                  <tr>
+                    <td><%=parsed['metadata']['filename']%></td>
+                    <td><%= simple_form_for sub do |f| %>
+                          <%= f.hidden_field :sub_id, value: sub.id %>
+                          <%= f.button :button, 'Delete', class: 'btn btn-danger' %>
+                          <% end %>
+                    </td>
+                  </tr>
+              <%end%>
+            </table>
+
+            <h5><u>Upload new file</u></h5>
+            <%= simple_form_for @submission do |f| %>
+                <%= f.file_field :content, id:'file-upload'%>
+                <%= f.hidden_field :team_id, value: @team.id %>
+                <%= f.button :button, 'Upload', class: 'btn btn-primary' %>
+
+            <% end %>
+          </div>
+        </div>
+    <%end%>
 
 
-    <div class="row">
+
+    <div class="row" style="padding-top: 30px;">
+      <h5 class="subheader">Other Actions</h5>
+
       <% if @team.users.count < 3 && !@team.users.all.include?(@user) && @user.teams.count < 3%>
-        <a class="btn btn-primary" href='/membership_requests/new?team_id=<%=@team.id%>'>Send Join Request</a>
+          <a class="btn btn-primary" href='/membership_requests/new?team_id=<%=@team.id%>'>Send Join Request</a>
       <% end %>
       <% if @team.users.all.include?(@user) && @team.creator != @user.id%>
           <a class="btn btn-warning" href='/quitTeam?team=<%=@team.id%>'>Quit Team</a>

@@ -18,6 +18,7 @@ Rails.application.config.assets.precompile += %w( agency.css )
 Rails.application.config.assets.precompile += %w( zigzagtimeline.css )
 Rails.application.config.assets.precompile += %w( lineartimeline.css )
 Rails.application.config.assets.precompile += %w( accordion.css )
+Rails.application.config.assets.precompile += %w( form-elements.scss )
 
 
 #js files
