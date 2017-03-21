@@ -23,6 +23,8 @@ class TeamsController < ApplicationController
 
     @request = MembershipRequest.new
 
+    @submission = Submission.new
+
   end
 
   def edit

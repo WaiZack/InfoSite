@@ -4,7 +4,7 @@ require "shrine/storage/s3"
 s3_options = {
     access_key_id:     'AKIAIDGH5CPGVWNNUKBA',
     secret_access_key: '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',
-    region:            'Singapore',
+    region:            'ap-southeast-1',
     bucket:            'elasticbeanstalk-ap-southeast-1-354987281312',
 }
 
@@ -16,6 +16,5 @@ Shrine.storages = {
 Shrine.plugin :activerecord
 Shrine.plugin :logging, logger: Rails.logger
 Shrine.plugin :backgrounding
-
-Shrine::Attacher.promote { |data| PromoteJob.perform_async(data) }
-Shrine::Attacher.delete { |data| DeleteJob.perform_async(data) }
+Shrine.plugin :validation_helpers
+Shrine.plugin :determine_mime_type
