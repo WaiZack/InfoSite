@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token, :only => :destroy
   before_action :logged_in_user, only: [:new]
 
   def logged_in_user
