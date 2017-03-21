@@ -128,7 +128,8 @@
             <table class="table">
               <thead>
               <tr>
-                <th colspan="2">File Name</th>
+                <th>File Name</th>
+                <th> Size</th>
               </tr>
 
               </thead>
@@ -137,22 +138,25 @@
                   <% parsed = ActiveSupport::JSON.decode(sub.content_data) %>
                   <tr>
                     <td><%=parsed['metadata']['filename']%></td>
+                    <td><%=number_to_human_size(parsed['metadata']['size'],precision: 2)%></td>
                     <td><%= simple_form_for sub do |f| %>
                           <%= f.hidden_field :sub_id, value: sub.id %>
                           <%= f.button :button, 'Delete', class: 'btn btn-danger' %>
-                          <% end %>
+                      <% end %>
                     </td>
                   </tr>
               <%end%>
             </table>
 
-            <h5><u>Upload new file</u></h5>
-            <%= simple_form_for @submission do |f| %>
-                <%= f.file_field :content, id:'file-upload'%>
-                <%= f.hidden_field :team_id, value: @team.id %>
-                <%= f.button :button, 'Upload', class: 'btn btn-primary' %>
-
-            <% end %>
+            <div>
+              <h5><u>Upload new file</u></h5>
+              <%= simple_form_for @submission do |f| %>
+                  <%= f.file_field :content, id:'file-upload'%>
+                  <%= f.hidden_field :team_id, value: @team.id %>
+                  <%= f.button :button, 'Upload', class: 'btn btn-primary' %>
+              <% end %>
+              <h5 style="color: forestgreen;">Max file size is 2MB; Only .pdf allowed</h5>
+            </div>
           </div>
         </div>
     <%end%>
@@ -166,6 +170,7 @@
           <a class="btn btn-primary" href='/membership_requests/new?team_id=<%=@team.id%>'>Send Join Request</a>
       <% end %>
       <% if @team.users.all.include?(@user) && @team.creator != @user.id%>
+          <h5 style="color: dodgerblue;">Warning! You won't be able to rejoin the same team should you quit</h5>
           <a class="btn btn-warning" href='/quitTeam?team=<%=@team.id%>'>Quit Team</a>
       <% end %>
 
