@@ -430,17 +430,16 @@ footer {
     text-align: center;
     background: rgba( black, .8);
     span.copyright {
-        line-height: 40px;
+        line-height: 15px;
         @include heading-font;
-        text-transform: none;
         color:white;
     }
-    ul.quicklinks {
-        margin-bottom: 0;
-        line-height: 40px;
-        @include heading-font;
-        text-transform: none;
-    }
+    //ul.quicklinks {
+    //    margin-bottom: 0;
+    //    line-height: 40px;
+    //    @include heading-font;
+    //    text-transform: none;
+    //}
 }
 
 // Social Buttons
@@ -751,14 +750,18 @@ h4{
   padding-bottom: 20px !important;
 }
 
+.fourC.statementText{
+  margin-bottom: 20px;
+}
+
 #logo{
   background: rgba( white, .6);
   padding:10px;
 }
 
 #logo img{
-  height:15%;
-  width:15%;
+  height:20%;
+  width:20%;
   border-radius: 50%;
 }
 @media(min-width:768px) {
@@ -767,7 +770,6 @@ h4{
     width:10%;
   }
 }
-
 
 .smartNationBody{
 
