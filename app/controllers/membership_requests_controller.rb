@@ -41,11 +41,13 @@ class MembershipRequestsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @request = MembershipRequest.find_by(id: params[:request_id])
 
+    @requester = User.find_by(id: session[@request.requester_id])
+
     @team = Team.find_by(id: @request.team_id)
     @sameTrackTeams = Team.where(track: @team.track)
     membership = Membership.new(team_id: @team.id, user_id:@request.requester_id)
 
-    if !(@user.teams.all & @sameTrackTeams).empty?
+    if !(@requester.teams.all & @sameTrackTeams).empty?
       flash[:danger] = 'This user already belongs to a team in this track!'
       redirect_to :back
     else
