@@ -239,6 +239,10 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.fa.fa-facebook{
+  font-size: 16px;
+}
+
 header {
 
     text-align: center;
@@ -426,20 +430,24 @@ section#contact {
 // Footer
 
 footer {
-    padding: 0px;
+    padding: 10px;
     text-align: center;
-    background: rgba( black, .8);
+    background: rgba( black, .9);
     span.copyright {
-        line-height: 15px;
+        //line-height: 15px;
         @include heading-font;
         color:white;
     }
-    //ul.quicklinks {
-    //    margin-bottom: 0;
-    //    line-height: 40px;
-    //    @include heading-font;
-    //    text-transform: none;
-    //}
+    ul.quicklinks {
+        margin-bottom: 0;
+        line-height: 40px;
+        @include heading-font;
+        text-transform: none;
+    }
+    .list-inline > li {
+      padding-left:9px;
+      padding-right:9px;
+    }
 }
 
 // Social Buttons
@@ -449,12 +457,7 @@ ul.social-buttons {
     li {
         a {
             display: block;
-            //background-color: $gray-darker;
-            height: 40px;
-            width: 40px;
-            border-radius: 100%;
-            font-size: 20px;
-            line-height: 40px;
+            font-size: 16px !important;
             color: $theme-primary;
             outline: none;
             -webkit-transition: all 0.3s;
@@ -464,7 +467,6 @@ ul.social-buttons {
             &:focus,
             &:active {
                 color:white;
-                background-color: $theme-primary;
             }
         }
     }
