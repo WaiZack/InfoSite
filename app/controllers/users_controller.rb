@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @acad_lvl = ['Polytechnic','Junior College', 'Undergraduate', 'Postgraduate']
   end
 
   def show
@@ -24,7 +25,8 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :institute,:terms_and_conditions,:data_protection_policy)
+                                   :password_confirmation, :institute,:terms_and_conditions,:data_protection_policy,
+      :firstName, :lastName, :specialization, :academic_level)
     end
 
 
