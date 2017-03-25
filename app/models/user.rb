@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :membership_requests
 
 
-  attr_accessor :remember_token, :activation_token, :reset_token
+  attr_accessor :remember_token, :activation_token, :reset_token, :terms_and_conditions, :data_protection_policy
   before_save   :downcase_email
   before_create :create_activation_digest
 
@@ -17,6 +17,10 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
+
+  validates :terms_and_conditions, :acceptance=> {:message => "must be accepted" }
+
+  validates :data_protection_policy, :acceptance => {:message => "must be accepted" }
 
 
   def authenticated?(attribute, token)

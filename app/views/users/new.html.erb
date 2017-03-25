@@ -16,6 +16,7 @@
   <%= stylesheet_link_tag ('login') %>
   <%=stylesheet_link_tag('application')%>
   <%= stylesheet_link_tag 'form-elements' %>
+  <%= stylesheet_link_tag 'awesome-bootstrap-checkbox'%>
 
 </head>
 
@@ -38,11 +39,32 @@
           </div>
         </div>
         <div class="form-bottom">
+
+          <% if @user.errors.any? %>
+              <div id="error_explanation">
+                 <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
           <%= simple_form_for @user do |f| %>
               <%= f.input :email, placeholder: 'Email', label: false %>
               <%= f.input :password, placeholder: 'Password', label: false %>
               <%= f.input :password_confirmation, placeholder: 'Repeat Password', label: false %>
               <%= f.input :institute, placeholder: 'Institute\'s Full Name', label: false %>
+
+
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :terms_and_conditions%>
+                <%= f.label :terms_and_conditions, "I agree to the terms and conditions"%>
+              </div>
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :data_protection_policy%>
+                <%= f.label :data_protection_policy, "I agree to the data protection policy"%>
+              </div>
+
               <%= f.button :button, 'Register', class: 'btn' %>
 
           <% end %>
