@@ -96,8 +96,7 @@
             <% @incoming_requests.each do |request| %>
                 <tr>
                   <td>
-
-                    <%= request.email%></td>
+                    <a href='/profile/?profile=<%= request.email%>'><%= request.email%></a></td>
                   <td><%= request.teamName%></td>
                   <td><a class="btn btn-success" href="/approve?request_id=<%= request.id %>">Approve</a></td>
                   <td><a class="btn btn-danger" href="/reject?request_id=<%= request.id %>">Reject</a></td>

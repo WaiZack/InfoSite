@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get '/quitTeam' => 'teams#quit'
   get '/deleteTeam' => 'teams#delete'
   post '/addList' => 'mailing_list#new'
+  get '/profile' => 'dashboard#show'
 
   resources :users
   resources :dashboard

@@ -73,53 +73,54 @@
   </div>
   <div class="container">
     <div class ="row col-md-12">
-      <%= simple_form_for @user, url: '/dashboard/:id' do |f| %>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Institute</label>
-                <%= f.input :institute, placeholder: 'Institute', label: false , input_html: { class: 'form-control' }, value: @user.institute %>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address (disabled)</label>
-                <%= f.input :email, placeholder: 'Email', label: false, input_html: { class: 'form-control' },value: @user.email, disabled: true %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          User Profile
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-striped table table-hover">
+              <thead>
+              <tr>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Institute</th>
+                <th>Specialisation</th>
+                <th>Introduction</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>
+                  <%=@profile.email%>
+                </td>
+                <td>
+                  <%=@profile.firstName%>
+                </td>
+                <td>
+                  <%=@profile.lastName%>
+                </td>
+                <td>
+                  <%=@profile.institute%>
+                </td>
+                <td>
+                  <%=@profile.specialization%>
+                </td>
+                <td>
+                  <%=@profile.introduction%>
+                </td>
+              </tr>
 
-              </div>
-            </div>
+
+              </tbody>
+            </table>
           </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>First Name</label>
-                <%= f.input :firstName, placeholder: 'First Name', label: false, input_html: { class: 'form-control' },value: @user.firstName %>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Last Name</label>
-                <%= f.input :lastName, placeholder: 'Last Name', label: false, input_html: { class: 'form-control' },value: @user.lastName %>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>About Me</label>
-                <%= f.input :introduction, placeholder: 'Introduce yourself!', label: false, input_html: { class: 'form-control' },value: @user.introduction %>
-              </div>
-            </div>
-          </div>
-
-          <%= f.button :button, 'Update', class: 'btn ' %>
-
-      <% end %>
+        </div>
+      </div>
 
     </div>
+
 
   </div>
 </div>
