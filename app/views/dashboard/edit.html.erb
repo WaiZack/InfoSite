@@ -104,13 +104,27 @@
 
               </div>
             </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Specialization</label>
+                <%= f.input :specialization, placeholder: 'Specialization', label: false, input_html: { class: 'form-control' },value: @user.specialization %>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Academic Level</label>
+                <%= f.input :academic_level, :collection => ['Polytechnic','Junior College', 'Undergraduate', 'Postgraduate'], label: false, input_html: { class: 'form-control' },value: @user.academic_level %>
+
+              </div>
+            </div>
           </div>
 
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label>About Me</label>
-                <%= f.input :introduction, placeholder: 'Introduce yourself!', label: false, input_html: { class: 'form-control' },value: @user.introduction %>
+                <%= f.input :introduction, placeholder: 'Introduce yourself!', label: false, input_html: { class: 'form-control textFieldCustom' },value: @user.introduction %>
               </div>
             </div>
           </div>
