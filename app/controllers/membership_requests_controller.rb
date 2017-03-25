@@ -41,13 +41,13 @@ class MembershipRequestsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @request = MembershipRequest.find_by(id: params[:request_id])
 
-    @requester = User.find_by(id: session[@request.requester_id])
+    @requester = User.find_by(id: @request.requester_id)
 
     @team = Team.find_by(id: @request.team_id)
     @sameTrackTeams = Team.where(track: @team.track)
     membership = Membership.new(team_id: @team.id, user_id:@request.requester_id)
 
-    if @team.members.count == 4
+    if @team.memberships.count == 4
       flash[:danger] = 'Your team has the maximum number of members!'
       redirect_to :back
     end
