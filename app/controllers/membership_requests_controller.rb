@@ -23,14 +23,14 @@ class MembershipRequestsController < ApplicationController
 
     if !(@user.teams.all & @sameTrackTeams).empty?
       flash[:danger] = 'You are already part of a team from the same track!'
-      redirect_to :back
+      redirect_to '/myTeams'
     else
       if @request.save
         flash[:info] = 'Request submitted'
-        redirect_to :back
+        redirect_to '/myTeams'
       else
         flash[:danger] = 'You have already submitted a request to that team!'
-        redirect_to :back
+        redirect_to '/myTeams'
       end
     end
 
