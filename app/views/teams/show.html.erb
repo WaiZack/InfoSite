@@ -86,7 +86,7 @@
         <div class="dashboard-div-wrapper bk-clr-four">
           <h5>Team Size</h5>
           <i  class="fa fa-users dashboard-div-icon" ></i>
-          <h4><%=@team.users.count%> / 3</h4>
+          <h4><%=@team.users.count%> / 4</h4>
         </div>
 
       </div>
@@ -138,28 +138,39 @@
               </thead>
 
               <% @team.submissions.all.each do |sub| %>
+                  <% if sub.content_data != nil%>
                   <% parsed = ActiveSupport::JSON.decode(sub.content_data) %>
                   <tr>
                     <td><%=parsed['metadata']['filename']%></td>
                     <td><%=number_to_human_size(parsed['metadata']['size'],precision: 2)%></td>
-                    <td><%= simple_form_for sub do |f| %>
+                    <td>
+                      <%= simple_form_for sub do |f| %>
                           <%= f.hidden_field :sub_id, value: sub.id %>
                           <%= f.button :button, 'Delete', class: 'btn btn-danger' %>
                       <% end %>
                     </td>
                   </tr>
+                      <% end %>
               <%end%>
             </table>
 
+            <% if @team.submissions.count <3%>
+                <div>
+                  <h5><u>Upload new file</u></h5>
+                  <%= simple_form_for @submission do |f| %>
+                      <%= f.file_field :content, id:'file-upload'%>
+                      <%= f.hidden_field :team_id, value: @team.id %>
+                      <%= f.button :button, 'Upload', class: 'btn btn-primary' %>
+                  <% end %>
+                  <h5 style="color: forestgreen;">Max file size is 2MB; Only .pdf allowed</h5>
+                </div>
+            <% else %>
             <div>
-              <h5><u>Upload new file</u></h5>
-              <%= simple_form_for @submission do |f| %>
-                  <%= f.file_field :content, id:'file-upload'%>
-                  <%= f.hidden_field :team_id, value: @team.id %>
-                  <%= f.button :button, 'Upload', class: 'btn btn-primary' %>
-              <% end %>
-              <h5 style="color: forestgreen;">Max file size is 2MB; Only .pdf allowed</h5>
+              <h5 style="color: darkgoldenrod;">You are only allowed a maximum of 2 files, please delete one of your files to upload more</h5>
+              Contact us if you have special requirements for file uploads
             </div>
+
+            <% end %>
           </div>
         </div>
     <%end%>
@@ -169,7 +180,7 @@
     <div class="row" style="padding-top: 30px;">
       <h5 class="subheader">Other Actions</h5>
 
-      <% if @team.users.count < 3 && !@team.users.all.include?(@user) && @user.teams.count < 3%>
+      <% if @team.users.count < 4 && !@team.users.all.include?(@user) && @user.teams.count < 3%>
           <a class="btn btn-primary" href='/membership_requests/new?team_id=<%=@team.id%>'>Send Join Request</a>
       <% end %>
       <% if @team.users.all.include?(@user) && @team.creator != @user.id%>

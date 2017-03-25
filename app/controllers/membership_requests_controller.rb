@@ -47,6 +47,11 @@ class MembershipRequestsController < ApplicationController
     @sameTrackTeams = Team.where(track: @team.track)
     membership = Membership.new(team_id: @team.id, user_id:@request.requester_id)
 
+    if @team.members.count == 4
+      flash[:danger] = 'Your team has the maximum number of members!'
+      redirect_to :back
+    end
+
     if !(@requester.teams.all & @sameTrackTeams).empty?
       flash[:danger] = 'This user already belongs to a team in this track!'
       redirect_to :back
