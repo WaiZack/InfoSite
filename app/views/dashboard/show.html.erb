@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'dash' %>
+  <%= stylesheet_link_tag 'form-elements' %>
+
+
+  <%= javascript_include_tag ('application') %>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse set-radius-zero">
+  <div class="container">
+    <div class="col-lg-12">
+      <a href="/"><%= image_tag("logos/Logo_2.png" , :class => 'headerLogo')%></a>
+    </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+  </div>
+</div>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="navbar-collapse collapse ">
+          <ul id="menu-top" class="nav navbar-nav navbar-right">
+            <li><a class="menu-top-active" href="/dash">Profile</a></li>
+            <li><a href="/teams">Teams</a></li>
+            <li>
+              <a href=<%= new_password_reset_path%>>
+                <p>Change Password</p>
+              </a>
+            </li>
+            <li>
+              <%= link_to "Log out", logout_path, method: "delete" %>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="page-head-line">Edit Profile</h4>
+
+      </div>
+
+
+    </div>
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+  <div class="container">
+    <div class ="row col-md-12">
+      <%= simple_form_for @user, url: '/dashboard/:id' do |f| %>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Institute</label>
+                <%= f.input :institute, placeholder: 'Institute', label: false , input_html: { class: 'form-control' }, value: @user.institute %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address (disabled)</label>
+                <%= f.input :email, placeholder: 'Email', label: false, input_html: { class: 'form-control' },value: @user.email, disabled: true %>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>First Name</label>
+                <%= f.input :firstName, placeholder: 'First Name', label: false, input_html: { class: 'form-control' },value: @user.firstName %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Last Name</label>
+                <%= f.input :lastName, placeholder: 'Last Name', label: false, input_html: { class: 'form-control' },value: @user.lastName %>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>About Me</label>
+                <%= f.input :introduction, placeholder: 'Introduce yourself!', label: false, input_html: { class: 'form-control' },value: @user.introduction %>
+              </div>
+            </div>
+          </div>
+
+          <%= f.button :button, 'Update', class: 'btn ' %>
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
