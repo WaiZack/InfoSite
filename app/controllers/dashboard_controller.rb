@@ -11,7 +11,7 @@ class DashboardController < ApplicationController
 
   def show
     @user = User.find_by(id: session[:user_id])
-    @profile = User.find_by(id: params[:profile_id])
+    @profile = User.find_by(email: params[:profile])
   end
 
 
