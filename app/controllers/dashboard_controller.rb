@@ -12,6 +12,11 @@ class DashboardController < ApplicationController
   def show
     @user = User.find_by(id: session[:user_id])
     @profile = User.find_by(email: params[:profile])
+
+    if @profile == nil
+      flash[:warning] = 'Invalid Action!'
+      redirect_to '/dash'
+    end
   end
 
 
