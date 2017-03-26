@@ -24,6 +24,9 @@ class MembershipRequestsController < ApplicationController
     if !(@user.teams.all & @sameTrackTeams).empty?
       flash[:danger] = 'You are already part of a team from the same track!'
       redirect_to '/myTeams'
+    elsif @team.memberships.count == 4
+      flash[:danger] = 'This team already has the maximum number of members!'
+      redirect_to '/myTeams'
     else
       if @request.save
         flash[:info] = 'Request submitted'
@@ -49,24 +52,23 @@ class MembershipRequestsController < ApplicationController
 
     if @team.memberships.count == 4
       flash[:danger] = 'Your team has the maximum number of members!'
-      redirect_to :back
-    end
-
-    if !(@requester.teams.all & @sameTrackTeams).empty?
-      flash[:danger] = 'This user already belongs to a team in this track!'
-      redirect_to :back
+      redirect_to '/myTeams'
     else
-      if membership.save
-        @request.update_attribute(:status, 'Approved')
-        flash[:info] = 'Member added!'
-        redirect_to :back
+      if !(@requester.teams.all & @sameTrackTeams).empty?
+        flash[:danger] = 'This user already belongs to a team in this track!'
+        redirect_to '/myTeams'
       else
-        flash[:danger] = 'This person is already part of the team!'
-        redirect_to :back
+        if membership.save
+          @request.update_attribute(:status, 'Approved')
+          flash[:info] = 'Member added!'
+          redirect_to '/myTeams'
+        else
+          flash[:danger] = 'This person is already part of the team!'
+          redirect_to '/myTeams'
+        end
       end
+
     end
-
-
 
   end
 
