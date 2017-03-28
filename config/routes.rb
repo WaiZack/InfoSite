@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/fintech' => 'landing#fintech'
   get '/about' => 'landing#about'
   # get '/users' => 'users#new'
+  get '/goodbyehello' => 'users#new'
 
   get '/dash' => 'dashboard#edit'
   # get    '/login',   to: 'sessions#new'
