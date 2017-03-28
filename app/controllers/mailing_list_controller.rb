@@ -3,9 +3,9 @@ class MailingListController < ApplicationController
   def new
     @mail = MailingList.new(mailing_list_params)
     if @mail.save
-      flash[:info] = 'Thanks for signing up!'
+      flash[:info] = 'Thanks for registering your interest!'
     else
-      flash[:warning] = 'Either the email is not valid or you have already signed ups'
+      flash[:warning] = 'Either the email is not valid or you have already signed up'
     end
     # redirect_to
     redirect_to root_url+'#mailing'
@@ -13,5 +13,9 @@ class MailingListController < ApplicationController
 
   def mailing_list_params
     params.require(:mailing_list).permit(:email)
+  end
+
+  def index
+
   end
 end

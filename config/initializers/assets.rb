@@ -20,9 +20,11 @@ Rails.application.config.assets.precompile += %w( lineartimeline.css )
 Rails.application.config.assets.precompile += %w( accordion.css )
 Rails.application.config.assets.precompile += %w( form-elements.scss )
 Rails.application.config.assets.precompile += %w( awesome-bootstrap-checkbox.scss)
+Rails.application.config.assets.precompile += %w( coming.css )
 
 
 #js files
 Rails.application.config.assets.precompile += %w( light-bootstrap-dashboard.js )
 Rails.application.config.assets.precompile += %w( loginScripts.js )
 Rails.application.config.assets.precompile += %w( agency.js )
+Rails.application.config.assets.precompile += %w( jquery.countdown.min.js )
