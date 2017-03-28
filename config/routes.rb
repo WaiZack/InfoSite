@@ -26,8 +26,9 @@ Rails.application.routes.draw do
   get '/users' => 'users#new'
 
   get '/dash' => 'dashboard#edit'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  # get    '/login',   to: 'sessions#new'
+  # post   '/login',   to: 'sessions#create'
+  get '/login', to: 'mailing_list#index'
   delete '/logout',  to: 'sessions#destroy'
 
   get '/changePassword' => 'dashboard#edit'
