@@ -154,7 +154,7 @@
               <%end%>
             </table>
 
-            <% if @team.submissions.count <3%>
+            <% if @team.submissions.count <2%>
                 <div>
                   <h5><u>Upload new file</u></h5>
                   <%= simple_form_for @submission do |f| %>
