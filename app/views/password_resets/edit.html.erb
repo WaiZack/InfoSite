@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <%= javascript_include_tag ('loginScripts') %>
+  <%= stylesheet_link_tag ('login') %>
+  <%=stylesheet_link_tag('application')%>
+  <%= stylesheet_link_tag 'form-elements' %>
+
+</head>
+
+<body>
+
+<!-- Top content -->
+<div class="top-content">
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+          <div class="form-top-left">
+            <h3>Reset Password</h3>
+          </div>
+        </div>
+        <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+        <div class="form-bottom">
+          <%= simple_form_for :password_reset, url: password_resets_path(params[:email]) do |f| %>
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+
+              <%= f.label :password_confirmation, "Confirmation" %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+              <%= f.submit "Update password", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
