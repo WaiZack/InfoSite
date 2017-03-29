@@ -46,11 +46,12 @@ Rails.application.routes.draw do
   get '/deleteTeam' => 'teams#delete'
   post '/addList' => 'mailing_list#new'
   get '/profile' => 'dashboard#show'
+  get '/password_back' => 'password_resets#back'
 
   resources :users
   resources :dashboard
   resources :account_activation, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :password_resets,     only: [:new, :create, :edit, :update, :back]
   resources :teams
   resources :membership_requests
   resources :mailing_list
