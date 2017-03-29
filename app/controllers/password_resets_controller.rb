@@ -38,7 +38,6 @@ class PasswordResetsController < ApplicationController
   end
 
 
-
   private
 
   def user_params

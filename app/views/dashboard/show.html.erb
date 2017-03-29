@@ -100,7 +100,11 @@
           </div>
           <div class = 'col-lg-12'>
             <p><strong>About myself</strong></p>
-            <p class = 'profileText'><%=@profile.introduction%></p>
+            <% if !@profile.introduction.empty?%>
+                <p class = 'profileText'><%=@profile.introduction%></p>
+            <%else%>
+                <p class = 'profileText'>This user has not entered anything about themselves!</p>
+            <%end%>
           </div>
 
         </div>
