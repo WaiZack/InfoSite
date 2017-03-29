@@ -43,7 +43,7 @@
               </a>
             </li>
             <li>
-              <%= link_to "Log out", logout_path, method: "delete" %>
+              <%= link_to "Log out", logout_path, method: "delete",:data => {:confirm => 'Confirm Logout?'}%>
             </li>
 
           </ul>
@@ -192,8 +192,8 @@
 
     <div class="row">
       <% if @team.creator == @user.id%>
-          <h5 style="color: dodgerblue;">Warning! There will be no confirmation should you choose to delete the team</h5>
-          <a class="btn btn-danger" href='/deleteTeam?team=<%=@team.id%>'>Delete Team</a>
+          <h5 style="color: dodgerblue;">Warning! There will be no way to recover should you choose to delete the team</h5>
+          <a class="btn btn-danger" href='/deleteTeam?team=<%=@team.id%>' data-confirm="Confirm delete?">Delete Team</a>
       <% end %>
     </div>
 

@@ -45,7 +45,7 @@
               </a>
             </li>
             <li>
-              <%= link_to "Log out", logout_path, method: "delete" %>
+              <%= link_to "Log out", logout_path, method: "delete",:data => {:confirm => 'Confirm Logout?'}%>
             </li>
 
           </ul>
