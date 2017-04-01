@@ -442,9 +442,9 @@ footer {
     text-align: center;
     background: rgba( black, .9);
     span.copyright {
-        //line-height: 15px;
+        font-size: 14px;
         @include heading-font;
-        color:white;
+        color:$theme-primary;
     }
     ul.quicklinks {
         margin-bottom: 0;
