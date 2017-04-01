@@ -66,3 +66,5 @@ gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'shrine'
 
 gem 'aws-sdk', '~> 2.1'
+
+gem 'validator-nric'

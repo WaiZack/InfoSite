@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325041412) do
+ActiveRecord::Schema.define(version: 20170401040927) do
 
   create_table "document_uploaders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170325041412) do
     t.datetime "reset_sent_at"
     t.integer  "age"
     t.string   "academic_level"
+    t.string   "nric"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
