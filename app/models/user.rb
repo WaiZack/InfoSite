@@ -22,6 +22,8 @@ class User < ApplicationRecord
 
   validates :data_protection_policy, :acceptance => {:message => "must be accepted" }
 
+  validates :firstName, :lastName, :specialization, :academic_level, presence: true
+
 
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")

@@ -11,6 +11,12 @@ class DashboardController < ApplicationController
 
   def show
     @user = User.find_by(id: session[:user_id])
+    @profile = User.find_by(email: params[:profile])
+
+    if @profile == nil
+      flash[:warning] = 'Invalid Action!'
+      redirect_to '/dash'
+    end
   end
 
 
@@ -31,8 +37,7 @@ class DashboardController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:firstName,:lastName, :introduction, :email, :institute)
+    params.require(:user).permit(:firstName,:lastName, :introduction, :email, :institute, :specialization, :academic_level)
   end
-
 
 end
