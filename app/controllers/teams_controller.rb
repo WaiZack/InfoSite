@@ -71,10 +71,10 @@ class TeamsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @team = Team.find_by(id: params[:team])
     @member = User.find_by(id: params[:member])
-    request = MembershipRequest.where(requester_id: @member.id).where(team_id: @team.id).first()
+    # request = MembershipRequest.where(requester_id: @member.id).where(team_id: @team.id).first()
 
     if @user.id == @team.creator && @member.id!=@user.id && request
-      MembershipRequest.find(request.id).delete
+      # MembershipRequest.find(request.id).delete
       @team.users.delete(@member)
 
       redirect_to '/myTeams'
