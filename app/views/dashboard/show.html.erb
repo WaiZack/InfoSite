@@ -7,12 +7,14 @@
   <meta name="author" content="" />
   <%= stylesheet_link_tag 'application' %>
   <%= stylesheet_link_tag 'dash' %>
+  <!--<%= stylesheet_link_tag 'form-elements' %>-->
 
 
   <%= javascript_include_tag ('application') %>
 
 </head>
 <body>
+
 <div class="navbar navbar-inverse set-radius-zero">
   <div class="container">
     <div class="col-lg-12">
@@ -35,8 +37,8 @@
       <div class="col-md-12">
         <div class="navbar-collapse collapse ">
           <ul id="menu-top" class="nav navbar-nav navbar-right">
-            <li><a href="/dash">Profile</a></li>
-            <li><a class="menu-top-active"  href="/teams">Teams</a></li>
+            <li><a class="menu-top-active" href="/dash">Profile</a></li>
+            <li><a href="/teams">Teams</a></li>
             <li>
               <a href=<%= new_password_reset_path%>>
                 <p>Change Password</p>
@@ -59,58 +61,59 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4 class="page-head-line">List Of Teams</h4>
-        <div style="padding-bottom: 20px">
-          <a class="btn btn-success" href="/createTeam">
-            Create Team
-          </a>
-          <a class="btn btn-primary" href="/myTeams">
-            My Teams
-          </a>
-        </div>
-        <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
-        <% end %>
-        <div class="table-responsive">
-          <table class="table table-hover table-bordered" id="teamTable">
-            <thead>
-            <tr>
-              <th>Name</th>
-              <th>Track</th>
-              <th>More Info</th>
-            </tr>
-            </thead>
-            <% @teams.each do |team| %>
-                <tr>
-                  <td><%= team.name%></td>
-                  <td><%= team.track%></td>
-                  <td><a class="btn btn-info" href="/teams/<%=team.id%>">View</a></td>
-                </tr>
-            <%end%>
-          </table>
-        </div>
-
-
+        <h4 class="page-head-line"><%=@profile.firstName%> <%=@profile.lastName%></h4>
 
       </div>
 
+
     </div>
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
   </div>
   <div class="container">
-    <div class ="row">
+    <div class ="row col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+
+        </div>
+        <div class="panel-body">
+          <div class = 'col-lg-12'>
+            <p><strong>First Name</strong></p>
+            <p class = 'profileText'><%=@profile.firstName%></p>
+          </div>
+          <div class = 'col-lg-12'>
+            <p><strong>Last Name</strong></p>
+            <p class = 'profileText'><%=@profile.lastName%></p>
+          </div>
+          <div class = 'col-lg-12'>
+            <p><strong>Email</strong></p>
+            <p class = 'profileText'><%=@profile.email%></p>
+          </div>
+          <div class = 'col-lg-12'>
+            <p><strong>Institute</strong></p>
+            <p class = 'profileText'><%=@profile.institute%></p>
+          </div>
+          <div class = 'col-lg-12'>
+            <p><strong>Specialization</strong></p>
+            <p class = 'profileText'><%=@profile.specialization%></p>
+          </div>
+          <div class = 'col-lg-12'>
+            <p><strong>About myself</strong></p>
+            <% if !@profile.introduction.empty?%>
+                <p class = 'profileText'><%=@profile.introduction%></p>
+            <%else%>
+                <p class = 'profileText'>This user has not entered anything about themselves!</p>
+            <%end%>
+          </div>
+
+        </div>
 
 
-
+      </div>
     </div>
-
   </div>
 </div>
 
 </body>
-
-<script>
-    $(document).ready(function() {
-        $('#teamTable').DataTable();
-    } );
-</script>
 </html>

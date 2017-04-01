@@ -23,11 +23,14 @@ Rails.application.routes.draw do
   get '/bigdata', to: 'landing#bigdata'
   get '/fintech' => 'landing#fintech'
   get '/about' => 'landing#about'
-  get '/users' => 'users#new'
+  # get '/users' => 'users#new'
+  get '/goodbyehello' => 'users#new'
 
   get '/dash' => 'dashboard#edit'
-  get    '/login',   to: 'sessions#new'
+  # get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
+  get '/login', to: 'mailing_list#index'
+  get 'hellogoodbye', to: 'sessions#new'
   delete '/logout',  to: 'sessions#destroy'
 
   get '/changePassword' => 'dashboard#edit'
@@ -42,11 +45,13 @@ Rails.application.routes.draw do
   get '/quitTeam' => 'teams#quit'
   get '/deleteTeam' => 'teams#delete'
   post '/addList' => 'mailing_list#new'
+  get '/profile' => 'dashboard#show'
+  get '/password_back' => 'password_resets#back'
 
   resources :users
   resources :dashboard
   resources :account_activation, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :password_resets,     only: [:new, :create, :edit, :update, :back]
   resources :teams
   resources :membership_requests
   resources :mailing_list

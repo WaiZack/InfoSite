@@ -23,14 +23,17 @@ class MembershipRequestsController < ApplicationController
 
     if !(@user.teams.all & @sameTrackTeams).empty?
       flash[:danger] = 'You are already part of a team from the same track!'
-      redirect_to :back
+      redirect_to '/myTeams'
+    elsif @team.memberships.count == 4
+      flash[:danger] = 'This team already has the maximum number of members!'
+      redirect_to '/myTeams'
     else
       if @request.save
         flash[:info] = 'Request submitted'
-        redirect_to :back
+        redirect_to '/myTeams'
       else
         flash[:danger] = 'You have already submitted a request to that team!'
-        redirect_to :back
+        redirect_to '/myTeams'
       end
     end
 
@@ -41,27 +44,31 @@ class MembershipRequestsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @request = MembershipRequest.find_by(id: params[:request_id])
 
-    @requester = User.find_by(id: session[@request.requester_id])
+    @requester = User.find_by(id: @request.requester_id)
 
     @team = Team.find_by(id: @request.team_id)
     @sameTrackTeams = Team.where(track: @team.track)
     membership = Membership.new(team_id: @team.id, user_id:@request.requester_id)
 
-    if !(@requester.teams.all & @sameTrackTeams).empty?
-      flash[:danger] = 'This user already belongs to a team in this track!'
-      redirect_to :back
+    if @team.memberships.count == 4
+      flash[:danger] = 'Your team has the maximum number of members!'
+      redirect_to '/myTeams'
     else
-      if membership.save
-        @request.update_attribute(:status, 'Approved')
-        flash[:info] = 'Member added!'
-        redirect_to :back
+      if !(@requester.teams.all & @sameTrackTeams).empty?
+        flash[:danger] = 'This user already belongs to a team in this track!'
+        redirect_to '/myTeams'
       else
-        flash[:danger] = 'This person is already part of the team!'
-        redirect_to :back
+        if membership.save
+          @request.update_attribute(:status, 'Approved')
+          flash[:info] = 'Member added!'
+          redirect_to '/myTeams'
+        else
+          flash[:danger] = 'This person is already part of the team!'
+          redirect_to '/myTeams'
+        end
       end
+
     end
-
-
 
   end
 
