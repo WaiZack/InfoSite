@@ -113,7 +113,7 @@
                     </td>
                 <%end%>
                 <% if member.id != @team.creator && @user.id == @team.creator%>
-                    <td><a class="btn btn-danger" href="/removeMember?member=<%=member.id%>&team=<%=@team.id%>">Remove Member</a></td>
+                    <td><a class="btn btn-danger" href="/removeMember?member=<%=member.id%>&team=<%=@team.id%>" data-confirm="If you remove this member they won't be able to rejoin! Are you sure?">Remove Member</a></td>
                 <%end%>
 
 
@@ -185,7 +185,7 @@
       <% end %>
       <% if @team.users.all.include?(@user) && @team.creator != @user.id%>
           <h5 style="color: dodgerblue;">Warning! You won't be able to rejoin the same team should you quit</h5>
-          <a class="btn btn-warning" href='/quitTeam?team=<%=@team.id%>'>Quit Team</a>
+          <a class="btn btn-warning" href='/quitTeam?team=<%=@team.id%>' data-confirm = "You won't be allowed to rejoin this team if you quit!">Quit Team</a>
       <% end %>
 
     </div>

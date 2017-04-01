@@ -99,7 +99,7 @@
                     <a href='/profile/?profile=<%= request.email%>'><%= request.email%></a></td>
                   <td><%= request.teamName%></td>
                   <td><a class="btn btn-success" href="/approve?request_id=<%= request.id %>">Approve</a></td>
-                  <td><a class="btn btn-danger" href="/reject?request_id=<%= request.id %>">Reject</a></td>
+                  <td><a class="btn btn-danger" href="/reject?request_id=<%= request.id %>" data-confirm="If you reject this request, this person will no longer be able to send another request to this team in the future! Are you sure?">Reject</a></td>
                 </tr>
             <%end%>
           </table>
