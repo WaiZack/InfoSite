@@ -50,25 +50,33 @@ class MembershipRequestsController < ApplicationController
     @sameTrackTeams = Team.where(track: @team.track)
     membership = Membership.new(team_id: @team.id, user_id:@request.requester_id)
 
-    if @team.memberships.count == 4
-      flash[:danger] = 'Your team has the maximum number of members!'
-      redirect_to '/myTeams'
-    else
-      if !(@requester.teams.all & @sameTrackTeams).empty?
-        flash[:danger] = 'This user already belongs to a team in this track!'
+
+    if @user.id == @team.creator
+
+      if @team.memberships.count == 4
+        flash[:danger] = 'Your team has the maximum number of members!'
         redirect_to '/myTeams'
       else
-        if membership.save
-          @request.update_attribute(:status, 'Approved')
-          flash[:info] = 'Member added!'
+        if !(@requester.teams.all & @sameTrackTeams).empty?
+          flash[:danger] = 'This user already belongs to a team in this track!'
           redirect_to '/myTeams'
         else
-          flash[:danger] = 'This person is already part of the team!'
-          redirect_to '/myTeams'
+          if membership.save
+            @request.update_attribute(:status, 'Approved')
+            flash[:info] = 'Member added!'
+            redirect_to '/myTeams'
+          else
+            flash[:danger] = 'This person is already part of the team!'
+            redirect_to '/myTeams'
+          end
         end
-      end
 
+      end
+    else
+      flash[:danger] = 'Invalid action!'
+      redirect_to '/myTeams'
     end
+
 
   end
 
@@ -76,9 +84,16 @@ class MembershipRequestsController < ApplicationController
   def reject
     @user = User.find_by(id: session[:user_id])
     @request = MembershipRequest.find_by(id: params[:request_id])
-    @request.update_attribute(:status, 'Rejected')
-    redirect_to :back
+    team = Team.find_by(id: @request.team_id)
+    if team.creator == @user.id
+      @request.update_attribute(:status, 'Rejected')
+      redirect_to :back
+    else
+      flash[:danger] = 'Invalid action!'
+      redirect_to '/myTeams'
+    end
   end
+
 
   def create
 
