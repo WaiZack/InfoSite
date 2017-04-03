@@ -86,6 +86,7 @@ class MembershipRequestsController < ApplicationController
     @request = MembershipRequest.find_by(id: params[:request_id])
     team = Team.find_by(id: @request.team_id)
     if team.creator == @user.id
+      flash[:info] = 'Request rejected!'
       @request.update_attribute(:status, 'Rejected')
       redirect_to :back
     else
