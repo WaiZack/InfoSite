@@ -26,6 +26,8 @@ class User < ApplicationRecord
 
   validates :nric , nric: true, presence: true, uniqueness: true
 
+  validates :age, presence:true
+
 
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
