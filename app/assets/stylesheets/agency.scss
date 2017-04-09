@@ -730,7 +730,8 @@ h4{
   background: rgba( $theme-home, .8);
 }
 .home-sponsors{
-  background: rgba( $theme-home, 1);
+  //background: rgba( $theme-home, 1);
+  background: white;
 }
 
 #homeHeader .intro-lead-in{
@@ -827,4 +828,12 @@ h4{
   background-attachment: fixed;
   background-position: center center;
   @include background-cover;
+}
+
+.sponsors{
+  background: #FFF;
+}
+
+.img-sponsor{
+  max-width: 50%;
 }

@@ -29,11 +29,11 @@ Rails.application.routes.draw do
   get '/dash' => 'dashboard#edit'
   # get '/users' => 'users#new'
   # get  '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  # post   '/login',   to: 'sessions#create'
 
   #new routes
   get '/login', to: 'mailing_list#index'
-  get 'hellogoodbye', to: 'sessions#new'
+  get '/hellogoodbye', to: 'sessions#new'
   get '/goodbyehello' => 'users#new'
   #end new routes
 
