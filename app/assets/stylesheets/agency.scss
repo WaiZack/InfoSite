@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom {
 
     .navbar-brand {
-        font-family: "Helvetica Neue";
+        font-family: "Helvetica Neue", !important;
         font-weight: bold;
         color: white;
         &:hover,
@@ -261,7 +261,7 @@ header {
         .intro-lead-in {
             //@include serif-font;
             //font-style: italic;
-            font-family: 'Orbitron', Sans-Serif;
+            font-family: 'Orbitron', Sans-Serif !important;
             font-size: 50px;
             line-height: 50px;
             margin-bottom: 25px;
@@ -271,7 +271,7 @@ header {
         .intro-heading {
             //@include heading-font;
             //font-weight: 700;
-            font-family: 'Orbitron', Sans-Serif;
+            font-family: 'Orbitron', Sans-Serif !important;
             font-size: 20px;
             //line-height: 50px;
             margin-bottom: 30px;
@@ -293,7 +293,7 @@ header {
             .intro-lead-in {
                 //@include serif-font;
                 //font-style: italic;
-                font-family: 'Orbitron', Sans-Serif;
+                font-family: 'Orbitron', Sans-Serif !important;
                 font-size: 92px;
                 line-height: 40px;
                 margin-bottom: 25px;
@@ -303,7 +303,7 @@ header {
             .intro-heading {
                 //@include heading-font;
                 //font-weight: 700;
-                font-family: 'Orbitron', Sans-Serif;
+                font-family: 'Orbitron', Sans-Serif !important;
                 font-size: 44px;
                 //line-height: 75px;
                 margin-top:50px;
@@ -624,7 +624,7 @@ a.btn-register{
 }
 
 .statementText{
-  font-family:"Helvetica Neue";
+  font-family:"Helvetica Neue" !important;
   width:70%;
   font-size: 18px;
   display: inline-block;
@@ -633,7 +633,7 @@ a.btn-register{
 }
 
 #statement-section-heading{
-  font-family:"Helvetica Neue";
+  font-family:"Helvetica Neue" !important;
   margin-bottom:15px !important;
 }
 
