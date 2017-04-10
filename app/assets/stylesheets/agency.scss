@@ -6,7 +6,7 @@
 body {
     overflow-x: hidden;
     @include body-font;
-    @include heading-font;
+    @include heading-font
 }
 
 .text-muted {
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom {
 
     .navbar-brand {
-        font-family: @serif-font !important;
+        font-family: "Helvetica Neue" !important;
         font-weight: bold;
         color: white;
         &:hover,
@@ -625,7 +625,7 @@ a.btn-register{
 }
 
 .statementText{
-  font-family:@serif-font !important;
+  font-family:"Helvetica Neue" !important;
   width:70%;
   font-size: 18px;
   display: inline-block;
@@ -634,7 +634,7 @@ a.btn-register{
 }
 
 #statement-section-heading{
-  font-family:@serif-font !important;
+  font-family:"Helvetica Neue" !important;
   margin-bottom:15px !important;
 }
 
