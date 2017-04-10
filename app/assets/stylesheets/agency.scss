@@ -706,7 +706,7 @@ h4{
 }
 
 .bd-bg{
-  background: rgba( $theme-bigdata, .6 );
+  background: rgba( $theme-bigdata, .7 );
 }
 .bd-sponsors{
   background: rgba( $theme-bigdata, 1);
@@ -836,4 +836,8 @@ h4{
 
 .img-sponsor{
   max-width: 50%;
+}
+
+.link-text{
+  color: lightgray;
 }
