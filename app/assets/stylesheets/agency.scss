@@ -5,7 +5,8 @@
 
 body {
     overflow-x: hidden;
-    //@include body-font;
+    @include body-font;
+    @include heading-font;
 }
 
 .text-muted {
