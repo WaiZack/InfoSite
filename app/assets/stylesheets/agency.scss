@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom {
 
     .navbar-brand {
-        font-family: "Helvetica Neue" !important;
+        font-family: @serif-font !important;
         font-weight: bold;
         color: white;
         &:hover,
@@ -625,7 +625,7 @@ a.btn-register{
 }
 
 .statementText{
-  font-family:"Helvetica Neue" !important;
+  font-family:@serif-font !important;
   width:70%;
   font-size: 18px;
   display: inline-block;
@@ -634,7 +634,7 @@ a.btn-register{
 }
 
 #statement-section-heading{
-  font-family:"Helvetica Neue" !important;
+  font-family:@serif-font !important;
   margin-bottom:15px !important;
 }
 
