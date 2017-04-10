@@ -67,7 +67,7 @@
 // Font Mixins
 
 @mixin serif-font {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 @mixin script-font {
@@ -79,7 +79,7 @@
 }
 
 @mixin heading-font {
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", sans-serif;
   font-weight:bold;
   //text-transform: uppercase;
 }
