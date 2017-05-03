@@ -842,11 +842,30 @@ h4{
 }
 
 .img-sponsor{
+  max-width: 40%;
+}
+
+#img-home-sas{
+  margin: 0 auto;
+  min-width: 100px;
+  max-width: 10%;
+}
+
+#img-home-zalora{
+  margin: 0 auto;
+  min-width: 120px;
+  max-width: 18%;
+}
+
+#img-home-singtel {
+  margin: 0 auto;
   max-width: 50%;
 }
 
-.img-home-sponsor{
-  max-width: 30%;
+#img-home-standchart{
+  margin: 0 auto;
+  max-width: 50%;
+  padding-top: 25px;
 }
 
 .link-text{
