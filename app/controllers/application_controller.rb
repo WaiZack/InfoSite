@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_subdomain
     if request.host == 'www.bizitfestival.com'
-      redirect_to 'http://bizitfestival.com' + request.fullpath, :status => 301
+      redirect_to 'https://bizitfestival.com' + request.fullpath, :status => 301
     end
   end
 
