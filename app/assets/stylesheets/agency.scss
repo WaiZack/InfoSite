@@ -655,8 +655,11 @@ span{
 h3{
   color: white;
 }
-
 h4{
+  color: white;
+}
+
+.special-h4{
   color: white;
   text-align: left;
   padding: 0px 60px 50px 60px;
@@ -682,6 +685,34 @@ h4{
 #mapSection p{
   color: white;
   margin-top: 20px;
+}
+
+.large-icon{
+  font-size: 7.5em;
+}
+.white-icon{
+  color: white;
+}
+.purple-icon{
+  color: rebeccapurple;
+}
+
+.center{
+  margin: 0 auto;
+}
+
+.ninety-percent{
+  max-width: 90%;
+}
+
+.normal-weight{
+  color: #8b8b8c;
+  font-weight:normal;
+}
+
+p span{
+  font-weight:bold;
+  color: white;
 }
   //individual track
 //#smartnationHeader{
@@ -845,10 +876,16 @@ h4{
   max-width: 40%;
 }
 
+#img-home-bizit{
+  margin: 0 auto;
+  max-width: 18%;
+}
+
 #img-home-sas{
   margin: 0 auto;
   min-width: 100px;
   max-width: 10%;
+  padding-top: 40px;
 }
 
 #img-home-zalora{
@@ -859,13 +896,49 @@ h4{
 
 #img-home-singtel {
   margin: 0 auto;
-  max-width: 50%;
+  max-width: 45%;
+  padding-top: 10px;
 }
 
 #img-home-standchart{
+   margin: 0 auto;
+   max-width: 50%;
+   padding-top: 25px;
+ }
+
+#img-home-accenture{
+  margin: 0 auto;
+  max-width: 60%;
+  padding-top: 25px;
+}
+
+#img-home-soc{
   margin: 0 auto;
   max-width: 50%;
-  padding-top: 25px;
+  padding-top: 45px;
+}
+
+#img-home-ibm{
+  margin: 0 auto;
+  max-width: 50%;
+  padding-top: 20px;
+}
+
+#img-home-imda{
+  margin: 0 auto;
+  max-width: 50%;
+  padding-top: 40px;
+}
+
+#img-home-govtech{
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+#img-home-sns{
+  margin: 0 auto;
+  max-width: 50%;
+  padding-top: 30px;
 }
 
 .link-text{
