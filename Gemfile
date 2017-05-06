@@ -68,3 +68,5 @@ gem 'shrine'
 gem 'aws-sdk', '~> 2.1'
 
 gem 'validator-nric'
+
+gem 'thredded', '~> 0.12.1'
