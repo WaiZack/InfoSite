@@ -4,14 +4,17 @@ class RecruitsController< ApplicationController
   def show
     @recruit = Recruit.all
     @user = User.find_by(id: session[:user_id])
-
-
   end
 
   def new
     @recruit = Recruit.new
     @user = User.find_by(id: session[:user_id])
     @teams = @user.teams.all
+
+    if @teams.count == 0
+      flash[:warning] = 'You need to belong to a team before you can post a notice! Create a team and start recruiting!'
+      redirect_to :back
+    end
 
   end
 
