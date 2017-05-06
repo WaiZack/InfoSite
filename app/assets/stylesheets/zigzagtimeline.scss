@@ -280,13 +280,28 @@ timeline-centered .img-circle {
   margin-left: -9px;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2, .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p {
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
   color: #6b7078;
   font-family: "Noto Sans",sans-serif;
   font-size: 16px;
   margin: 0;
   line-height: 1.428571429;
   text-align: left;
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p {
+  color: #6a7078;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.428571429;
+  text-align: left;
+  font-weight: normal;
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p span{
+  color: black;
+  font-weight: bold;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
