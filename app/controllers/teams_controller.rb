@@ -15,6 +15,13 @@ class TeamsController < ApplicationController
     @tracks = ['Big Data', 'FinTech', 'Smart Nation']
   end
 
+  def update
+    @team = Team.find(params[:id])
+    @team.update_attributes(requirements)
+    flash[:info] = 'Requirements updated!'
+    redirect_to :back
+  end
+
   def show
     @user = User.find_by(id: session[:user_id])
     @team = Team.find(params[:id])
@@ -122,6 +129,10 @@ class TeamsController < ApplicationController
   private
   def team_params
     params.require(:team).permit(:name, :track)
+  end
+
+  def requirements
+    params.require(:team).permit(:requirements)
   end
 
   def created_too_many_teams?

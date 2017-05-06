@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :password_digest
       t.string :institute
       t.integer :phone
-      t.string :year
+      t.string :year``
       t.string :specialization
       t.text :introduction
 

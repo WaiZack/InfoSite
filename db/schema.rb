@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170409132917) do
+ActiveRecord::Schema.define(version: 20170506032201) do
 
   create_table "document_uploaders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -57,12 +57,7 @@ ActiveRecord::Schema.define(version: 20170409132917) do
     t.integer  "numMember"
     t.integer  "creator"
     t.text     "proposal_data", limit: 65535
-  end
-
-  create_table "teams_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id", null: false
-    t.integer "team_id", null: false
-    t.index ["user_id", "team_id"], name: "index_teams_users_on_user_id_and_team_id", using: :btree
+    t.text     "requirements",  limit: 65535
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

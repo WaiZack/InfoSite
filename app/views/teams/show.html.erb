@@ -121,6 +121,34 @@
           <%end%>
         </table>
       </div>
+
+      <h4 class="subheader">Looking for</h4>
+      <% if @team.users.all.include?(@user)%>
+      <div>
+        If you still need members, enter your requirements in the box below
+
+
+        <%= simple_form_for @team do |f| %>
+
+            <label>Requirements</label>
+            <%= f.input :requirements, placeholder: 'Who are you looking for?', label: false, input_html: { class: 'form-control textFieldCustom' },value: @team.requirements %>
+            <%= f.hidden_field :id, value: @team.id %>
+            <%= f.button :button, 'Update', class: 'btn' %>
+
+        <% end %>
+      </div>
+          <%else%>
+          <div>
+            <h6>This team is looking for the following attributes, feel free to send a request to join the team if you think you are what they are looking for!</h6>
+            <% if !@team.requirements.nil?%>
+                <p><strong><%=@team.requirements%></strong></p>
+            <%else%>
+                <p><strong>This team has not entered any requirements!</strong></p>
+            <%end%>
+
+
+          </div>
+      <% end %>
     </div>
 
     <% if @team.users.all.include?(@user)%>
