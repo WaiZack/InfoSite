@@ -126,8 +126,6 @@
       <% if @team.users.all.include?(@user)%>
       <div>
         If you still need members, enter your requirements in the box below
-
-
         <%= simple_form_for @team do |f| %>
 
             <label>Requirements</label>
