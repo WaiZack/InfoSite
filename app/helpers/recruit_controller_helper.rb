@@ -1,0 +1,2 @@
+module RecruitControllerHelper
+end

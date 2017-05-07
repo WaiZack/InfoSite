@@ -54,8 +54,12 @@ Rails.application.routes.draw do
   post '/addList' => 'mailing_list#new'
   get '/profile' => 'dashboard#show'
   get '/password_back' => 'password_resets#back'
+  get '/recruit' => 'recruits#show'
+  get '/newRecruit' => 'recruits#new'
+  get '/recruited' => 'recruits#delete'
 
   resources :users
+  resources :recruits
   resources :dashboard
   resources :account_activation, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update, :back]
