@@ -329,6 +329,11 @@ section {
         margin-top: 0;
         margin-bottom: 65px;
     }
+    h2.section-heading {
+      color: #ffffff;;
+      margin-top: 0;
+      margin-bottom: 65px;
+    }
     h3.section-subheading {
         font-family: "Roboto", sans-serif !important;
         font-size: 25px;
@@ -599,7 +604,7 @@ body {
 .nav li a.btn-login:hover,
 .nav li a.btn-login:focus {
           color: white;
-          background-color: darken($theme-primary, 10%);
+          background-color: darken($theme-danger, 10%);
         }
 
 .btn-register{
@@ -612,7 +617,7 @@ body {
 }
 
 .btn-login{
-  @include button-variant(white, $theme-primary, $theme-primary);
+  @include button-variant(white, $theme-danger, $theme-danger);
   border-radius: 3px;
   padding-top:8px !important;
   padding-bottom:8px !important;
