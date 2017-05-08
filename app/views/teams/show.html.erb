@@ -188,7 +188,11 @@
                       <%= f.hidden_field :team_id, value: @team.id %>
                       <%= f.button :button, 'Upload', class: 'btn btn-primary' %>
                   <% end %>
-                  <h5 style="color: forestgreen;">Max file size is 2MB; Only .pdf allowed</h5>
+                  <h5 style="color: forestgreen;">
+                    Max file size is 2MB; Only .pdf allowed <br>Indicate clearly the names and institutions of all team members on the first page of the document.
+                    <br>If you choose to submit a 1-min video, please upload it on Youtube and provide the link in the document.
+                  </h5>
+
                 </div>
             <% else %>
             <div>
