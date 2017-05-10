@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="none">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+
+  <%= javascript_include_tag ('loginScripts') %>
+  <%= stylesheet_link_tag ('login') %>
+  <%=stylesheet_link_tag('application')%>
+  <%= stylesheet_link_tag 'form-elements' %>
+  <%= stylesheet_link_tag 'awesome-bootstrap-checkbox'%>
+
+</head>
+
+
+<body>
+
+<!-- Top content -->
+<div class="top-content">
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+          <div class="form-top-left">
+            <h3>BiZiT Festival Registration</h3>
+            <p>Please provide the following information</p>
+          </div>
+          <div class="form-top-right">
+            <i class="fa fa-lock"></i>
+          </div>
+        </div>
+        <div class="form-bottom">
+
+          <% if @user.errors.any? %>
+              <div id="error_explanation">
+                 <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+          <%= simple_form_for @user do |f| %>
+              <%= f.input :email, placeholder: 'Email', label: false %>
+              <%= f.input :password, placeholder: 'Password', label: false %>
+              <%= f.input :password_confirmation, placeholder: 'Repeat Password', label: false %>
+              <%= f.input :nric, placeholder: 'NRIC / FIN', label: false %>
+              <%= f.input :firstName, placeholder: 'First Name', label: false %>
+              <%= f.input :lastName, placeholder: 'Last Name', label: false %>
+              <%= f.input :institute, placeholder: 'Institute\'s Full Name', label: false %>
+              <%= f.input :specialization, placeholder: 'Specialization/Major', label: false %>
+              <%= f.input :academic_level, :collection => ['Polytechnic','Junior College', 'Undergraduate', 'Postgraduate']%>
+              <%= f.input :age, placeholder: 'Age', label: false %>
+
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :terms_and_conditions%>
+                <%= f.label :terms_and_conditions, "I agree to the #{link_to 'terms and conditions','http://bizitsociety.org/wp-content/uploads/2017/04/BiZiT-Festival-TERMS-AND-CONDITIONS.pdf', target:'_blank'}".html_safe%>
+              </div>
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :data_protection_policy%>
+                <%= f.label :terms_and_conditions, "I agree to the #{link_to 'data protection policy','http://bizitsociety.org/wp-content/uploads/2017/03/Data-Protection-Policy-BiZiT-Festival.pdf', target:'_blank'}".html_safe%>
+              </div>
+              <div style="padding-bottom: 10px">
+                <i>
+                I certify that the information provided is true to the best of my knowledge and
+                I understand that I will be disqualified in the event that
+                the information is found to be falsified.</i>
+              </div>
+
+              <%= f.button :button, 'Register', class: 'btn' %>
+
+          <% end %>
+        </div>
+        <div>
+          <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%= javascript_include_tag 'application' %>
+
+</body>
+
+</html>
