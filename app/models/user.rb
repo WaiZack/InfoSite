@@ -24,11 +24,11 @@ class User < ApplicationRecord
 
   validates :firstName, :lastName, presence: true
 
-  validates :specialization, :academic_level, presence: true
-
-  validates :nric , nric: true, presence: true, uniqueness: true
-
-  validates :age, presence:true
+  # validates :specialization, :academic_level, presence: true
+  #
+  # validates :nric , nric: true, presence: true, uniqueness: true
+  #
+  # validates :age, presence:true
 
 
   def authenticated?(attribute, token)
