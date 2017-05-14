@@ -873,6 +873,16 @@ p span{
   @include background-cover;
 }
 
+.WSBody{
+
+  background-image: image-url('about/dummy.jpg'); //commented out to apply background image individually
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+
+}
+
 .sponsors{
   background: #FFF;
 }

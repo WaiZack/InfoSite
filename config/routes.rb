@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/bigdata', to: 'landing#bigdata'
   get '/fintech' => 'landing#fintech'
   get '/about' => 'landing#about'
+  get '/workshops' => 'landing#workshops'
 
 
 
