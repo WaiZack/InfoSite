@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/fintech' => 'landing#fintech'
   get '/about' => 'landing#about'
   get '/workshops' => 'landing#workshops'
+  get '/speakers' => 'landing#speakers'
 
 
 
@@ -58,6 +59,7 @@ Rails.application.routes.draw do
   get '/recruit' => 'recruits#show'
   get '/newRecruit' => 'recruits#new'
   get '/recruited' => 'recruits#delete'
+
 
   resources :users
   resources :recruits
