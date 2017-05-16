@@ -22,6 +22,7 @@ Rails.application.config.assets.precompile += %w( form-elements.scss )
 Rails.application.config.assets.precompile += %w( awesome-bootstrap-checkbox.scss)
 Rails.application.config.assets.precompile += %w( coming.css )
 Rails.application.config.assets.precompile += %w( events.css )
+Rails.application.config.assets.precompile += %w( time.css )
 
 
 #js files
