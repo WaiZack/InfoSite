@@ -957,5 +957,8 @@ p span{
 }
 
 .link-text{
-  color: lightgray;
+  color: yellow;
+}
+.link-text:hover{
+  color: #ffdb03;
 }
