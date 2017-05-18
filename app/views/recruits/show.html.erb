@@ -94,6 +94,25 @@
         </div>
     <%end%>
 
+    <%@recruit2.each do |post2|%>
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Team : <strong><%=post2.name%></strong>
+              <a class="btn btn-info" style="float:right" href="/teams/<%=post2.id%>">Go to team</a>
+            </div>
+            <div class="panel-body">
+              <div><%=post2.requirements%></div>
+            </div>
+
+            <div class="panel-footer">
+              <div><h6>Posted on: <%=post2.updated_at.strftime('%v')%></h6></div>
+            </div>
+          </div>
+        </div>
+    <%end%>
+
+
+
 
   </div>
 

@@ -12,6 +12,8 @@ class RecruitsController< ApplicationController
   def show
     @recruit = Recruit.all
     @user = User.find_by(id: session[:user_id])
+
+    @recruit2 = Team.where.not(requirements: [nil,''])
   end
 
   def new
