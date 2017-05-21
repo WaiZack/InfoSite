@@ -723,6 +723,21 @@ p span{
   font-weight:bold;
   color: white;
 }
+
+.orange-a {
+  color: $theme-secondary !important;
+}
+.orange-a:hover{
+  color: darken($theme-secondary, 10%) !important;
+}
+
+.red-a {
+  color: #c25b4e !important;
+}
+.red-a:hover{
+  color: darken(#c25b4e, 10%) !important;
+}
+
   //individual track
 //#smartnationHeader{
 //  background-image: asset_data_url('smartnation/SmartNationBackground.jpg');
