@@ -115,7 +115,34 @@
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="fa fa-hand-o-right"></span>    <a href="https://www.eventbrite.sg/e/personal-branding-networking-workshop-tickets-34513098607" target="_blank">Register</a>
                       </div>
                     </div>
+                  </li>
 
+
+                  <li>
+                    <time datetime="2017-06-03">
+                      <span class="day">3</span>
+                      <span class="month">Jun</span>
+                      <span class="year">2017</span>
+                      <span class="time">ALL DAY</span>
+                    </time>
+                    <%= image_tag 'workshops/microsoft_azure.png' %>
+                    <div class="info">
+                      <h2 class="title">Microsoft Azure Workshop</h2>
+                      <div class="row">
+                        <span class="fa fa-clock-o"></span>    3rd June, 10AM - 12 PM
+                      </div>
+                      <div class="row">
+                        <span class="fa fa-money"></span>    Free
+                      </div>
+                      <div class="row">
+                        <span class="fa fa-map-marker"></span>    <a href="http://www.comp.nus.edu.sg/maps/photos/#com1" target="_blank">
+                        Cerebro Room, COM1, 13 Computing Drive, Singapore 117417</a>
+                      </div>
+                      <div class="row">
+                        <span class="fa fa-hand-o-right"></span>    <a href="#MA" class="portfolio-link" data-toggle="modal">Find out more</a>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="fa fa-hand-o-right"></span>    <a href="https://www.eventbrite.sg/e/microsoft-azure-workshop-tickets-34761965976" target="_blank">Register</a>
+                      </div>
+                    </div>
                   </li>
 
 
@@ -127,7 +154,7 @@
                       <span class="year">2017</span>
                       <span class="time">ALL DAY</span>
                     </time>
-                    <%= image_tag 'home/sas.png' %>
+                    <%= image_tag 'workshops/sas_viya.png' %>
                     <div class="info">
                       <h2 class="title">SAS Viya Workshop</h2>
                       <div class="row">
@@ -137,11 +164,15 @@
                         <span class="fa fa-money"></span>    Free
                       </div>
                       <div class="row">
-                        <span class="fa fa-map-marker"></span>    To Be Confirmed
+                        <span class="fa fa-map-marker"></span>    <a href="http://www.comp.nus.edu.sg/maps/photos/#com1" target="_blank">
+                        Programming Lab 1, B-12, COM1, 13 Computing Drive, Singapore 117417</a>
+                      </div>
+                      <div class="row">
+                        <span class="fa fa-hand-o-right"></span>    <a href="#SAS" class="portfolio-link" data-toggle="modal">Find out more</a>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="fa fa-hand-o-right"></span>    <a href="https://www.eventbrite.sg/e/sas-viya-workshop-tickets-34594261367" target="_blank">Register</a>
                       </div>
                     </div>
                   </li>
-
 
 
                 </ul>
@@ -174,7 +205,7 @@
 
               <div class="row">
                 <div class="portfolioDiv">
-                  <%= image_tag 'workshops/cfg.jpg' %>
+                  <%= image_tag 'workshops/cfg.jpg' , :class => "modal_logo_img"%>
                   <h4><span>Personal Branding & Networking Workshop</span></h4>
                   <h5>Impart critical skills for your future career</h5>
                 </div>
@@ -189,9 +220,8 @@
                 </p>
               </div>
               <div class = "nextRow">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Portfolio</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
               </div>
-
             </div>
           </div>
         </div>
@@ -200,6 +230,83 @@
   </div>
 </div>
 
+<!-- Modal 2 -->
+<div class="portfolio-modal modal fade" id="MA" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
+
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'workshops/microsoft_azure.png', :class => "modal_logo_img"%>
+                  <h4><span>Microsoft Azure Workshop</span></h4>
+                </div>
+              </div>
+
+              <div class = "row portfolioDiv">
+                <p class="text-center">
+                  Hands-on workshop conducted by Microsoft Technical Evangelist on Microsoft Azure!
+                  <br><br>* Exclusive for BiZiT Festival 2017 participants and BiZiT Society members.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="portfolio-modal modal fade" id="SAS" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
+
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'workshops/sas_viya.png', :class => "modal_logo_img"%>
+                  <h4><span>SAS Viya Workshop</span></h4>
+                </div>
+              </div>
+
+              <div class = "row portfolioDiv">
+                <p class="text-justify">
+                  This two-day workshop is organised exclusively for participants of BiZiT Festival 2017 - Big Data Challenge.
+                  <br><br>Please note that each team is entitled to two reserved slots for this workshop. Any additional members will placed on a waiting list.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <footer>
