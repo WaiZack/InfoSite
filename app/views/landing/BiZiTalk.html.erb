@@ -22,6 +22,7 @@
   <%= stylesheet_link_tag 'agency' %>
   <%= stylesheet_link_tag 'events' %>
   <%= stylesheet_link_tag 'talk' %>
+  <%= stylesheet_link_tag 'lineartimeline' %>
 
 
 </head>
@@ -53,6 +54,9 @@
           <a href="/fintech">FinTech</a>
         </li>
         <li>
+          <a href="/BiZiTalk">BiZiTalk</a>
+        </li>
+        <li>
           <a href="/workshops">Workshops</a>
         </li>
         <li>
@@ -73,8 +77,43 @@
   <!-- /.container-fluid -->
 </nav>
 
+<section class="layer">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="section-heading">BiZiTalk</h1>
+      </div>
+    </div>
+
+    <div class="main">
+      <ul class="cbp_tmtimeline">
+        <li>
+          <time class="cbp_tmtime"><span>2017</span> <span>22 June</span></time>
+          <div class="cbp_tmicon cbp_tmicon-phone"></div>
+          <div class="cbp_tmlabel">
+            <h2>Day 1: Innovate</h2>
+            <p style="padding: 0px; margin: 0px; text-align: center">Details to be announced</p>
+          </div>
+        </li>
+
+        <li>
+          <time class="cbp_tmtime"><span>2017</span> <span>23 June</span></time>
+          <div class="cbp_tmicon cbp_tmicon-mail"></div>
+          <div class="cbp_tmlabel">
+            <h2><a class="page-scroll" href="#Day2">Day 2: IS Industry Seminar/Panel Discussion</a></h2>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+</section>
+
+
 <!--Day 2 timeline-->
-<section class="layer-Light">
+<section class="layer-Light" id="Day2">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">

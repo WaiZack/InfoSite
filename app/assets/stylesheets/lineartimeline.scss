@@ -197,9 +197,8 @@
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 .clearfix:after { clear: both; }
 
-body {
+.main p{
   font-family: 'Roboto', sans-serif;
-  color: #47a3da;
 }
 
 .main,
