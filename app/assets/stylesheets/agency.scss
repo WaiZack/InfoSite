@@ -970,7 +970,7 @@ p span{
   color: yellow;
 }
 .link-text:hover{
-  color: #ffdb03;
+  color: darken(yellow, 10%);
 }
 
 //speakers
@@ -987,6 +987,12 @@ p span{
   }
   h3 {
     font-size: 1.2em;
+  }
+  a {
+    color: $theme-secondary;
+  }
+  a:hover{
+    color: darken($theme-secondary, 10%);
   }
 }
 @media(min-width:768px) {
