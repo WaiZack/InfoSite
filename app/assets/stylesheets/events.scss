@@ -15,6 +15,11 @@
   padding: 0px;
   margin: 0px 0px 20px;
 }
+
+.event-list > li > .talk {
+  background-color: rgb(201, 245, 255)!important;
+}
+
 .event-list > li > time {
   display: inline-block;
   width: 100%;
@@ -24,9 +29,19 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+.event-list > li >.talk-time {
+  background-color: rgb(109, 167, 167)!important;
+}
+
 .event-list > li:nth-child(even) > time {
   background-color: rgb(165, 82, 167);
 }
+
+.event-list > li:nth-child(even) > .talk-time {
+  background-color: rgb(65, 124, 167) !important;
+}
+
 .event-list > li > time > span {
   display: none;
 }
@@ -132,6 +147,9 @@
   .event-list > li > .info {
     background-color: rgb(245, 245, 245);
     overflow: hidden;
+  }
+  .event-list > li > .talk {
+    background-color: rgb(201, 245, 255);
   }
   .event-list > li > time {
     width: 120px;
