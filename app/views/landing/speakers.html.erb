@@ -103,10 +103,10 @@
                 </div>
                 <div class="tl-body">
                   <p>Panelists:
-                      <br>Prof. Huang Ke‐Wei
-                      <br>Mr. Anupam Pahuja
-                      <br>Mr. Alan Lim
-                      <br>Ms. Judy Hsu
+                    <br><a href="#Huang_Ke‐Wei">Prof. Huang Ke‐Wei</a>
+                    <br><a href="#Anupam_Pahuja">Mr. Anupam Pahuja</a>
+                    <br><a href="#Alan_Lim">Mr. Alan Lim</a>
+                    <br><a href="#Judy_Hsu">Ms. Judy Hsu</a>
                   </p>
                 </div>
               </div>
@@ -238,24 +238,63 @@
 
     <div class="row">
       <div class="col-sm-3">
-        <div class="trackDiv">
-          <%= image_tag 'home/smartnation.png',:class => 'img-responsive img-circle'%></a>
-          <h3><span><a href="/smartnation">Smart Nation</a></span></h3>
-          <p class="text-muted">The Challenges of a Futuristic World</p>
+        <div class="speakersDiv" id="Huang_Ke‐Wei">
+          <%= image_tag 'speakers/huangkw.png',:class => 'img-responsive img-circle'%>
+          <h3><span><a href="#Huang_Ke‐Wei_Portfolio" class="portfolio-link" data-toggle="modal">Prof. Huang Ke‐Wei</a></span></h3>
+          <p class="text-muted">National University of Singapore</p>
         </div>
       </div>
       <div class="col-sm-3">
-        <div class="trackDiv">
-          <a href="/bigdata"><%= image_tag 'home/bigdata.png', :class => 'img-responsive img-circle'%></a>
-          <h3><span><a href="/bigdata">Big Data</a></span></h3>
-          <p class="text-muted">The Challenges of Business Innovation</p>
+        <div class="speakersDiv" id="Anupam_Pahuja">
+          <%= image_tag 'speakers/Anupam_Pahuja.jpg', :class => 'img-responsive img-circle'%>
+          <h3><span>Mr. Anupam Pahuja</span></h3>
+          <p class="text-muted">MD, Country Manager India and GM Technology APAC, PayPal</p>
         </div>
       </div>
       <div class="col-sm-3">
-        <div class="trackDiv">
-          <a href="/fintech"><%= image_tag 'home/fintech.png', :class => 'img-responsive img-circle'%></a>
-          <h3><span><a href="/fintech">Fintech</a></span></h3>
-          <p class="text-muted">Disrupting Financial Service</p>
+        <div class="speakersDiv" id="Alan_Lim">
+          <%= image_tag 'speakers/Alan_Lim.jpg', :class => 'img-responsive img-circle'%>
+          <h3><span>Mr. Alan Lim</span></h3>
+          <p class="text-muted">ASEAN Garage Leader, IBM</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Judy_Hsu">
+          <%= image_tag 'speakers/Judy_Hsu.png',:class => 'img-responsive img-circle'%>
+          <h3><span>Ms. Judy Hsu</span></h3>
+          <p class="text-muted">Chief Executive Officer, Standard Chartered Bank Singapore</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row nextRow">
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Huang_Ke‐Wei">
+          <%= image_tag 'speakers/Anindya_Ghose.jpg',:class => 'img-responsive img-circle'%>
+          <h3><span>Prof. Huang Ke‐Wei</span></h3>
+          <p class="text-muted">National University of Singapore</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Anupam_Pahuja">
+          <%= image_tag 'speakers/Anupam_Pahuja.jpg', :class => 'img-responsive img-circle'%>
+          <h3><span>Mr. Anupam Pahuja</span></h3>
+          <p class="text-muted">MD, Country Manager India and GM Technology APAC, PayPal</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Alan_Lim">
+          <%= image_tag 'speakers/Alan_Lim.jpg', :class => 'img-responsive img-circle'%>
+          <h3><span>Mr. Alan Lim</span></h3>
+          <p class="text-muted">ASEAN Garage Leader, IBM</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Judy_Hsu">
+          <%= image_tag 'speakers/Judy_Hsu.png',:class => 'img-responsive img-circle'%>
+          <h3><span>Ms. Judy Hsu</span></h3>
+          <p class="text-muted">Chief Executive Officer, Standard Chartered Bank Singapore</p>
         </div>
       </div>
     </div>
@@ -263,7 +302,48 @@
   </div>
 </section>
 
+<!-- Portfolio Modal 1 -->
+<div class="portfolio-modal modal fade" id="Huang_Ke‐Wei_Portfolio" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
 
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'speakers/huangkw.png',:class => 'img-responsive img-circle'%>
+                  <h4><span>Prof. Huang Ke‐Wei</span></h4>
+                  <h5>National University of Singapore</h5>
+                </div>
+              </div>
+
+              <div class = "row portfolioDiv">
+                <p class="text-justify">
+                Dr. Ke-Wei Huang is an Associate Professor in the Department of Information Systems at the National University of Singapore (NUS).
+                  Dr. Huang joined NUS in July 2007. He received his Ph.D. (2007), M.Phil. (2005), and M.Sc. (2002) degrees in Information Systems from the Stern School of Business at New York University, and his M.B.A. in Finance (1997) and B.Sc. in Electrical Engineering (1995) from National Taiwan University.
+                <br><br>
+                Dr. Huang’s research interests are in the economics of information systems and data mining for financial applications. Currently, he focuses on various topics of pricing digital goods, labor economics of IT professionals, and data mining or econometrics issues for topics in accounting or finance.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Portfolio</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <footer>
