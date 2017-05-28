@@ -24,9 +24,9 @@ class User < ApplicationRecord
 
   validates :firstName, :lastName, presence: true
 
-  validates :shirtSize, presence:true
-  validates :dietaryPreference, presence: true
-  validates :phone, presence: true
+  # validates :shirtSize, presence:true
+  # validates :dietaryPreference, presence: true
+  # validates :phone, presence: true
 
   # validates :specialization, :academic_level, presence: true
   #
