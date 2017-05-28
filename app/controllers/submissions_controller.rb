@@ -2,11 +2,15 @@ class SubmissionsController < ApplicationController
 
   def create
     @submission = Submission.new(submission_params)
-    if @submission.save
-      flash[:info] = 'File Uploaded'
+    if @submission.content_data == nil
+      flash[:danger] = 'Please select a file for upload!'
     else
-      error_msg = @submission.errors[:content]
-      flash[:danger] = error_msg
+      if @submission.save
+        flash[:info] = 'File Uploaded'
+      else
+        error_msg = @submission.errors[:content]
+        flash[:danger] = error_msg
+      end
     end
     redirect_to :back
 
