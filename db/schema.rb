@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528124120) do
+ActiveRecord::Schema.define(version: 20170528132000) do
 
   create_table "document_uploaders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -310,7 +310,7 @@ ActiveRecord::Schema.define(version: 20170528124120) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "institute"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "year"
     t.string   "specialization"
     t.text     "introduction",      limit: 65535

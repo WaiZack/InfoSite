@@ -75,6 +75,51 @@
   <div class="container">
     <div class ="row col-md-12">
       <%= simple_form_for @user, url: '/dashboard/:id' do |f| %>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="page-head-line">Additional details needed</h4>
+            </div>
+          </div>
+
+          <div class="alert alert-info">Please also ensure that your name is correct</div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Phone Number</label>
+                <%= f.input :phone, placeholder: 'Phone Number', label: false, input_html: { class: 'form-control' },value: @user.phone%>
+
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Dietary Preference</label>
+                <%= f.input :dietaryPreference, :collection => %w(Vegetarian Non-Vegetarian), include_blank: false, include_hidden: false, label: false, input_html: { class: 'form-control' },value: @user.dietaryPreference %>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Shirt Size</label>
+                <%= f.input :shirtSize, :collection => %w(XS S M L XL), include_blank: false, include_hidden: false, label: false, input_html: { class: 'form-control' },value: @user.shirtSize %>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="page-head-line">Basic User Information </h4>
+            </div>
+          </div>
+
+
+
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -130,32 +175,6 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <h4 class="page-head-line">Details for shortlisted participants</h4>
-            </div>
-          </div>
-
-          <div class="alert alert-info">Please also ensure that your name is correct</div>
-
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Dietary Preference</label>
-                <%= f.input :dietaryPreference, :collection => %w(Vegetarian Non-Vegetarian), include_blank: false, include_hidden: false, label: false, input_html: { class: 'form-control' },value: @user.dietaryPreference %>
-
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Shirt Size</label>
-                <%= f.input :shirtSize, :collection => %w(XS S M L XL), include_blank: false, include_hidden: false, label: false, input_html: { class: 'form-control' },value: @user.shirtSize %>
-
-              </div>
-            </div>
-          </div>
 
 
           <%= f.button :button, 'Update', class: 'btn ' %>
