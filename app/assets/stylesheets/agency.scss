@@ -264,8 +264,6 @@ header {
             //font-style: italic;
             font-family: 'Orbitron', sans-serif !important;
             font-size: 50px;
-            line-height: 50px;
-            margin-bottom: 25px;
             margin-top: -150px;
             text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
@@ -274,7 +272,6 @@ header {
             //font-weight: 700;
             font-family: 'Orbitron', sans-serif !important;
             font-size: 20px;
-            //line-height: 50px;
             margin-bottom: 30px;
             text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
@@ -296,8 +293,6 @@ header {
                 //font-style: italic;
                 font-family: 'Orbitron', sans-serif !important;
                 font-size: 92px;
-                line-height: 40px;
-                margin-bottom: 25px;
                 margin-top: -350px;
                 text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
             }
@@ -306,8 +301,6 @@ header {
                 //font-weight: 700;
                 font-family: 'Orbitron', sans-serif !important;
                 font-size: 44px;
-                //line-height: 75px;
-                margin-top:50px;
                 margin-bottom: 100px;
                 text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
             }
@@ -702,8 +695,20 @@ h4{
 .white-icon{
   color: white;
 }
-.purple-icon{
-  color: rebeccapurple;
+.grey-icon{
+  color: #777777;
+}
+
+.red-icon{
+  color: #a94442;
+}
+
+.green-icon{
+  color: #47764a;
+}
+
+.orange-icon{
+  color: #f4a460;
 }
 
 .center{
@@ -715,7 +720,7 @@ h4{
 }
 
 .normal-weight{
-  color: #989899;
+  color: #b3b3b4;
   font-weight:normal;
 }
 
@@ -813,17 +818,10 @@ p span{
 }
 #homeHeader .intro-heading{
   color: $theme-about;
-  margin-top: 20px;
 }
 
 #tracks h1{
   margin-bottom: 85px !important;
-}
-#tracks a{
-  color: $theme-secondary;
-}
-#tracks a:hover{
-  color:white;
 }
 
 .statementText span{
@@ -998,6 +996,13 @@ p span{
 }
 .link-text:hover{
   color: darken(yellow, 10%);
+}
+
+.link-text-darker{
+  color: #f4a460;
+}
+.link-text-darker:hover{
+  color: darken(#f4a460, 10%);
 }
 
 //speakers
