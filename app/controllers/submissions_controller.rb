@@ -3,20 +3,20 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(submission_params)
     team = @submission.team
-    # if team.track == 'Big Data' or team.track == 'FinTech'
-    #   flash[:danger] = 'Submission has closed for this track!'
-    # else
-    if @submission.content_data == nil
-      flash[:danger] = 'Please select a file for upload!'
+    if team.track == 'Big Data' or team.track == 'FinTech'
+      flash[:danger] = 'Submission has closed for this track!'
     else
-      if @submission.save
-        flash[:info] = 'File Uploaded'
+      if @submission.content_data == nil
+        flash[:danger] = 'Please select a file for upload!'
       else
-        error_msg = @submission.errors[:content]
-        flash[:danger] = error_msg
+        if @submission.save
+          flash[:info] = 'File Uploaded'
+        else
+          error_msg = @submission.errors[:content]
+          flash[:danger] = error_msg
+        end
       end
     end
-    # end
     redirect_to :back
 
 

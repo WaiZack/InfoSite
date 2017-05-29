@@ -12,7 +12,8 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
-    @tracks = ['Big Data', 'FinTech', 'Smart Nation']
+    # @tracks = ['Big Data', 'FinTech', 'Smart Nation']
+    @tracks = ['Smart Nation']
   end
 
   def update
