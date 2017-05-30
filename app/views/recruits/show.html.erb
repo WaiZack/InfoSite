@@ -72,44 +72,40 @@
       </div>
     </div>
 
-    <%@recruit.in_groups_of(3,false).each do |post|%>
-        <div class = "row">
-          <div class="col-md-4">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Team : <strong><%=post.team_name%></strong>
-                <a class="btn btn-info" style="float:right" href="/teams/<%=post.team_id%>">Go to team</a>
-              </div>
-              <div class="panel-body">
-                <div><%=post.content%></div>
-              </div>
-              <div class="panel-footer">
-                <div>Contact: <%=post.email%></div>
-                <div><h6>Posted on: <%=post.created_at.strftime('%v')%></h6></div>
-                <%if @user.email == post.email%>
-                    <a class="btn btn-danger" href="/recruited/?id=<%=post.id%>" data-confirm="Confirm Delete?">Delete</a>
-                <%end%>
+    <%@recruit.each do |post|%>
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Team : <strong><%=post.team_name%></strong>
+              <a class="btn btn-info" style="float:right" href="/teams/<%=post.team_id%>">Go to team</a>
+            </div>
+            <div class="panel-body">
+              <div><%=post.content%></div>
+            </div>
+            <div class="panel-footer">
+              <div>Contact: <%=post.email%></div>
+              <div><h6>Posted on: <%=post.created_at.strftime('%v')%></h6></div>
+              <%if @user.email == post.email%>
+                  <a class="btn btn-danger" href="/recruited/?id=<%=post.id%>" data-confirm="Confirm Delete?">Delete</a>
+              <%end%>
 
 
-              </div>
             </div>
           </div>
         </div>
     <%end%>
 
-    <%@recruit2.in_groups_of(3,false).each do |post2|%>
-        <div class = "row">
-          <div class="col-md-4">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Team : <strong><%=post2.name%></strong>
-                <a class="btn btn-info" style="float:right" href="/teams/<%=post2.id%>">Go to team</a>
-              </div>
-              <div class="panel-body">
-                <div><%=post2.requirements%></div>
-              </div>
+    <%@recruit2.each do |post2|%>
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Team : <strong><%=post2.name%></strong>
+              <a class="btn btn-info" style="float:right" href="/teams/<%=post2.id%>">Go to team</a>
+            </div>
+            <div class="panel-body">
+              <div><%=post2.requirements%></div>
+            </div>
 
-              <div class="panel-footer">
-                <div><h6>Posted on: <%=post2.updated_at.strftime('%v')%></h6></div>
-              </div>
+            <div class="panel-footer">
+              <div><h6>Posted on: <%=post2.updated_at.strftime('%v')%></h6></div>
             </div>
           </div>
         </div>
