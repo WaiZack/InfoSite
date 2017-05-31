@@ -19,7 +19,7 @@ class MailingListController < ApplicationController
       flash[:warning] = 'Either the email is not valid or you have already signed up'
     end
     # redirect_to
-    redirect_to '/BiZiTalk'
+    redirect_to '/BiZiTalk#mailing2'
   end
 
   def mailing_list_params
