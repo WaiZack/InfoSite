@@ -556,6 +556,32 @@
   </div>
 </section>
 
+<!--mailing list-->
+<section id="contactForm" class="layer-Gao">
+  <div class="container">
+    <a name="mailing"></a>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="section-heading">Mailing List</h1>
+        <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+        <h3 class="section-heading">
+          Sign up to get updated about the Finale!
+        </h3>
+
+      </div>
+
+    </div>
+    <%= simple_form_for :mailing_list, url: '/addList' do |f| %>
+        <%= f.input :email, placeholder: 'Email', label: false %>
+        <%= f.button :button, 'Sign up!', class: 'btn' %>
+    <% end %>
+  </div>
+
+</section>
+
+
 <!-- Huang_Ke‐Wei_Profile -->
 <div class="portfolio-modal modal fade" id="Huang_Ke‐Wei_Profile" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
@@ -955,7 +981,6 @@
     </div>
   </div>
 </div>
-
 
 
 <footer>
