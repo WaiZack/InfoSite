@@ -60,6 +60,8 @@ Rails.application.routes.draw do
   get '/newRecruit' => 'recruits#new'
   get '/recruited' => 'recruits#delete'
 
+  post '/addList2' => 'mailing_list#new2'
+
 
   resources :users
   resources :recruits
