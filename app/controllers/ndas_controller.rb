@@ -19,7 +19,7 @@ class NdasController < ApplicationController
     @nda.user_id = @user.id
 
     if @nda.save
-      redirect_to 'http://www.google.com'
+      send_file 'app/assets/downloads/dataset.zip'
     else
       render 'new'
     end
