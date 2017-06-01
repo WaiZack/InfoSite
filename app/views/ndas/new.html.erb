@@ -40,8 +40,9 @@
 
         </div>
 
-        <div class="alert alert-danger">
+
           <% if @nda.errors.any? %>
+            <div class="alert alert-danger">
               <div id="error_explanation">
 
                   <% @nda.errors.full_messages.each do |msg| %>
@@ -49,8 +50,8 @@
                   <% end %>
 
               </div>
+            </div>
           <% end %>
-        </div>
 
         <div class="form-bottom">
 
