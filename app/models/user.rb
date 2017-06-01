@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :memberships
   has_many :teams, through: :memberships
   has_many :membership_requests
+  has_one :nda
 
 
   attr_accessor :remember_token, :activation_token, :reset_token, :terms_and_conditions, :data_protection_policy

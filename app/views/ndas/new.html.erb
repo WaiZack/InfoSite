@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="none">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+
+  <%= javascript_include_tag ('loginScripts') %>
+  <%= stylesheet_link_tag ('login') %>
+  <%=stylesheet_link_tag('application')%>
+  <%= stylesheet_link_tag 'form-elements' %>
+  <%= stylesheet_link_tag 'awesome-bootstrap-checkbox'%>
+
+</head>
+
+
+<body>
+
+<!-- Top content -->
+<div class="top-content">
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+          <div class="form-top-left">
+            <h3>Big Data dataset download</h3>
+          </div>
+          <div class="form-top-right">
+            <i class="fa fa-lock"></i>
+          </div>
+
+        </div>
+
+        <div class="alert alert-danger">
+          <% if @nda.errors.any? %>
+              <div id="error_explanation">
+
+                  <% @nda.errors.full_messages.each do |msg| %>
+                    <p><%= msg %></p>
+                  <% end %>
+
+              </div>
+          <% end %>
+        </div>
+
+        <div class="form-bottom">
+
+          <p>By clicking on 'Download', you are agreeing to the terms outlined in the non-disclosure agreemment.</p>
+
+          <p>In summary, you agree to:
+          <ul>
+            <li>Not use the data for any purpose other than the work required for BiZiT Festival 2017 Big Data challenge
+            <li>Not disclose the data to any individuals, groups, or ogranisations
+          </ul>
+
+          You may find a more complete form of the agreement here: xxx"</p>
+
+
+
+
+          <%= simple_form_for @nda do |f| %>
+
+
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :nda%>
+                <%= f.label :nda, "I agree to the #{link_to 'Non-disclosure agreement','http://bizitsociety.org/wp-content/uploads/2017/03/Data-Protection-Policy-BiZiT-Festival.pdf', target:'_blank'}".html_safe%>
+              </div>
+              <div style="padding-bottom: 10px">
+              </div>
+
+              <%= f.button :button, 'Download', class: 'btn' %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%= javascript_include_tag 'application' %>
+
+</body>
+
+</html>
