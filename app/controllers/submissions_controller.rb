@@ -3,7 +3,7 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(submission_params)
     team = @submission.team
-    if team.track == 'Big Data' or team.track == 'FinTech'
+    if team.track == 'Big Data' or team.track == 'FinTech' or team.track == 'Smart Nation'
       flash[:danger] = 'Submission has closed for this track!'
     else
       if @submission.content_data == nil
