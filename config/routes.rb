@@ -59,6 +59,7 @@ Rails.application.routes.draw do
   get '/recruit' => 'recruits#show'
   get '/newRecruit' => 'recruits#new'
   get '/recruited' => 'recruits#delete'
+  get '/NDAnotNBA' => 'ndas#new'
 
   post '/addList2' => 'mailing_list#new2'
 
@@ -72,5 +73,6 @@ Rails.application.routes.draw do
   resources :membership_requests
   resources :mailing_list
   resources :submissions, only: [:create, :update]
+  resources :ndas
 
 end
