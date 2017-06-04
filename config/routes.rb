@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   get '/changePassword' => 'dashboard#edit'
 
   get '/teams' => 'teams#index'
-  get '/createTeam' => 'teams#new'
+  # get '/createTeam' => 'teams#new'
   get '/myTeams' => 'teams#myteams'
 
   get '/approve' => 'membership_requests#approve'
