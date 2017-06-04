@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   get '/changePassword' => 'dashboard#edit'
 
   get '/teams' => 'teams#index'
-  get '/createTeam' => 'teams#new'
+  # get '/createTeam' => 'teams#new'
   get '/myTeams' => 'teams#myteams'
 
   get '/approve' => 'membership_requests#approve'
@@ -59,7 +59,7 @@ Rails.application.routes.draw do
   get '/recruit' => 'recruits#show'
   get '/newRecruit' => 'recruits#new'
   get '/recruited' => 'recruits#delete'
-  get '/NDAnotNBA' => 'ndas#new'
+  # get '/NDAnotNBA' => 'ndas#new'
 
   post '/addList2' => 'mailing_list#new2'
 
