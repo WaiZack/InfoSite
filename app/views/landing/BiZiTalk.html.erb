@@ -151,7 +151,7 @@
                   <h3><span class="fa fa-clock-o"></span> 9.00 ~ 9.45am</h3>
                 </div>
                 <div class="tl-body">
-                  <p>Speaker: MAS </p>
+                  <p>Speaker: <a class="page-scroll" href="#Damien_Pang">Mr. Damien Pang</a></p>
                 </div>
               </div>
             </li>
@@ -168,7 +168,7 @@
                     <br><a class="page-scroll" href="#Huang_Ke‐Wei">Prof. Huang Ke‐Wei</a>
                     <br><a class="page-scroll" href="#Anupam_Pahuja">Mr. Anupam Pahuja</a>
                     <br><a class="page-scroll" href="#Alan_Lim">Mr. Alan Lim</a>
-                    <br><a class="page-scroll" href="#Judy_Hsu">Ms. Judy Hsu</a>
+                    <br><a class="page-scroll" href="#Lai_Pei_Si">Ms. Lai Pei Si</a>
                   </p>
                 </div>
               </div>
@@ -201,7 +201,7 @@
                     <br><a class="page-scroll" href="#Teo_Hock_Hai">Prof. Teo Hock Hai</a>
                     <br><a class="page-scroll" href="#Arun_Rai">Prof. Arun Rai</a>
                     <br><a class="page-scroll" href="#Bin_Gu">Prof. Bin Gu</a>
-                    <br>Mr. Jensen Tan (Head Partnership Development, Consumer Sales, Singtel)
+                    <br><a class="page-scroll" href="#Jensen_Tan">Mr. Jensen Tan</a>
                     <br><a class="page-scroll" href="#Silvia">Ms. Silvia Thom</a>
                   </p>
                 </div>
@@ -218,7 +218,7 @@
                   <h3><span class="fa fa-clock-o"></span> 2.00 ~ 2.45pm</h3>
                 </div>
                 <div class="tl-body">
-                  <p>Speaker: Accenture</p>
+                  <p>Speaker: <a class="page-scroll" href="#Carl_Ward">Mr. Carl Ward</a></p>
                 </div>
               </div>
             </li>
@@ -236,7 +236,8 @@
                     <br><a class="page-scroll" href="#Atreyi_Kankanhalli">Prof. Atreyi Kankanhalli</a>
                     <br><a class="page-scroll" href="#Alex_Siow">Prof. Alex Siow</a>
                     <br><a class="page-scroll" href="#Elena_Karahanna">Prof. Elena Karahanna</a>
-                    <br>Mr. Daniel Teo (Program Director, GovTech)
+                    <br><a class="page-scroll" href="#Daniel_Teo">Mr. Daniel Teo</a>
+                    <br><a class="page-scroll" href="#Carl_Ward">Mr. Carl Ward</a>
                   </p>
                 </div>
               </div>
@@ -462,6 +463,15 @@
     </div>
 
       <div class="row">
+
+        <div class="col-sm-3">
+          <div class="speakersDiv" id="Damien_Pang">
+            <%= image_tag 'speakers/Damien_Pang.png',:class => 'img-responsive img-circle'%>
+            <h3><span><a href="#Damien_Pang_Profile" class="portfolio-link" data-toggle="modal">Mr. Damien Pang</a></span></h3>
+            <p class="text-muted">Innovation Acceleration Office, FinTech & Innovation Group, Monetary Authority of Singapore</p>
+          </div>
+        </div>
+
         <div class="col-sm-3">
           <div class="speakersDiv" id="Huang_Ke‐Wei">
             <%= image_tag 'speakers/huangkw.png',:class => 'img-responsive img-circle'%>
@@ -469,13 +479,15 @@
             <p class="text-muted">National University of Singapore</p>
           </div>
         </div>
+
         <div class="col-sm-3">
           <div class="speakersDiv" id="Anupam_Pahuja">
             <%= image_tag 'speakers/Anupam_Pahuja.jpg', :class => 'img-responsive img-circle'%>
-            <h3><span>Mr. Anupam Pahuja</span></h3>
+            <h3><span><a href="#Anupam_Pahuja_Profile" class="portfolio-link" data-toggle="modal">Mr. Anupam Pahuja</a></span></h3>
             <p class="text-muted">MD, Country Manager India and GM Technology APAC, PayPal</p>
           </div>
         </div>
+
         <div class="col-sm-3">
           <div class="speakersDiv" id="Alan_Lim">
             <%= image_tag 'speakers/Alan_Lim.png', :class => 'img-responsive img-circle'%>
@@ -483,16 +495,19 @@
             <p class="text-muted">ASEAN Garage Leader, IBM</p>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="speakersDiv" id="Judy_Hsu">
-            <%= image_tag 'speakers/Judy_Hsu.png',:class => 'img-responsive img-circle'%>
-            <h3><span>Ms. Judy Hsu</span></h3>
-            <p class="text-muted">Chief Executive Officer, Standard Chartered Bank Singapore</p>
-          </div>
-        </div>
+
       </div>
 
       <div class="row nextRow">
+
+        <div class="col-sm-3">
+          <div class="speakersDiv" id="Lai_Pei_Si">
+            <%= image_tag 'speakers/Lai_Pei_Si.png',:class => 'img-responsive img-circle'%>
+            <h3><span><a href="#Lai_Pei_Si_Profile" class="portfolio-link" data-toggle="modal">Ms. Lai Pei Si</a></span></h3>
+            <p class="text-muted">Head, Strategic Programmes Singapore</p>
+          </div>
+        </div>
+
         <div class="col-sm-3">
           <div class="speakersDiv" id="Anindya_Ghose">
             <%= image_tag 'speakers/Anindya_Ghose.png',:class => 'img-responsive img-circle'%>
@@ -514,6 +529,12 @@
             <p class="text-muted">Georgia State University</p>
           </div>
         </div>
+
+
+      </div>
+
+      <div class="row nextRow">
+
         <div class="col-sm-3">
           <div class="speakersDiv" id="Bin_Gu">
             <%= image_tag 'speakers/Bin_Gu.jpg',:class => 'img-responsive img-circle'%>
@@ -521,9 +542,16 @@
             <p class="text-muted">Arizona State University</p>
           </div>
         </div>
-      </div>
 
-      <div class="row nextRow">
+        <div class="col-sm-3">
+          <div class="speakersDiv" id="Jensen_Tan">
+            <%= image_tag 'speakers/Jensen_Tan.png',:class => 'img-responsive img-circle'%>
+            <h3><span><a href="#Jensen_Tan_Profile" class="portfolio-link" data-toggle="modal">Mr. Jensen Tan</a></span></h3>
+            <p class="text-muted">Head, Partnership Development, Consumer Sales, Singtel</p>
+          </div>
+        </div>
+
+
         <div class="col-sm-3">
           <div class="speakersDiv" id="Silvia">
             <%= image_tag 'speakers/Silvia.jpg',:class => 'img-responsive img-circle'%>
@@ -531,28 +559,49 @@
             <p class="text-muted">Regional Director, Zalora</p>
           </div>
         </div>
+
         <div class="col-sm-3">
-          <div class="speakersDiv" id="Atreyi_Kankanhalli">
-            <%= image_tag 'speakers/Atreyi_Kankanhalli.png', :class => 'img-responsive img-circle'%>
-            <h3><span><a href="#Atreyi_Kankanhalli_Profile" class="portfolio-link" data-toggle="modal">Prof. Atreyi Kankanhalli</a></span></h3>
-            <p class="text-muted">National University of Singapore</p>
+          <div class="speakersDiv" id="Carl_Ward">
+            <%= image_tag 'speakers/Carl_Ward.jpg',:class => 'img-responsive img-circle'%>
+            <h3><span>Mr. Carl Ward</span></h3>
+            <p class="text-muted">Managing Director, APAC Health and Public Service Technology, Accenture</p>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="speakersDiv" id="Alex_Siow">
-            <%= image_tag 'speakers/Alex_Siow.png', :class => 'img-responsive img-circle'%>
-            <h3><span><a href="#Alex_Siow_Profile" class="portfolio-link" data-toggle="modal">Prof. Alex Siow</a></span></h3>
-            <p class="text-muted">National University of Singapore</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="speakersDiv" id="Elena_Karahanna">
-            <%= image_tag 'speakers/Elena_Karahanna.png',:class => 'img-responsive img-circle'%>
-            <h3><span><a href="#Elena_Karahanna_Profile" class="portfolio-link" data-toggle="modal">Prof. Elena Karahanna</a></span></h3>
-            <p class="text-muted">University of Georgia</p>
-          </div>
+
+      </div>
+
+    <div class="row nextRow">
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Atreyi_Kankanhalli">
+          <%= image_tag 'speakers/Atreyi_Kankanhalli.png', :class => 'img-responsive img-circle'%>
+          <h3><span><a href="#Atreyi_Kankanhalli_Profile" class="portfolio-link" data-toggle="modal">Prof. Atreyi Kankanhalli</a></span></h3>
+          <p class="text-muted">National University of Singapore</p>
         </div>
       </div>
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Alex_Siow">
+          <%= image_tag 'speakers/Alex_Siow.png', :class => 'img-responsive img-circle'%>
+          <h3><span><a href="#Alex_Siow_Profile" class="portfolio-link" data-toggle="modal">Prof. Alex Siow</a></span></h3>
+          <p class="text-muted">National University of Singapore</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Elena_Karahanna">
+          <%= image_tag 'speakers/Elena_Karahanna.png',:class => 'img-responsive img-circle'%>
+          <h3><span><a href="#Elena_Karahanna_Profile" class="portfolio-link" data-toggle="modal">Prof. Elena Karahanna</a></span></h3>
+          <p class="text-muted">University of Georgia</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="speakersDiv" id="Daniel_Teo">
+          <%= image_tag 'speakers/Daniel_Teo.png',:class => 'img-responsive img-circle'%>
+          <h3><span><a href="#Daniel_Teo_Profile" class="portfolio-link" data-toggle="modal">Mr. Daniel Teo</a></span></h3>
+          <p class="text-muted">Program Director, GovTech</p>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 </section>
@@ -576,12 +625,51 @@
     </div>
     <%= simple_form_for :mailing_list, url: '/addList2' do |f| %>
         <%= f.input :email, placeholder: 'Email', label: false %>
-        <%= f.button :button, 'Sign up!', class: 'btn' %>
+        <%= f.button :button, 'Sign up!', class: 'btn-mail' %>
     <% end %>
   </div>
 
 </section>
 
+
+<!-- Damien_Pang_Profile -->
+<div class="portfolio-modal modal fade" id="Damien_Pang_Profile" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'speakers/Damien_Pang.png',:class => 'img-responsive img-circle'%>
+                  <h4><span>Mr. Damien Pang</span></h4>
+                  <h5>Innovation Acceleration Office, FinTech & Innovation Group, Monetary Authority of Singapore</h5>
+                </div>
+              </div>
+              <div class = "row portfolioDiv">
+                <p class="text-justify">
+                  Damien is currently heading the Technology Infrastructure Office under the FinTech & Innovation Group (FTIG) at the Monetary Authority of Singapore (MAS) that is responsible for regulatory policies and strategies for developing safe and efficient technology enabled infrastructures for the financial sector. Prior to this role, he led the team at MAS on technology risk management and cyber security policies.
+                  <br><br>Before joining MAS, he was a senior manager in InfoAssurance at the Defence Science and Technology Agency (DSTA), and led the security domain under IDA’s Singapore Government – Technology (ICT) Reference Model (SG-TRM) program for public sector-wide interoperability and standardisation.
+                  He was also one of the co-founders for (ISC)2 Singapore Chapter, and the chapter’s vice president until 2014.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Huang_Ke‐Wei_Profile -->
 <div class="portfolio-modal modal fade" id="Huang_Ke‐Wei_Profile" tabindex="-1" role="dialog" aria-hidden="true">
@@ -623,6 +711,51 @@
   </div>
 </div>
 
+<!-- Anupam_Pahuja_Profile -->
+<div class="portfolio-modal modal fade" id="Anupam_Pahuja_Profile" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'speakers/Anupam_Pahuja.jpg',:class => 'img-responsive img-circle'%>
+                  <h4><span>Mr. Anupam Pahuja</span></h4>
+                  <h5>General Manager, Paypal</h5>
+                </div>
+              </div>
+              <div class = "row portfolioDiv">
+                <p class="text-justify">
+                  Anupam Pahuja is the General Manager of Singapore Developer Center. He is responsible for the business operations and management of the technology center in Singapore. These talented technologists are part of a global team that is constantly innovating and driving software development initiatives that enhance and expand PayPal’s global payments platform. The technology centers house a best-in-class team of software developers, architects, user experience engineers, web developers, data analytics & project managers.
+                  <br><br>
+                  Anupam joined PayPal as the General Manager of India Development Centers in 2010. Bringing with him years of international experience in technology, consulting and entrepreneurship, Anupam has been instrumental in making the India centers one of the best places to work in the country. The PayPal centers in India have been ranked among the top 15 IT companies in the “India’s Best Places to Work” for 6 years in a row, by the Great Places to Work Institute and The Economic Times.
+                  <br><br>
+                  Anupam has a wealth of experience managing large-scale multinational enterprises, and has also incubated and sold several businesses. Prior to PayPal, Anupam was the Managing Director for India for NASDAQ-listed SumTotal Systems, the world’s largest eLearning company. In this role, Anupam managed the company’s global product development and led sales, marketing, and professional services for the APAC region.
+                  <br><br>
+                  In 2000, Anupam founded MobiApps Inc, a mobile focused company where he played the role of the CTO and COO and sold the company in 2006. He then founded SeaKey another high tech startup, which failed in 2008. He also serves as a Board Member for several companies and nonprofit organizations.
+                  <br><br>
+                  Anupam holds an undergraduate degree in Computer Science from Slippery Rock University of Pennsylvania and an MBA in International Business from Georgetown University.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Alan_Lim_Profile -->
 <div class="portfolio-modal modal fade" id="Alan_Lim_Profile" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
@@ -651,6 +784,47 @@
                   Prior to this, Alan Lim was the Lead Software Architect for IBM in Singapore. During which he led his team of Senior IT Architects to work with enterprises across industries on the solution design and strategy for digital transformation.  Alan’s expertise is in distributed computing, large-scale transactional systems and enterprise modernization. His experience includes working with major banks on the design and implementation of IBM solutions for their Digital Banking and Core Banking Transformation programs. In the government space, he has designed and implemented solutions involving complex, cross agency integrations.
                   <br><br>
                   Alan serves on the board of directors of Caritas Singapore, a non-profit organisation that support a wide array of causes such as the poor, children, youth at risk, families, prisoners, elderly, sick, people with life-limiting illnesses, people with HIV/AIDS, those with disabilities, migrant workers, people with legal and medical needs.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lai_Pei_Si_Profile -->
+<div class="portfolio-modal modal fade" id="Lai_Pei_Si_Profile" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'speakers/Lai_Pei_Si.png',:class => 'img-responsive img-circle'%>
+                  <h4><span>Ms. Lai Pei Si</span></h4>
+                  <h5>Head, Strategic Programmes Singapore</h5>
+                </div>
+              </div>
+              <div class = "row portfolioDiv">
+                <p class="text-justify">
+                  Lai Pei-Si was appointed as Head, Strategic Programmes, Singapore in Nov 2016. In line with the corporate strategy for the Singapore franchise, Pei-Si will work with the CMT to deliver strategic programmes across all segments. These include the introduction of innovative and market disruptive propositions for the emerging affluent and affluent client segments; strengthening our network platform to be the partner for internationally oriented companies; and implementation of end-to-end digitisation with a “human” touch. In addition, Pei-Si will continue to lead on a number of strategic programmes for the ASEAN and South Asia (ASA) region, supporting Anna Marrs, Regional CEO, ASEAN & South Asia.
+                  <br><br>
+                  Pei-Si joined the Bank in 1999 as a Personal Financial Consultant in Singapore and rose through the ranks with her wealth of experience, proven capabilities in managing teams and effecting tangible improvements, and successful execution of change management. She is also amongst the first to be part of the Asian Financial Leaders Programme. Pei-Si moved to Brunei in 2011 as Chief Executive Officer and Head, Retail Clients Segment, Standard Chartered Brunei. She returned to Singapore in 2014 to assume the role of Head of CEO Office, Singapore and subsequently as Head of Regional CEO Office, ASA.
+                  <br><br>
+                  Pei-Si holds a Bachelor’s (Honours) degree in Economics & Political Science from National University of Singapore, Singapore.  She is married with four children.
                 </p>
               </div>
               <div class = "nextRow">
@@ -825,6 +999,45 @@
   </div>
 </div>
 
+<!--  Jensen Tan Profile -->
+<div class="portfolio-modal modal fade" id="Jensen_Tan_Profile" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'speakers/Jensen_Tan.png',:class => 'img-responsive img-circle'%>
+                  <h4><span>Mr. Jensen Tan</span></h4>
+                  <h5>Head, Partnership Development, Consumer Sales, Singtel</h5>
+                </div>
+              </div>
+              <div class = "row portfolioDiv">
+                <p class="text-justify">
+                  Jensen Tan was appointed Head, Partnership Development on 1 April 2015 to strengthen Singtel consumer channel partner’s relationships and capabilities in Prepaid, Singtel Exclusive Retailers and Mobile Remittance business. Prior to this position in 16 February 2011, he was the Director of Consumer Sales with responsibilities to Prepaid and Mobile Remittance. Under his leadership our Prepaid business gained strong sales and distribution competitive advantages as evidence in our relative market share over the last six years.
+                  <br><br>
+                  Prior to joining SingTel, he was the Sales Director of Kraft Foods Singapore as well as a company Director where he works closely with retailers, distributors, own sales force and regulators to drive the country strategies in sales, category management and trade marketing. He was also appointed as the change leader for Kraft Asia Pacific integration efforts in Cadbury acquisition.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--  Silvia Thom Profile -->
 <div class="portfolio-modal modal fade" id="Silvia_Thom_Profile" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
@@ -970,6 +1183,45 @@
                   Elena’s expertise are in the implementation and use of information systems, e-health, IS leadership especially at the CIO level, social media, and cross-cultural issues. Her research has been published in leading scholarly journals in Information Systems (e.g., Management Science, MIS Quarterly, Information Systems Research) as well as in practitioner journals (e.g., MIS Quarterly Executive, Cutter Benchmark Review, Business Horizons).  Elena’s research is highly cited with over 17,000 citations as per Google Scholar and three of her articles are among the top 15 most frequently cited articles in the history of the MIS Quarterly. She is ranked 4th worldwide for publications in the MIS Quarterly in the past 15 years (1999-2014). For her research achievements, Elena has received the Terry College of Business Outstanding Research Award in 2010 and was named a University of Georgia Distinguished Research Professor in 2016. She was also named a Fellow of the Association for Information Systems in 2012 for outstanding contributions in research, teaching and service to the Information Systems discipline.
                   <br><br>
                   Elena has served as Senior Editor at the MIS Quarterly, Information Systems Research, and the Journal of the Association for Information Systems (a cumulative total of 11 years as Senior Editor across the three journals), and serves or has served as Associate Editor at Management Science, Information Systems Research, MIS Quarterly, Journal of the Association for Information Systems, IEEE Transactions on Engineering Management, and the European Journal of Information Systems. She has also guest co-edited a Special Issue of IEEE Transactions on Engineering Management on “IS Leadership” and a Special Issue of MIS Quarterly Executive on “New IS Leadership Roles in a Digital World.” She has also served as program co-chair for the International Conference on Information Systems (ICIS) in 2014, as Doctoral Consortium co-chair for the Americas Conference on Information Systems (AMCIS) in 2014, and as conference co-chair for the Mediterranean Conference on Information Systems (MCIS) in 2011 and in 2016. For her service contributions to the profession, Elena received the AIS Sandra Slaughter Service Award in 2015. Elena has taught a variety of courses in the undergraduate, MBA, Masters, and Doctoral programs and has received teaching excellence awards from Florida State University in 1998 and from the University of Georgia in 2003, 2011, and 2013. She has also chaired 13 dissertations and served as committee member or as an external examiner on another 20 dissertation committees.
+                </p>
+              </div>
+              <div class = "nextRow">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  Daniel Teo Profile -->
+<div class="portfolio-modal modal fade" id="Daniel_Teo_Profile" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="modal-body">
+              <div class="row">
+                <div class="portfolioDiv">
+                  <%= image_tag 'speakers/Daniel_Teo.png',:class => 'img-responsive img-circle'%>
+                  <h4><span>Mr. Daniel Teo</span></h4>
+                  <h5>Director, Smart Nation Sensor Platform Government</h5>
+                </div>
+              </div>
+              <div class = "row portfolioDiv">
+                <p class="text-justify">
+                  Daniel has over 20 years in the ICT and telecommunications industry. In his current role with the Government Technology Agency of Singapore (GovTech), he leads its Programme Office for the Smart Nation Sensor Platform (SNSP). The Programme Office will look into the architectural infrastructure, system engineering and analytics design and implementation, security and operations of the SNSP. Prior to working in GovTech, he was one of the pioneers in developing ADSL to its full capability in Singapore before leading the operations of the broadband wholesale infrastructure team in Singapore and SingNet. He was also one of the early starters in the next generation broadband network (NGNBN) and played a key role in defining NGNBN’s OSS/BSS systems.
+                  <br><br>
+                  Daniel has a Bachelor degree in Electronics and Electrical Engineering from the Nanyang Technological University and is one of the patent owners of Virtual Private Network for Service Provider Network.
                 </p>
               </div>
               <div class = "nextRow">

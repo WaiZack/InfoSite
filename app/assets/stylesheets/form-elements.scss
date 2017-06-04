@@ -49,7 +49,7 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 
 
 
-button.btn {
+button.btn-mail {
 	height: 50px;
     margin: 0;
     padding: 0 20px;
@@ -67,13 +67,13 @@ button.btn {
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 
-button.btn:hover { opacity: 0.6; color: #fff; }
+button.btn-mail:hover { opacity: 0.6; color: #fff; }
 
-button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+button.btn-mail:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
 
-button.btn:focus { outline: 0; opacity: 0.6; background: #de995e; color: #fff; }
+button.btn-mail:focus { outline: 0; opacity: 0.6; background: #de995e; color: #fff; }
 
-button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #de995e; color: #fff; }
+button.btn-mail:active:focus, button.btn-mail.active:focus { outline: 0; opacity: 0.6; background: #de995e; color: #fff; }
 
 .textFieldCustom{
   min-height:200px
