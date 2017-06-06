@@ -70,7 +70,7 @@ Rails.application.routes.draw do
   resources :account_activation, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update, :back]
   resources :teams
-  resources :membership_requests
+  # resources :membership_requests
   resources :mailing_list
   resources :submissions, only: [:create, :update]
   resources :ndas
