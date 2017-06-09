@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'slaves/new'
+
   get 'membership_requests/new'
 
   get 'membership_acceptance/new'
@@ -59,7 +61,10 @@ Rails.application.routes.draw do
   get '/recruit' => 'recruits#show'
   get '/newRecruit' => 'recruits#new'
   get '/recruited' => 'recruits#delete'
-  # get '/NDAnotNBA' => 'ndas#new'
+  get '/NDAnotNBA' => 'ndas#new'
+  get '/volunteers' => 'slaves#new'
+  get '/volunteerDone' => 'slaves#done'
+  post '/volunteering' => 'slaves#create'
 
   post '/addList2' => 'mailing_list#new2'
 
@@ -70,9 +75,10 @@ Rails.application.routes.draw do
   resources :account_activation, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update, :back]
   resources :teams
-  resources :membership_requests
+  # resources :membership_requests
   resources :mailing_list
   resources :submissions, only: [:create, :update]
   resources :ndas
+  resources :slaves
 
 end
