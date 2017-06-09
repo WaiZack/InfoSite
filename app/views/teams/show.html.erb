@@ -213,9 +213,9 @@
     <div class="row" style="padding-top: 30px;">
       <h5 class="subheader">Other Actions</h5>
 
-      <% #if @team.users.count < 4 && !@team.users.all.include?(@user) && @user.teams.count < 3%>
-          <!--<a class="btn btn-primary" href='/membership_requests/new?team_id=<%=@team.id%>'>Send Join Request</a>-->
-      <% #end %>
+      <% if @team.users.count < 4 && !@team.users.all.include?(@user) && @user.teams.count < 3%>
+          <a class="btn btn-primary" href='/membership_requests/new?team_id=<%=@team.id%>'>Send Join Request</a>
+      <% end %>
       <% if @team.users.all.include?(@user) && @team.creator != @user.id%>
           <h5 style="color: dodgerblue;">Warning! You won't be able to rejoin the same team should you quit</h5>
           <a class="btn btn-warning" href='/quitTeam?team=<%=@team.id%>' data-confirm = "You won't be allowed to rejoin this team if you quit!">Quit Team</a>
