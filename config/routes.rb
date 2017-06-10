@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/fintech' => 'landing#fintech'
   get '/about' => 'landing#about'
   get '/workshops' => 'landing#workshops'
-  get '/BiZiTalk' => 'landing#BiZiTalk'
+  get '/finale' => 'landing#BiZiTalk'
 
 
 
