@@ -69,7 +69,7 @@ Rails.application.routes.draw do
   post '/addList2' => 'mailing_list#new2'
 
 
-  resources :users
+  resources :users, except: [:new]
   resources :recruits
   resources :dashboard
   resources :account_activation, only: [:edit]
