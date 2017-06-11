@@ -138,6 +138,10 @@
     height: 140px !important;
   }
 
+  .event-list.finale> li {
+    height: 120px !important;
+  }
+
   .event-list > li > time,
   .event-list > li > img  {
     display: inline-block;
@@ -167,6 +171,11 @@
     padding-top: 15px !important;
   }
 
+  .event-list.finale > li > time {
+    height: 120px !important;
+    padding-top: 5px !important;
+  }
+
   .event-list > li > img {
     width: 120px;
     padding: 0px;
@@ -182,6 +191,10 @@
 
   .event-list.talkul > li > .info {
     height: 140px !important;
+  }
+
+  .event-list.finale > li > .info {
+    height: 120px !important;
   }
 
   .event-list > li > .info > div.row {
