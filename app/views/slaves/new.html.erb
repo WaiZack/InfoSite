@@ -57,6 +57,25 @@
               <%= f.input :institute, placeholder: 'School\'s Full Name', label: false %>
               <label>Dietary Preference</label>
               <%= f.input :diet, :collection => %w(Vegetarian Non-Vegetarian), include_blank: false, include_hidden: false,label: false, input_html: { class: 'form-control' },value: @slave.diet%>
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :morning, value: @slave.morning%>
+                <%= f.label :morning, "Day 1 Morning Shift".html_safe%>
+              </div>
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :afternoon, value: @slave.afternoon%>
+                <%= f.label :afternoon, "Day 1 Afternoon Shift".html_safe%>
+              </div>
+
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :morning2, value: @slave.morning2%>
+                <%= f.label :morning2, "Day 2 Morning Shift".html_safe%>
+              </div>
+              <div class="checkbox checkbox-circle checkbox-success">
+                <%= f.check_box :afternoon2, value: @slave.afternoon2%>
+                <%= f.label :afternoon2, "Day 2 Afternoon Shift".html_safe%>
+              </div>
+
+
 
               <%= f.button :button, 'Sign up', class: 'btn btn-lg btn-success' %>
 

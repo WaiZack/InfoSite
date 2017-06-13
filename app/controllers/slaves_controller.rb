@@ -15,6 +15,6 @@ class SlavesController < ApplicationController
   end
 
   def slaves_param
-    params.require(:slave).permit(:name, :email, :institute, :diet, :phone)
+    params.require(:slave).permit(:name, :email, :institute, :diet, :phone,:morning,:afternoon,:morning2,:afternoon2)
   end
 end
