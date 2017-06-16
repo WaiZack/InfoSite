@@ -77,33 +77,39 @@
 
 
 <!-- About Finale-->
-<section class="home-bg" style="padding-bottom: 90px">
+<section class="home-bg">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 class="section-heading" id="statement-section-heading"><span>The Finale</span></h1>
         <div class="statementText nextRow">
           BiZiT Festival Finale a two-day event featuring talks, seminars and competitions on 22nd and 23rd June.
-          Come join us for 2 days of exciting innovation and learn about hot topics in the business IT industry!
+          <br><br>
+          There will be fireside chats with the most prominent startups in Singapore; prototypes showcase by our top contestants from each tracks where you will be able to catch the latest innovation of Big Data, Fintech and Smart Nation; HR booths by our title sponors.
+          <br><br>
+          ICE Workshop on 23rd June is an industry seminar organised by NUS School of Computing. Featuring executives from leading technology companies, banks, and government bodies.
         </div>
       </div>
     </div>
     <div class="row nextNextRow text-center">
       <a href="https://www.eventbrite.sg/e/bizit-festival-finale-tickets-35118224555" target="_blank" class="btn-register">Register</a>
     </div>
+    <div class = "row text-center" style="padding-top: 20px">
+      <a href="#summary" class="link-text-darker page-scroll">Find out more</a>
+    </div>
   </div>
 </section>
 
 
-<!--time slots -->
-<section class="layer" style="padding-top: 90px">
+<!--summary-->
+<section class="layer" id="summary">
   <div class="container">
 
     <div class="row">
       <div class="col-md-2"></div>
 
       <div class="col-md-8">
-        <ul class="event-list finale">
+        <ul class="event-list ">
 
           <li>
             <time datetime="2017-06-22" class="talk-time">
@@ -114,11 +120,23 @@
             </time>
             <div class="info talk">
               <h2 class="title text-center"><a class="page-scroll" href="#Day1">Day 1: Innovate</a></h2>
-              <div class="row text-center">
+              <div class="row">
                 <span class="fa fa-clock-o"></span>    8:30AM - 6PM
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <span class="fa fa-map-marker"></span>    <a href="http://utown.nus.edu.sg/contact/getting-here/" target="_blank">
-                University Town, NUS</a>
+                &nbsp&nbsp
+                <span class="fa fa-map-marker"></span><a href="http://utown.nus.edu.sg/contact/getting-here/" target="_blank">
+                Stephen Riady Center, University Town, NUS</a>,&nbsp register @ Auditorium 2
+              </div>
+              <div class="row">
+                <span class="fa fa-money"></span>&nbspOpen to general public.&nbsp Register and redeem a goodie bag!
+              </div>
+              <div class="row" style="margin-top: 8px">
+                <span class="fa fa-chevron-circle-right"></span>&nbsp&nbsp Fireside Chat and Networking Opportunities with Startups
+              </div>
+              <div class="row">
+                <span class="fa fa-chevron-circle-right"></span>&nbsp&nbsp HR and Product Booths by StanChart, Singtel, Accenture and more
+              </div>
+              <div class="row">
+                <span class="fa fa-chevron-circle-right"></span>&nbsp&nbsp Project Showcase,&nbsp Popularity Voting,&nbsp Lucky Draw
               </div>
               <div class="row text-center"></div>
             </div>
@@ -134,11 +152,25 @@
             </time>
             <div class="info talk">
               <h2 class="title text-center"><a class="page-scroll" href="#Day2">Day 2: IS industry seminar - ICE workshop</a></h2>
-              <div class="row text-center">
+              <div class="row">
                 <span class="fa fa-clock-o"></span>    8:30AM - 7PM
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <span class="fa fa-map-marker"></span>    <a href="http://utown.nus.edu.sg/contact/getting-here/" target="_blank">
-                University Town, NUS</a>
+                &nbsp&nbsp
+                <span class="fa fa-map-marker"></span><a href="http://utown.nus.edu.sg/contact/getting-here/" target="_blank">
+                Stephen Riady Center, University Town, NUS</a>,&nbsp register @ Auditorium 2
+              </div>
+              <div class="row">
+                <span class="fa fa-money"></span>&nbsp ICE Industry Seminar is open to students from
+                <a data-toggle="tooltip" data-placement="top" title="Please refer to our Terms & Conditions for the definitions of IHL">
+                  Institutes of Higher Learning (IHLs).</a>
+              </div>
+              <div class="row" style="margin-top: 8px">
+                <span class="fa fa-chevron-circle-right"></span>&nbsp&nbsp ICE Industry Seminar
+              </div>
+              <div class="row">
+                <span class="fa fa-chevron-circle-right"></span>&nbsp&nbsp Industry HR and Products Booths
+              </div>
+              <div class="row">
+                <span class="fa fa-chevron-circle-right"></span>&nbsp&nbsp Project Showcase,&nbsp Popularity Voting,&nbsp Lucky Draw
               </div>
               <div class="row text-center"></div>
             </div>
@@ -1642,5 +1674,11 @@
 </footer>
 
 </body>
+
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 
 </html>

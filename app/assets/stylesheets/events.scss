@@ -29,7 +29,7 @@
 }
 
 .event-list > li >.talk-time {
-  background-color: rgb(109, 167, 167)!important;
+  background-color: #a94442!important;
 }
 
 .event-list > li:nth-child(even) > time {
@@ -37,7 +37,7 @@
 }
 
 .event-list > li:nth-child(even) > .talk-time {
-  background-color: rgb(65, 124, 167) !important;
+  background-color: #2d4268 !important;
 }
 
 .event-list > li > time > span {
@@ -134,12 +134,12 @@
     padding: 0px;
   }
 
-  .event-list.talkul> li {
-    height: 140px !important;
-  }
+  //.event-list.talkul> li {
+  //  height: 140px !important;
+  //}
 
   .event-list.finale> li {
-    height: 120px !important;
+    height: 220px !important;
   }
 
   .event-list > li > time,
@@ -166,13 +166,13 @@
     padding-top: 50px;
   }
 
-  .event-list.talkul > li > time {
-    height: 140px !important;
-    padding-top: 15px !important;
-  }
+  //.event-list.talkul > li > time {
+  //  height: 140px !important;
+  //  padding-top: 15px !important;
+  //}
 
   .event-list.finale > li > time {
-    height: 120px !important;
+    height: 220px !important;
     padding-top: 5px !important;
   }
 
@@ -189,12 +189,12 @@
     text-align: left;
   }
 
-  .event-list.talkul > li > .info {
-    height: 140px !important;
-  }
+  //.event-list.talkul > li > .info {
+  //  height: 140px !important;
+  //}
 
   .event-list.finale > li > .info {
-    height: 120px !important;
+    height: 220px !important;
   }
 
   .event-list > li > .info > div.row {
@@ -214,7 +214,8 @@
   }
 
   .talk .title{
-    margin-top: 20px!important;
+    margin-top: 8px!important;
+    margin-bottom: 0px!important;
   }
 
   .event-list > li > .info > ul {

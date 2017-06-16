@@ -1097,10 +1097,10 @@ p span{
 }
 
 .link-text-darker{
-  color: #f4a460;
+  color: #f4a460 !important;
 }
 .link-text-darker:hover{
-  color: darken(#f4a460, 10%);
+  color: darken(#f4a460, 10%) !important;
 }
 
 //speakers
