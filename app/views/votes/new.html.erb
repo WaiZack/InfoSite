@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="none">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+
+  <%= javascript_include_tag ('loginScripts') %>
+  <%= stylesheet_link_tag ('login') %>
+  <%=stylesheet_link_tag('application')%>
+  <%= stylesheet_link_tag 'form-elements' %>
+  <%= stylesheet_link_tag 'awesome-bootstrap-checkbox'%>
+
+</head>
+
+
+<body>
+
+<!-- Top content -->
+<div class="top-content">
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+          <div class="form-top-left">
+            <h3>BiZiT Festival Popularity Voting</h3>
+          </div>
+          <div class="form-top-right">
+          </div>
+        </div>
+        <div class="form-bottom">
+
+          <%= simple_form_for @vote do |f| %>
+              <%= f.input :email, placeholder: 'Email', label: false %>
+              <%= f.input :name, placeholder: 'Name', label: false %>
+              <%= f.input :phone, placeholder: 'Phone Number', label: false %>
+              <label>I am voting for</label>
+              <%= f.input :choice, :collection => @teams, include_blank: false, include_hidden: false,label: false, input_html: { class: 'form-control' },value: @vote.choice%>
+
+              <%= f.button :button, 'Vote!', class: 'btn btn-lg btn-success' %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%= javascript_include_tag 'application' %>
+
+</body>
+
+</html>
