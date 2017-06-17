@@ -68,6 +68,10 @@ Rails.application.routes.draw do
 
   post '/addList2' => 'mailing_list#new2'
 
+  get '/lemmeVote' => 'votes#new'
+
+  get 'votingDone' => 'votes#done'
+
 
   resources :users, except: [:new]
   resources :recruits
@@ -80,5 +84,6 @@ Rails.application.routes.draw do
   resources :submissions, only: [:create, :update]
   resources :ndas
   resources :slaves
+  resources :votes
 
 end
