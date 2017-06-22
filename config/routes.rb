@@ -68,7 +68,7 @@ Rails.application.routes.draw do
 
   post '/addList2' => 'mailing_list#new2'
 
-  get '/lemmeVote' => 'votes#new'
+  get '/TazsBrovhCJgKHYibYCE' => 'votes#new'
 
   get 'votingDone' => 'votes#done'
 

@@ -7,6 +7,7 @@ class VotesController < ApplicationController
 
   def create
     @vote = Vote.new(votes_param)
+    @vote.day = 'Day 2 Voter'
     @teams = Team.joins(:submissions).pluck(:name).sort_by!{|e| e.downcase}
     if @vote.save
       redirect_to '/votingDone'
