@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: festival
+  database: ebdb
   username: <%= ENV['RDS_USERNAME'] %>
   password: <%= ENV['RDS_PASSWORD'] %>
   host: <%= ENV['RDS_HOSTNAME'] %>
